@@ -3,159 +3,164 @@
 |------|----|-------|
 |email|||
 |password|||
-|full-name|||
-|name-katakana|||
-|tell|||
-|thumbnail|||
-|self-introduction|||
-|adress_id|||
-|birthday-year|||
-|birthday-manth|||
-|birthday-day|||
+|full-name|string|null: false|
+|name-katakana|string|null: false|
+|tell|string|null: false|
+|thumbnail|string||
+|self-introduction|text||
+|adress_id|integer|null: false|
+|birthday-year|integer|null: false|
+|birthday-manth|integer|null: false|
+|birthday-day|integer|null: false|
 
 
 ## productsテーブル
 |Column|Type|Options|
 |------|----|-------|
-|name|||
-|product-explain|||
-|price|||
-|category_id|||
-|brand_id|||
-|day_id|||
-|prefecture_id|||
-|transactions-status_id|||
-|condition_id|||
-|fee_id|||
+|name|string|null: false|
+|product-explain|text|null: false|
+|price|integer|null: false|
+|category_id|integer|null: false|
+|brand_id|integer||
+|send-day_id|integer|null: false|
+|prefecture_id|integer|null: false|
+|transactions-status_id|integer|null: false|
+|condition_id|integer|null: false|
+|fee_id|integer|null: false|
 
 
-
-
-## messagesテーブル
+## product-messagesテーブル
 |Column|Type|Options|
 |------|----|-------|
-|message|||
-|user_id|||
-|product_id|||
+|message|text|null: false|
+|user_id|integer|null: false|
+|product_id|integer|null: false|
 
 
 
-## likesテーブル
+## product-likesテーブル
 |Column|Type|Options|
 |------|----|-------|
-|user_id|||
-|product_id|||
+|user_id|integer|null: false|
+|product_id|integer|null: false|
 
 
 ## salersテーブル
 |Column|Type|Options|
 |------|----|-------|
-|user_id|||
-|product_id|||
+|user_id|integer|null: false|
+|product_id|integer|null: false|
 
 
 ## buyersテーブル
 |Column|Type|Options|
 |------|----|-------|
-|user_id|||
-|product_id|||
+|user_id|integer|null: false|
+|product_id|integer|null: false|
 
 
-## commentsテーブル
+## product-commentsテーブル
 |Column|Type|Options|
 |------|----|-------|
-|comment|||
-|user_id|||
-|product_id|||
+|comment|text|null: false|
+|user_id|integer|null: false|
+|product_id|integer|null: false|
 
 
 ## prefecturesテーブル
 |Column|Type|Options|
 |------|----|-------|
-|prefecture-name|||
+|prefecture-name|string|null: false|
 
 
 ## userlikesテーブル
 |Column|Type|Options|
 |------|----|-------|
-|smile_id|||
-|user-likes-comment|||
-|receive-user_id|||
-|user_id|||
+|rank_id|integer|null: false|
+|user-likes-comment|text||
+|receive-user_id|integer|null: false|
+|user_id|integer|null: false|
 
-## smilesテーブル
+
+## ranksテーブル
 |Column|Type|Options|
 |------|----|-------|
-|mark|||
+|rank|string|null: false|
 
 
 ## birthday-yearsテーブル
 |Column|Type|Options|
 |------|----|-------|
-|birthday-year|||
+|birthday-year|integer|null: false|
 
 
 ## birthday-manthsテーブル
 |Column|Type|Options|
 |------|----|-------|
-|birthday-manth|||
+|birthday-manth|integer|null: false|
 
 
 ## birthday-daysテーブル
 |Column|Type|Options|
 |------|----|-------|
-|birthday-day|||
+|birthday-day|integer|null: false|
 
 
 ## adressesテーブル
 |Column|Type|Options|
 |------|----|-------|
-|postalcode|||
-|city|||
-|little-adress|||
-|building|||
-|prefecture_id|||
+|postalcode|string|null: false|
+|city|string|null: false|
+|little-adress|string|null: false|
+|building|string|null: false|
+|prefecture_id|integer|null: false|
 
 
 ## imagesテーブル
 |Column|Type|Options|
 |------|----|-------|
-|image|||
-|product_id|||
+|image|string|null: false|
+|product_id|integer|null: false|
 
 
-## daysテーブル
+## send-daysテーブル
 |Column|Type|Options|
 |------|----|-------|
-|day|||
+|day|integer|null: false|
 
 
-## categorysテーブル
+## product-categorysテーブル
 |Column|Type|Options|
 |------|----|-------|
-|name|||
-|parent-id|||
+|name|string|null: false|
+|parent-id|integer||
 
 
-## brandsテーブル
+## product-brandsテーブル
 |Column|Type|Options|
 |------|----|-------|
-|name|||
+|name|string|null: false|
 
 
-## feesテーブル
+## product-feesテーブル
 |Column|Type|Options|
 |------|----|-------|
-|fee|||
+|fee|integer|null: false|
 
 
-## conditionsテーブル
+## product-conditionsテーブル
 |Column|Type|Options|
 |------|----|-------|
-|condition|||
+|condition|string|null: false|
 
 
-## transaction-statusesテーブル
+## product-transaction-statusesテーブル
 |Column|Type|Options|
 |------|----|-------|
-|transaction-status|||
+|transaction-status|string|null: false|
+
+
+## product-sizesテーブル
+|Column|Type|Options|
+|------|----|-------|
+|size|string|null: false|

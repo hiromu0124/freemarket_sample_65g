@@ -4,6 +4,7 @@
 |email|||
 |password|||
 |full-name|string|null: false|
+|nickname|string|null: false|
 |name-katakana|string|null: false|
 |tell|string|null: false, unique:true|
 |thumbnail|string||

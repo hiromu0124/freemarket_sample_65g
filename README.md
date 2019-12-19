@@ -5,10 +5,10 @@
 |password|||
 |full-name|string|null: false|
 |name-katakana|string|null: false|
-|tell|string|null: false|
+|tell|string|null: false, unique:true|
 |thumbnail|string||
 |self-introduction|text||
-|adress_id|integer|null: false|
+|adress_id|integer|null: false, foreign_key: true|
 |birthday-year|integer|null: false|
 |birthday-manth|integer|null: false|
 |birthday-day|integer|null: false|
@@ -30,16 +30,16 @@
 |------|----|-------|
 |name|string|null: false|
 |product-explain|text|null: false|
-|price|integer|null: false|
-|category_id|integer|null: false|
-|brand_id|integer||
-|send-day_id|integer|null: false|
-|prefecture_id|integer|null: false|
-|saler_id|integer||
-|transactions-status_id|integer|null: false|
-|condition_id|integer|null: false|
-|fee_id|integer|null: false|
-|size_id|integer||
+|price|integer|null: false, check: price >= 0, price < 10000000|
+|category_id|integer|null: false, foreign_key: true|
+|brand_id|integer|foreign_key: true|
+|send-day_id|integer|null: false, foreign_key: true|
+|prefecture_id|integer|null: false, foreign_key: true|
+|saler_id|integer|foreign_key: true|
+|transactions-status_id|integer|null: false, foreign_key: true|
+|condition_id|integer|null: false, foreign_key: true|
+|fee_id|integer|null: false, foreign_key: true|
+|size_id|integer|foreign_key: true|
 
 ### Association
 - has_many :product-messages
@@ -61,8 +61,8 @@
 |Column|Type|Options|
 |------|----|-------|
 |message|text|null: false|
-|user_id|integer|null: false|
-|product_id|integer|null: false|
+|user_id|integer|null: false, foreign_key: true|
+|product_id|integer|null: false, foreign_key: true|
 
 ### Association
 - belongs_to :user
@@ -73,8 +73,8 @@
 ## product-likesテーブル
 |Column|Type|Options|
 |------|----|-------|
-|user_id|integer|null: false|
-|product_id|integer|null: false|
+|user_id|integer|null: false, foreign_key: true|
+|product_id|integer|null: false, foreign_key: true|
 
 ### Association
 - belongs_to :user
@@ -84,8 +84,8 @@
 ## ordersテーブル
 |Column|Type|Options|
 |------|----|-------|
-|buyer_id|integer|null: false|
-|product_id|integer|null: false|
+|buyer_id|integer|null: false, foreign_key: true|
+|product_id|integer|null: false, foreign_key: true|
 
 
 ### Association
@@ -98,8 +98,8 @@
 |Column|Type|Options|
 |------|----|-------|
 |comment|text|null: false|
-|user_id|integer|null: false|
-|product_id|integer|null: false|
+|user_id|integer|null: false, foreign_key: true|
+|product_id|integer|null: false, foreign_key: true|
 
 
 ### Association
@@ -110,7 +110,7 @@
 ## prefecturesテーブル
 |Column|Type|Options|
 |------|----|-------|
-|prefecture-name|string|null: false|
+|prefecture-name|string|null: false, unique:true|
 
 
 ### Association
@@ -121,10 +121,10 @@
 ## userlikesテーブル
 |Column|Type|Options|
 |------|----|-------|
-|rank_id|integer|null: false|
+|rank_id|integer|null: false, foreign_key: true|
 |user-likes-comment|text||
-|receive-user_id|integer|null: false|
-|user_id|integer|null: false|
+|receive-user_id|integer|null: false, foreign_key: true|
+|user_id|integer|null: false, foreign_key: true|
 
 
 ### Association
@@ -136,7 +136,7 @@
 ## ranksテーブル
 |Column|Type|Options|
 |------|----|-------|
-|rank|string|null: false|
+|rank|string|null: false, unique:true|
 
 ### Association
 - has_many :userlikes
@@ -147,7 +147,7 @@
 ## birthday-yearsテーブル
 |Column|Type|Options|
 |------|----|-------|
-|birthday-year|integer|null: false|
+|birthday-year|integer|null: false, unique:true|
 
 ### Association
 - has_many :users
@@ -156,7 +156,7 @@
 ## birthday-manthsテーブル
 |Column|Type|Options|
 |------|----|-------|
-|birthday-manth|integer|null: false|
+|birthday-manth|integer|null: false, unique:true|
 
 ### Association
 - has_many :users
@@ -166,7 +166,7 @@
 ## birthday-daysテーブル
 |Column|Type|Options|
 |------|----|-------|
-|birthday-day|integer|null: false|
+|birthday-day|integer|null: false, unique:true|
 
 ### Association
 - has_many :users
@@ -180,7 +180,7 @@
 |city|string|null: false|
 |little-adress|string|null: false|
 |building|string|null: false|
-|prefecture_id|integer|null: false|
+|prefecture_id|integer|null: false, foreign_key: true|
 
 ### Association
 - belongs_to :user
@@ -191,7 +191,7 @@
 |Column|Type|Options|
 |------|----|-------|
 |image|string|null: false|
-|product_id|integer|null: false|
+|product_id|integer|null: false, foreign_key: true|
 
 ### Association
 - belongs_to :product
@@ -200,7 +200,7 @@
 ## product-send-daysテーブル
 |Column|Type|Options|
 |------|----|-------|
-|day|integer|null: false|
+|day|integer|null: false, unique:true|
 
 ### Association
 - has_many :products
@@ -210,7 +210,7 @@
 ## product-categorysテーブル
 |Column|Type|Options|
 |------|----|-------|
-|name|string|null: false|
+|name|string|null: false, unique:true|
 |parent-id|integer||
 
 ### Association
@@ -221,7 +221,7 @@
 ## product-brandsテーブル
 |Column|Type|Options|
 |------|----|-------|
-|name|string|null: false|
+|name|string|null: false, unique:true|
 
 ### Association
 - has_many :products
@@ -231,7 +231,7 @@
 ## product-feesテーブル
 |Column|Type|Options|
 |------|----|-------|
-|fee|integer|null: false|
+|fee|integer|null: false, unique:true|
 
 ### Association
 - has_many :products
@@ -240,7 +240,7 @@
 ## product-conditionsテーブル
 |Column|Type|Options|
 |------|----|-------|
-|condition|string|null: false|
+|condition|string|null: false, unique:true|
 
 ### Association
 - has_many :products
@@ -250,7 +250,7 @@
 ## product-transaction-statusesテーブル
 |Column|Type|Options|
 |------|----|-------|
-|transaction-status|string|null: false|
+|transaction-status|string|null: false, unique:true|
 
 ### Association
 - has_many :products
@@ -260,7 +260,7 @@
 ## product-sizesテーブル
 |Column|Type|Options|
 |------|----|-------|
-|size|string|null: false|
+|size|string|null: false, unique:true|
 
 ### Association
 - has_many :products

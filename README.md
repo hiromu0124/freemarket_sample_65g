@@ -29,6 +29,7 @@
 - has_many :product-comments
 
 
+
 ## productsテーブル
 |Column|Type|Options|
 |------|----|-------|
@@ -37,28 +38,23 @@
 |price|integer|null: false, check: price >= 0, price < 10000000|
 |category_id|integer|null: false, foreign_key: true|
 |brand_id|integer|foreign_key: true|
-|send-day_id|integer|null: false, foreign_key: true|
+|product_send_day|integer|null: false, unique:true|
 |prefecture_id|integer|null: false, foreign_key: true|
 |saler_id|integer|foreign_key: true|
-|transactions_status_id|integer|null: false, foreign_key: true|
-|condition_id|integer|null: false, foreign_key: true|
-|fee_id|integer|null: false, foreign_key: true|
-|size_id|integer|foreign_key: true|
+|transaction_status|string|null: false, unique:true|
+|product_condition|string|null: false, unique:true|
+|product_fee|integer|null: false, unique:true|
+|product_size|string||
 
 ### Association
 - has_many :product-messages
 - has_many :product-likes
 - has_one :order
 - has_many :product-comments
-- belongs_to :prefecture
 - belongs_to :product-category
 - belongs_to :product-brand
 - has_many :product-images
-- belongs_to :product-send-day
-- belongs_to :product-fee
-- belongs_to :product-condition
-- belongs_to :product-transaction-status
-- belongs_to :product-size
+
 
 
 ## product_messagesテーブル
@@ -85,12 +81,12 @@
 - belongs_to :product
 
 
+
 ## ordersテーブル
 |Column|Type|Options|
 |------|----|-------|
 |buyer_id|integer|null: false, foreign_key: true|
 |product_id|integer|null: false, foreign_key: true|
-
 
 ### Association
 - belongs_to :user
@@ -105,10 +101,10 @@
 |user_id|integer|null: false, foreign_key: true|
 |product_id|integer|null: false, foreign_key: true|
 
-
 ### Association
 - belongs_to :user
 - belongs_to :product
+
 
 
 ## userlikesテーブル
@@ -118,7 +114,6 @@
 |user_likes_comment|text||
 |receive_user_id|integer|null: false, foreign_key: true|
 |user_id|integer|null: false, foreign_key: true|
-
 
 ### Association
 - belongs_to :rank
@@ -136,11 +131,6 @@
 
 
 
-### Association
-- belongs_to :user
-- belongs_to :prefecture
-
-
 ## product_imagesテーブル
 |Column|Type|Options|
 |------|----|-------|
@@ -149,15 +139,6 @@
 
 ### Association
 - belongs_to :product
-
-
-## product_send_daysテーブル
-|Column|Type|Options|
-|------|----|-------|
-|day|integer|null: false, unique:true|
-
-### Association
-- has_many :products
 
 
 
@@ -176,45 +157,6 @@
 |Column|Type|Options|
 |------|----|-------|
 |name|string|null: false, unique:true|
-
-### Association
-- has_many :products
-
-
-
-## product_feesテーブル
-|Column|Type|Options|
-|------|----|-------|
-|fee|integer|null: false, unique:true|
-
-### Association
-- has_many :products
-
-
-## product_conditionsテーブル
-|Column|Type|Options|
-|------|----|-------|
-|condition|string|null: false, unique:true|
-
-### Association
-- has_many :products
-
-
-
-## product_transaction_statusesテーブル
-|Column|Type|Options|
-|------|----|-------|
-|transaction_status|string|null: false, unique:true|
-
-### Association
-- has_many :products
-
-
-
-## product_sizesテーブル
-|Column|Type|Options|
-|------|----|-------|
-|size|string|null: false, unique:true|
 
 ### Association
 - has_many :products

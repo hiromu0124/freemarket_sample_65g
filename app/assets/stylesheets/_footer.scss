@@ -1,20 +1,11 @@
 .footer {
   position: absolute;
   bottom: 0;
-
-
   &__top {
     height: 280px;
     background-image: url(/mercali_footer.jpg);
     background-size: cover;
-    &__message {
-
-    }
-    &__link {
-
-    }
   }
-
   &__under {
     color: white;
     background-color: #222222;
@@ -31,7 +22,6 @@
           color: white;
           padding-right: 18px;
         }
-
       }
     }
     &__link {

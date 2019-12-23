@@ -1,62 +1,63 @@
 .footer {
   position: absolute;
   bottom: 0;
-}
 
-.footer__top {
-  height: 280px;
-  background-image: url(/mercali_footer.jpg);
-  background-size: cover;
-  &__message {
 
-  }
-  &__link {
+  &__top {
+    height: 280px;
+    background-image: url(/mercali_footer.jpg);
+    background-size: cover;
+    &__message {
 
-  }
-}
-
-.footer__under {
-  color: white;
-  background-color: #222222;
-  padding: 20px 300px 30px 300px;
-  display: flex;
-  &__content {
-    margin: 0 20px;
-    h3 {
-      font-weight: bold;
     }
-    .sns__logo {
-      margin-top: 30px;
-      &--color {
-        color: white;
-        padding-right: 18px;
+    &__link {
+
+    }
+  }
+
+  &__under {
+    color: white;
+    background-color: #222222;
+    padding: 20px 300px 30px 300px;
+    display: flex;
+    &__content {
+      margin: 0 20px;
+      h3 {
+        font-weight: bold;
       }
+      .sns__logo {
+        margin-top: 30px;
+        &--color {
+          color: white;
+          padding-right: 18px;
+        }
 
+      }
+    }
+    &__link {
+      color: #bbbbbb;
+      display: block;
+      font-size: 12px;
+      margin: 13px 0;
+      text-decoration: none;
+    }
+    &__link:hover {
+      text-decoration: underline;
     }
   }
-  .footer__under__link {
-    color: #bbbbbb;
-    display: block;
-    font-size: 12px;
-    margin: 13px 0;
-    text-decoration: none;
-  }
-  .footer__under__link:hover {
-    text-decoration: underline;
-  }
-}
 
-.footer__under__logo {
-  background-color: #222222;
-  padding: 0 320px 20px 320px;
-  position: relative;
-  .home__logo {
-    color: white;
-    position: absolute;
-    bottom: 12px;
-  }
-  .center__logo {
-    color: white;
-    text-align: center;
+  &__under__logo {
+    background-color: #222222;
+    padding: 0 320px 20px 320px;
+    position: relative;
+    .home__logo {
+      color: white;
+      position: absolute;
+      bottom: 12px;
+    }
+    .center__logo {
+      color: white;
+      text-align: center;
+    }
   }
 }

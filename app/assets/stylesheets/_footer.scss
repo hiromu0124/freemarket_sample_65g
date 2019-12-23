@@ -38,7 +38,25 @@
     color: #bbbbbb;
     display: block;
     font-size: 12px;
-    padding: 7px 0;
+    margin: 13px 0;
     text-decoration: none;
+  }
+  .footer__under__link:hover {
+    text-decoration: underline;
+  }
+}
+
+.footer__under__logo {
+  background-color: #222222;
+  padding: 0 320px 20px 320px;
+  position: relative;
+  .home__logo {
+    color: white;
+    position: absolute;
+    bottom: 12px;
+  }
+  .center__logo {
+    color: white;
+    text-align: center;
   }
 }

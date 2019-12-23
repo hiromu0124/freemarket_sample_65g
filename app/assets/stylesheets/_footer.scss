@@ -1,5 +1,10 @@
+.footer {
+  position: absolute;
+  bottom: 0;
+}
+
 .footer__top {
-  height: 300px;
+  height: 280px;
   background-image: url(/mercali_footer.jpg);
   background-size: cover;
   &__message {
@@ -13,15 +18,21 @@
 .footer__under {
   color: white;
   background-color: #222222;
-  padding: 20px 310px 30px 310px;
+  padding: 20px 300px 30px 300px;
   display: flex;
   &__content {
-    padding: 0 20px;
-
+    margin: 0 20px;
     h3 {
       font-weight: bold;
     }
-    
+    .sns__logo {
+      margin-top: 30px;
+      &--color {
+        color: white;
+        padding-right: 18px;
+      }
+
+    }
   }
   .footer__under__link {
     color: #bbbbbb;

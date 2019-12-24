@@ -76,7 +76,7 @@
         .product__show__comment__area__name
           池田
         .product__show__comment__area__box
-          ほつれはありますか？
+          ほつれはありますか？メリークリスマス！！！＼(^o^)／
     .product__show__comment
       = image_tag 'sea4.jpg', class: 'product__show__comment__picture'
       .product__show__comment__area
@@ -86,11 +86,14 @@
           検討します！
     .product__show__comments__note
       相手のことを考え丁寧なコメントを心がけましょう。不快な言葉遣いなどは利用制限や退会処分となることがあります。
-    .product__show__comments__form
-      %textarea
+    %textarea.product__show__comments__form
+    %button.product__show__comments__btn
+      コメントする
   .product__show__move
-    チョコレートフォンデュポット
-    スタッドレス 中古
+    = link_to '#', class: 'product__show__move__before' do
+      ＜ チョコレートフォンデュポット
+    = link_to '#', class: 'product__show__move__after' do
+      スタッドレス 中古 ＞
   .product__show__sns
     FB Twitter
   .otherproduct--in_user

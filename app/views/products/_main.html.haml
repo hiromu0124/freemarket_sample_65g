@@ -1,1 +1,67 @@
-メイン写真一覧作成
+メイン写真一覧作
+.main_header
+  .header_upper
+    人気のカテゴリー
+  .header_low
+    %li<
+      = link_to "#", class: "var" do
+        レディース
+    %li<
+      = link_to "#", class: "var" do
+        メンズ
+    %li<
+      = link_to "#", class: "var" do
+        家電・スマホ・カメラ
+    %li<
+      = link_to "#", class: "var" do
+        おもちゃ・ホビー・グッズ
+
+.main_contents__wrapper
+  .main_contents
+    .items
+      .items_name
+        %h3 レディース新着アイテム
+        .items_viewmore
+          = link_to "#", class: "viewmore" do
+            もっと見る ＞
+      .items__images
+        = image_tag 'merukari1.jpg', size: '230x230', class: 'items__images__image'
+        %p EPOKA
+        %h3 ¥3,000
+  .main_contents
+    .items
+      .items_name
+        %h3 メンズ新着アイテム
+        .items_viewmore
+          = link_to "#", class: "viewmore" do
+            もっと見る ＞
+      .items__images
+        = image_tag 'merukari1.jpg', size: '230x230', class: 'items__images__image'
+        %p EPOKA
+        %h3 ¥3,000
+  .main_contents
+    .items
+      .items_name
+        %h3 家電・スマホ・カメラ新着アイテム
+        .items_viewmore
+          = link_to "#", class: "viewmore" do
+            もっと見る ＞
+      .items__images
+        = image_tag 'merukari1.jpg', size: '230x230', class: 'items__images__image'
+        %p EPOKA
+        %h3 ¥3,000
+  .main_contents
+    .items
+      .items_name
+        %h3 おもちゃ・ホビー・グッズ新着アイテム
+        .items_viewmore
+          = link_to "#", class: "viewmore" do
+            もっと見る ＞
+      .items__images
+        = image_tag 'merukari1.jpg', size: '230x230', class: 'items__images__image'
+        %p EPOKA
+        %h3 ¥3,000
+
+      
+        
+        

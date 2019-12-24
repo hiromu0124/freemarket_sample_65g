@@ -6,10 +6,88 @@
       .product__show__detail__picture
         = image_tag 'denim.png', size: '300x270'
       .product__show__detail__table
-    
+        %table
+          %tr
+            %th 出品者
+            %td しょう吉
+          %tr
+            %th カテゴリー 
+            %td デニム
+          %tr
+            %th ブランド
+            %td 寅壱
+          %tr
+            %th 商品のサイズ
+            %td S
+          %tr
+            %th 商品の状態
+            %td やや傷や汚れあり
+          %tr
+            %th 配送料の負担
+            %td 送料込み(出品者負担)
+          %tr
+            %th 配送の方法
+            %td ゆうゆうメルカリ便
+          %tr
+            %th 配送元地域
+            %td 北海道
+          %tr
+            %th 発送日の目安
+            %td 2~3日で発送
+    .product__show__price
+      %span ¥ 3,100
+      (税込) 送料込み
+    = link_to "#", class: 'product__show__buy_btn'do
+      購入画面に進む
+    .product__show__notes
+      この商品はゆうゆうメルカリ便を利用しているため、アプリからのみ購入できます。
+    .product__show__message
+      何回か着ましたが目立つような汚れはありませんが着ていたので神経質な方の購入は控え下さい。
+    .product__show__bottom
+      %button.product__show__bottom__like_btn
+        %i.far.fa-heart
+        %span いいね!
+      %button.product__show__bottom__report_btn
+        %i.far.fa-flag
+        %span 不適切な商品の報告
+      = link_to "#", class: "relief" do
+        %i.fas.fa-unlock-alt
+        %span あんしん・あんぜんへの取り組み
+
 
   .product__show__comments
-
+    .product__show__comment
+      = image_tag 'sea1.jpg', class: 'product__show__comment__picture'
+      .product__show__comment__area
+        .product__show__comment__area__name
+          努
+        .product__show__comment__area__box
+          裏面も見たいです！
+    .product__show__comment
+      = image_tag 'sea2.jpg', class: 'product__show__comment__picture'
+      .product__show__comment__area
+        .product__show__comment__area__name
+          中村
+        .product__show__comment__area__box
+          タグも見たいです！
+    .product__show__comment
+      = image_tag 'sea3.jpg', class: 'product__show__comment__picture'
+      .product__show__comment__area
+        .product__show__comment__area__name
+          池田
+        .product__show__comment__area__box
+          ほつれはありますか？
+    .product__show__comment
+      = image_tag 'sea4.jpg', class: 'product__show__comment__picture'
+      .product__show__comment__area
+        .product__show__comment__area__name
+          加藤
+        .product__show__comment__area__box
+          検討します！
+    .product__show__comments__note
+      相手のことを考え丁寧なコメントを心がけましょう。不快な言葉遣いなどは利用制限や退会処分となることがあります。
+    .product__show__comments__form
+      %textarea
   .product__show__move
     チョコレートフォンデュポット
     スタッドレス 中古

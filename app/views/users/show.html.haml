@@ -5,7 +5,7 @@
     .mypage__left__top
       %ul
         %li
-          %a.active{:href => "#home"} マイページ
+          = link_to 'マイページ', '#',class: 'active'
         %li
           = link_to 'お知らせ', '#'
         %li
@@ -75,10 +75,10 @@
             .mypage__right__top__user__box__bottom__product
               出品数
       .mypage__right__top__tabs
-        %input#infomation{:name => "mypage__right__top__tab_item", :type => "radio"}/
-        %label.mypage__right__top__tab_item{:for => "infomation"} お知らせ
-        %input#todo{:name => "mypage__right__top__tab_item", :type => "radio"}/
-        %label.mypage__right__top__tab_item{:for => "todo"} やることリスト
+        %input#infomation{name: "mypage__right__top__tab_item", type: "radio"}/
+        %label.mypage__right__top__tab_item{for: "infomation"} お知らせ
+        %input#todo{name: "mypage__right__top__tab_item",type: "radio"}/
+        %label.mypage__right__top__tab_item{for: "todo"} やることリスト
         #infomation_content.mypage__right__top__tab_content
           .mypage__right__top__tab_content_description
             %p.c-txtsp お知らせがここに入ります
@@ -95,10 +95,10 @@
       .mypage__right__buttom__title
         購入した商品
       .mypage__right__buttom__tabs
-        %input#trading{:name => "mypage__right__buttom__tab_item", :type => "radio"}/
-        %label.mypage__right__buttom__tab_item{:for => "trading"} 取引中
-        %input#past{:name => "mypage__right__buttom__tab_item", :type => "radio"}/
-        %label.mypage__right__buttom__tab_item{:for => "past"} 過去の取引
+        %input#trading{name: "mypage__right__buttom__tab_item", type: "radio"}/
+        %label.mypage__right__buttom__tab_item{for: "trading"} 取引中
+        %input#past{name: "mypage__right__buttom__tab_item", type: "radio"}/
+        %label.mypage__right__buttom__tab_item{for: "past"} 過去の取引
         #trading_content.mypage__right__buttom__tab_content
           .mypage__right__buttom__tab_content_description
             %p.c-txtsp 取引中の内容がここに入ります

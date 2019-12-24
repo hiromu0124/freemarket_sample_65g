@@ -39,6 +39,8 @@
   }
 }
 
+
+
 #sbtn5:hover{
   color:#7fbfff;
   }
@@ -67,92 +69,114 @@
   width: 600px;
   padding: 0;
   color: black;
+
+  li {
+    position: relative;
+    width: 20%;
+    float: left;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    white-space: nowrap;
+
+    a {
+      display: block;
+      margin: 0;
+      padding: 16px 0;
+      background: #ffffff;
+      color: black;
+      font-size: 10px;
+      font-weight: bold;
+      line-height: 1;
+      text-decoration: none;
+    }
+
+    ul {
+      list-style: none;
+      position: absolute;
+      z-index: 100;
+      top: 100%;
+      left: 0;
+      width: 100%;
+      margin: 0;
+      padding: 0;
+
+      li {
+        overflow: hidden;
+        width: 100%;
+        height: 0;
+        color: black;
+        transition: .2s;
+
+        a {
+          padding: 13px 15px;
+          background: #ffffff;
+          text-align: left;
+          font-size: 10px;
+          font-weight: normal;
+        }
+
+        ul {
+          top: 0;
+          left: 100%;
+        }
+      }
+    }
+
+    &:last-child ul li ul {
+      left: -100%;
+      width: 100%;
+    }
+
+    ul li ul:before {
+      position: absolute;
+      content: "";
+      top: 13px;
+      left: -20px;
+      width: 0;
+      height: 0;
+      border: 5px solid transparent;
+      border-left-color: #ffffff;
+    }
+
+    &:last-child ul li ul:before {
+      position: absolute;
+      content: "";
+      top: 13px;
+      left: 200%;
+      margin-left: -20px;
+      border: 5px solid transparent;
+      border-right-color: #ffffff;
+    }
+
+    ul li {
+      &:hover > ul > li {
+        overflow: visible;
+        height: 38px;
+      }
+
+      ul li a {
+        background: #ffffff;
+      }
+    }
+
+    &:hover ul li ul li a:hover {
+      background: #ffffff;
+    }
+  }
+
+  > li:hover {
+    > a, li:hover > a {
+      background: #ffffff;
+    }
+
+    > ul > li {
+      overflow: visible;
+      height: 38px;
+    }
+  }
 }
-#category li {
-  position: relative;
-  width: 20%;
-  float: left;
-  margin: 0;
-  padding: 0;
-  text-align: center;
-  white-space: nowrap;
-}
-#category li a {
-  display: block;
-  margin: 0;
-  padding: 16px 0;
-  background: #ffffff;
-  color: black;
-  font-size: 10px;
-  font-weight: bold;
-  line-height: 1;
-  text-decoration: none;
-}
-#category li ul {
-  list-style: none;
-  position: absolute;
-  z-index: 100;
-  top: 100%;
-  left: 0;
-  width: 100%;
-  margin: 0;
-  padding: 0;
-}
-#category li ul li {
-  overflow: hidden;
-  width: 100%;
-  height: 0;
-  color: black;
-  transition: .2s;
-}
-#parent-category__name {
-  padding: 13px 15px;
-  background: #ffffff;
-  text-align: left;
-  font-size: 10px;
-  font-weight: normal;
-}
-#category > li:hover > a {  background: #ffffff }
-#category > li:hover li:hover > a {  background: #ffffff }
-#category > li:hover > ul > li {
-  overflow: visible;
-  height: 38px;
-}
-#category li ul li ul {
-  top: 0;
-  left: 100%;
-}
-#category li:last-child ul li ul {
-  left: -100%;
-  width: 100%;
-}
-#category li ul li ul:before {
-  position: absolute;
-  content: "";
-  top: 13px;
-  left: -20px;
-  width: 0;
-  height: 0;
-  border: 5px solid transparent;
-  border-left-color: #ffffff;
-}
-#category li:last-child ul li ul:before {
-  position: absolute;
-  content: "";
-  top: 13px;
-  left: 200%;
-  margin-left: -20px;
-  border: 5px solid transparent;
-  border-right-color: #ffffff;
-}
-#category li ul li:hover > ul > li {
-  overflow: visible;
-  height: 38px;
-}
-#category li ul li ul li a {  background: #ffffff }
-#category li:hover ul li ul li a:hover {  background: #ffffff }
 
 a {
   text-decoration: none;
-  }
-  
+}

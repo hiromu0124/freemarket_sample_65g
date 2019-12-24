@@ -17,11 +17,40 @@
         %li
           = link_to 'カテゴリから探す', '#'
           %ul
+            %li
+              = link_to 'レディース', '#',{:class => "parent-category"}
+              %ul
+                %li
+                  = link_to 'カテゴリ', '#',{:class => "child-category"}
+                  %ul
+                    %li
+                      = link_to 'カテゴリ', '#',{:class => "grandchild"}
+                    %li#grandchild
+                      = link_to 'カテゴリ', '#',{:class => "grandchild"}
+                    %li#grandchild
+                      = link_to 'カテゴリ', '#',{:class => "grandchild"}
+                    %li#grandchild
+                      = link_to 'カテゴリ', '#',{:class => "grandchild"}
+                %li#child-category
+                  = link_to 'カテゴリ', '#',{:class => "child-category"}
+                  %ul
+                    %li#grandchild
+                      = link_to 'カテゴリ', '#'
+                    %li#grandchild
+                      = link_to 'カテゴリ', '#'
+                    %li#grandchild
+                      = link_to 'カテゴリ', '#'
+                    %li#grandchild
+                      = link_to 'カテゴリ', '#'
+                %li#child-category
+                  = link_to 'カテゴリ', '#',{:class => "child-category"}
+                %li#child-category
+                  = link_to 'カテゴリ', '#',{:class => "child-category"}
             %li#parent-category
-              = link_to 'レディース', '#'
+              = link_to 'メンズ', '#',{:class => "parent-category"}
               %ul
                 %li#child-category
-                  = link_to 'カテゴリ', '#'
+                  = link_to 'カテゴリ', '#',{:class => "child-category"}
                   %ul
                     %li#grandchild
                       = link_to 'カテゴリ', '#'
@@ -47,36 +76,7 @@
                 %li#child-category
                   = link_to 'カテゴリ', '#'
             %li#parent-category
-              = link_to 'メンズ', '#'
-              %ul
-                %li#child-category
-                  = link_to 'カテゴリ', '#'
-                  %ul
-                    %li#grandchild
-                      = link_to 'カテゴリ', '#'
-                    %li#grandchild
-                      = link_to 'カテゴリ', '#'
-                    %li#grandchild
-                      = link_to 'カテゴリ', '#'
-                    %li#grandchild
-                      = link_to 'カテゴリ', '#'
-                %li#child-category
-                  = link_to 'カテゴリ', '#'
-                  %ul
-                    %li#grandchild
-                      = link_to 'カテゴリ', '#'
-                    %li#grandchild
-                      = link_to 'カテゴリ', '#'
-                    %li#grandchild
-                      = link_to 'カテゴリ', '#'
-                    %li#grandchild
-                      = link_to 'カテゴリ', '#'
-                %li#child-category
-                  = link_to 'カテゴリ', '#'
-                %li#child-category
-                  = link_to 'カテゴリ', '#'
-            %li#parent-category
-              = link_to 'ベビー・キッズ', '#'
+              = link_to 'ベビー・キッズ', '#',{:class => "parent-category"}
               %ul
                 %li#child-category
                   = link_to 'カテゴリ', '#'
@@ -96,7 +96,7 @@
                 %li#child-category
                   = link_to 'カテゴリ', '#'
             %li#parent-category
-              = link_to 'インテリア・住まい', '#'
+              = link_to 'インテリア・住まい', '#',{:class => "parent-category"}
               %ul
                 %li#child-category
                   = link_to 'カテゴリ', '#'
@@ -107,7 +107,7 @@
                 %li#child-category
                   = link_to 'カテゴリ', '#'
             %li#parent-category
-              = link_to '本・音楽・ゲーム', '#'
+              = link_to '本・音楽・ゲーム', '#',{:class => "parent-category"}
               %ul
                 %li#child-category
                   = link_to 'カテゴリ', '#'
@@ -118,7 +118,7 @@
                 %li#child-category
                   = link_to 'カテゴリ', '#'
             %li#parent-category
-              = link_to 'その他', '#'
+              = link_to 'その他', '#',{:class => "parent-category"}
               %ul
                 %li#child-category
                   = link_to 'カテゴリ', '#'

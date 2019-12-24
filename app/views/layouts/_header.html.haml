@@ -1,0 +1,187 @@
+.main-header
+  .main-header__top
+    .main-header__top__title
+      %i.fab.fa-meetup
+      = link_to 'mercari', '#'
+
+    %form#main-header__top__form{:action => "", :method => ""}
+      %input#main-header__top__form__text{:name => "s", :placeholder => "何かお探しですか？", :type => "text"}/
+      %button#main-header__top__form__btn{:type => "submit"}
+        %i.fas.fa-search
+
+
+
+  .main-header__bottom
+    .main-header__bottom__left
+      %ul#category
+        %li
+          = link_to 'カテゴリから探す', '#'
+          %ul
+            %li
+              = link_to 'レディース', '#',{:class => "parent-category"}
+              %ul
+                %li
+                  = link_to 'カテゴリ', '#',{:class => "child-category"}
+                  %ul
+                    %li
+                      = link_to 'カテゴリ', '#',{:class => "grandchild"}
+                    %li#grandchild
+                      = link_to 'カテゴリ', '#',{:class => "grandchild"}
+                    %li#grandchild
+                      = link_to 'カテゴリ', '#',{:class => "grandchild"}
+                    %li#grandchild
+                      = link_to 'カテゴリ', '#',{:class => "grandchild"}
+                %li#child-category
+                  = link_to 'カテゴリ', '#',{:class => "child-category"}
+                  %ul
+                    %li#grandchild
+                      = link_to 'カテゴリ', '#'
+                    %li#grandchild
+                      = link_to 'カテゴリ', '#'
+                    %li#grandchild
+                      = link_to 'カテゴリ', '#'
+                    %li#grandchild
+                      = link_to 'カテゴリ', '#'
+                %li#child-category
+                  = link_to 'カテゴリ', '#',{:class => "child-category"}
+                %li#child-category
+                  = link_to 'カテゴリ', '#',{:class => "child-category"}
+            %li#parent-category
+              = link_to 'メンズ', '#',{:class => "parent-category"}
+              %ul
+                %li#child-category
+                  = link_to 'カテゴリ', '#',{:class => "child-category"}
+                  %ul
+                    %li#grandchild
+                      = link_to 'カテゴリ', '#'
+                    %li#grandchild
+                      = link_to 'カテゴリ', '#'
+                    %li#grandchild
+                      = link_to 'カテゴリ', '#'
+                    %li#grandchild
+                      = link_to 'カテゴリ', '#'
+                %li#child-category
+                  = link_to 'カテゴリ', '#'
+                  %ul
+                    %li#grandchild
+                      = link_to 'カテゴリ', '#'
+                    %li#grandchild
+                      = link_to 'カテゴリ', '#'
+                    %li#grandchild
+                      = link_to 'カテゴリ', '#'
+                    %li#grandchild
+                      = link_to 'カテゴリ', '#'
+                %li#child-category
+                  = link_to 'カテゴリ', '#'
+                %li#child-category
+                  = link_to 'カテゴリ', '#'
+            %li#parent-category
+              = link_to 'ベビー・キッズ', '#',{:class => "parent-category"}
+              %ul
+                %li#child-category
+                  = link_to 'カテゴリ', '#'
+                %li#child-category
+                  = link_to 'カテゴリ', '#'
+                %li#child-category
+                  = link_to 'カテゴリ', '#'
+                  %ul
+                    %li#grandchild
+                      = link_to 'カテゴリ', '#'
+                    %li#grandchild
+                      = link_to 'カテゴリ', '#'
+                    %li#grandchild
+                      = link_to 'カテゴリ', '#'
+                    %li#grandchild
+                      = link_to 'カテゴリ', '#'
+                %li#child-category
+                  = link_to 'カテゴリ', '#'
+            %li#parent-category
+              = link_to 'インテリア・住まい', '#',{:class => "parent-category"}
+              %ul
+                %li#child-category
+                  = link_to 'カテゴリ', '#'
+                %li#child-category
+                  = link_to 'カテゴリ', '#'
+                %li#child-category
+                  = link_to 'カテゴリ', '#'
+                %li#child-category
+                  = link_to 'カテゴリ', '#'
+            %li#parent-category
+              = link_to '本・音楽・ゲーム', '#',{:class => "parent-category"}
+              %ul
+                %li#child-category
+                  = link_to 'カテゴリ', '#'
+                %li#child-category
+                  = link_to 'カテゴリ', '#'
+                %li#child-category
+                  = link_to 'カテゴリ', '#'
+                %li#child-category
+                  = link_to 'カテゴリ', '#'
+            %li#parent-category
+              = link_to 'その他', '#',{:class => "parent-category"}
+              %ul
+                %li#child-category
+                  = link_to 'カテゴリ', '#'
+                %li#child-category
+                  = link_to 'カテゴリ', '#'
+                %li#child-category
+                  = link_to 'カテゴリ', '#'
+                %li#child-category
+                  = link_to 'カテゴリ', '#'
+            %li
+              = link_to 'カテゴリ一覧', '#'
+        %li
+          = link_to 'ブランドから探す', '#'
+          %ul
+            %li
+              = link_to 'シャネル', '#'
+            %li
+              = link_to 'ナイキ', '#'
+            %li
+              = link_to 'ルイ ヴィトン', '#'
+            %li
+              = link_to 'アディダス', '#'
+            %li
+              = link_to 'ブランド一覧', '#'
+
+    .main-header__bottom__right
+      %ul#category
+        %li
+          = link_to 'いいね一覧', '#'
+
+        %li
+          = link_to 'お知らせ', '#'
+          %ul
+            %li
+              = link_to 'mercari', '#'
+            %li
+              = link_to 'mercari', '#'
+            %li
+              = link_to 'mercari', '#'
+            %li
+              = link_to 'mercari', '#'
+        %li
+          = link_to 'やることリスト', '#'
+          %ul
+            %li
+              = link_to 'mercari', '#'
+            %li
+              = link_to 'mercari', '#'
+            %li
+              = link_to 'mercari', '#'
+            %li
+              = link_to 'mercari', '#'
+        %li
+          = link_to 'マイページ', '#'
+          %ul
+            %li
+              = link_to 'mercari', '#'
+            %li
+              = link_to 'mercari', '#'
+            %li
+              = link_to 'mercari', '#'
+            %li
+              = link_to 'mercari', '#'
+
+
+    

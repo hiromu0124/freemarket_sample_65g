@@ -16,7 +16,7 @@ class DeviseCreateUsers < ActiveRecord::Migration[5.2]
       t.string :city,null:false
       t.string :little_adress,null: false
       t.string :building,null: false
-      t.integer :prefecture_id, null: false, foreign_key: true
+      t.integer :prefecture_id, null: false
       t.integer :birthday_year, null: false
       t.integer :birthday_manth,null: false
       t.integer :birthday_day, null: false

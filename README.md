@@ -13,7 +13,7 @@
 |city|string|null: false|
 |little_adress|string|null: false|
 |building|string|null: false|
-|prefecture_id|integer|null: false, foreign_key: true|
+|prefecture_id|integer|null: false|
 |birthday_year|integer|null: false|
 |birthday_manth|integer|null: false|
 |birthday_day|integer|null: false|
@@ -39,7 +39,7 @@
 |category_id|integer|null: false, foreign_key: true|
 |brand_id|integer|foreign_key: true|
 |product_send_day|integer|null: false, unique:true|
-|prefecture_id|integer|null: false, foreign_key: true|
+|prefecture_id|integer|null: false|
 |saler_id|integer|foreign_key: true|
 |transaction_status|string|null: false, unique:true|
 |product_condition|string|null: false, unique:true|

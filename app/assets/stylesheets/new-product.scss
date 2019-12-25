@@ -1,0 +1,385 @@
+.single__header{
+  height: 128px;
+  background-color: #EEEEEE;
+  text-align: center;
+  line-height: 128px;
+  &__home{
+  font-size: 49px;
+  font-family: "Source Sans Pro", Helvetica, Arial, 游ゴシック体, YuGothic, メイリオ, Meiryo, sans-serif;
+  color: black;
+  text-decoration: none;
+  &__icon{
+    color: red;
+  }
+  }
+}
+.single__main{
+  background-color:#EEEEEE;
+  &__product{
+    background-color: white;
+    width: 700px;
+    margin: 0 360px;
+    &__header{
+      height: 97px;
+      text-align: center;
+      line-height: 97px;
+      font-size: 22px;
+      border-bottom: 1px solid #EEEEEE;
+      font-family: 'arial';
+    }
+    &__image{
+      height: 252px;
+      padding: 40px;
+      border-bottom: 1px solid #EEEEEE;
+      &__class{
+        display: flex;
+        &__label{
+          font-family: 'arial';
+          font-weight: 500;
+          
+        }
+        &__Required{
+          width: 32px;
+          height: 19px;
+          font-size: 12px;
+          text-align: center;
+          line-height: 19px;
+          background-color: red;
+          color: white;
+          margin-left: 10px;
+          font-family: 'arial';
+          border-radius:3px;
+          font-weight: 600;
+        }
+      }
+      &__Supplement{
+        font-size: 14px;
+        font-weight: lighter;
+      }
+      &__images{
+        font-size: 14px;
+        font-family: 'arial';
+        white-space:pre-wrap;
+        height: 82px;
+        width: 540px;
+        background-color: #EEEEEE;
+        border:2px  dotted #DDDDDD;
+        text-align: center;
+        padding: 40px;
+        &__fild{
+          display: none;
+        }
+      }
+    }
+      &__name{
+        height: 275px;
+        width: 620px;
+        border-bottom: 1px solid #EEEEEE;
+        padding: 40px;
+        &__class{
+          display: flex;
+          &__label{
+            font-weight: 500;
+            font-family: 'arial';
+          }
+          &__Required{
+            width: 32px;
+            height: 19px;
+            font-size: 12px;
+            text-align: center;
+            line-height: 19px;
+            background-color: red;
+            color: white;
+            margin-left: 10px;
+            font-family: 'arial';
+            border-radius:3px;
+            font-weight: 600;
+          }
+        }
+        &__nameform{
+          height: 48px;
+          width: 620px;
+          padding-left: 10px;
+          border-radius:4px;
+        }
+      &__description{
+        display: flex;
+        margin-top: 40px;
+        &__label{
+          font-weight: 500;
+          font-family: 'arial';
+        }
+        &__Required{
+          font-family: 'arial';
+          width: 32px;
+          height: 19px;
+          font-size: 12px;
+          text-align: center;
+          line-height: 19px;
+          background-color: red;
+          color: white;
+          margin-left: 10px;
+          border-radius:3px;
+          font-weight: 600;
+        }
+      }
+      &__descriptionform{
+        height: 142px;
+        width: 620px;
+        padding: 10px 0 0 10px;
+        text-align: left;
+        font-size: 17px;
+      }
+      &::-ms-input-placeholder {
+        color:gray;
+      }
+    }
+    &__details{
+      width: 620px;
+      height: 182px;
+      padding: 40px;
+      border-bottom: 1px solid #EEEEEE;
+      display: flex;
+      &__sell{
+        font-family: 'arial';
+        color: gray;
+      }
+      &__category{
+        margin-left: 140px;
+        &__class{
+          display: flex;
+          &__label{
+            font-size: 14px;
+            font-weight: 600;
+            font-family: 'arial';
+          }
+          &__Required{
+            width: 32px;
+            height: 19px;
+            font-size: 12px;
+            text-align: center;
+            line-height: 19px;
+            background-color: red;
+            color: white;
+            margin-left: 10px;
+            font-family: 'arial';
+            border-radius:3px;
+            font-weight: 600;
+          }
+        }
+        &__condition{
+          display: flex;
+          margin-top: 40px;
+          &__label{
+            font-size: 14px;
+            font-weight: 600;
+            font-family: 'arial';
+          }
+          &__Required{
+            width: 32px;
+            height: 19px;
+            font-size: 12px;
+            text-align: center;
+            line-height: 19px;
+            background-color: red;
+            color: white;
+            margin-left: 10px;
+            font-family: 'arial';
+            border-radius:3px;
+            font-weight: 600;
+          }
+        }
+      }
+      &__categoryform{
+        height: 48px;
+        width: 400px;
+      }
+      &__conditionform{
+        height: 48px;
+        width: 400px;
+      }
+    }
+    &__delivery{
+      border-bottom: 1px solid #EEEEEE;
+      height: 291px;
+      width: 620px;
+      display: flex;
+      padding: 40px;
+      &__list{
+        color: gray;
+        &__icon{
+          color: #1E90FF;
+          font-size: 15px;
+        }
+      }
+      &__form{
+        margin-left: 110px;
+        &__class{
+          display: flex;
+          &__label{
+            font-size: 14px;
+            font-weight: 600;
+            font-family: 'arial';
+          }
+          &__Required{
+            width: 32px;
+            height: 19px;
+            font-size: 12px;
+            text-align: center;
+            line-height: 19px;
+            background-color: red;
+            color: white;
+            margin-left: 10px;
+            font-family: 'arial';
+            border-radius:3px;
+            font-weight: 600;
+          }
+        }
+        &__area{
+          display: flex;
+          margin-top: 40px;
+          &__label{
+            font-size: 14px;
+            font-weight: 600;
+            font-family: 'arial';
+          }
+          &__Required{
+            width: 32px;
+            height: 19px;
+            font-size: 12px;
+            text-align: center;
+            line-height: 19px;
+            background-color: red;
+            color: white;
+            margin-left: 10px;
+            font-family: 'arial';
+            border-radius:3px;
+            font-weight: 600;
+          }
+        }
+      }
+      &__deliveryform{
+        height: 48px;
+        width: 400px;
+      }
+      &__areaform{
+        height: 48px;
+        width: 400px;
+      }
+    }
+    &__fee{
+      height: 219px;
+      width: 620px;
+      border-bottom: 1px solid #EEEEEE;
+      padding: 40px;
+      display: flex;
+      &__list{
+        color: gray;
+        font-size: 14px;
+        font-family: 'arial';
+        &__icon{
+          color: #1E90FF;
+          font-size: 15px;
+        }
+      }
+      &__form{
+        margin-left: 40px;
+        &__tax{
+          border-top: 1px solid #EEEEEE;
+          padding: 24px 0;
+          margin-left: 10px;
+          font-size: 14px;
+          font-family: 'arial';
+          &__index{
+            float: right;
+          }
+        }
+        &__profit{
+          border-top: 1px solid #EEEEEE;
+          padding: 24px 0;
+          margin-left: 10px;
+          font-size: 14px;
+          font-family: 'arial';
+        }
+        &__class{
+          display: flex;
+          &__label{
+            font-size: 14px;
+            font-weight: 600;
+            font-family: 'arial';
+          }
+          &__Required{
+            width: 32px;
+            height: 19px;
+            font-size: 12px;
+            text-align: center;
+            line-height: 19px;
+            background-color: red;
+            color: white;
+            margin-left: 10px;
+            font-family: 'arial';
+            border-radius:3px;
+            font-weight: 600;
+          }
+        }
+      
+      }
+      &__calculation{
+        margin-left: 150px;
+        height: 52px;
+        padding-bottom: 24px;
+        &__feeform{
+          height: 48px;
+          width: 150px;
+          border-radius:3px;
+          text-align: right;
+          padding-right: 10px;
+        }
+      }
+    }
+    &__list{
+      height: 249px;
+      width: 620px;
+      padding: 40px;
+      &__note{
+        font-family: 'arial';
+        font-size: 14px;
+      }
+      &__exhibitionbtn{
+        background-color: red;
+        width: 620px;
+        height: 50px;
+        color: white;
+        text-align: center;
+        line-height:50px ;
+        margin-top: 40px;
+      }
+      &__returnbtn{
+        background-color: gray;
+        width: 279px;
+        height: 50px;
+        color: white;
+        text-align: center;
+        line-height:50px ;
+        margin: 24px 170.5px 0;
+      }
+    }
+  }
+}
+.returnbtn{
+  text-decoration: none;
+  color: white;
+}
+.single__footer{
+  padding: 40px 0;
+  text-align: center;
+  text-decoration: none;
+  &__note{
+    color: black;
+    font-size: 12px;
+    text-decoration: none;
+  }
+  &__image{
+    margin-top: 40px;
+  }
+}

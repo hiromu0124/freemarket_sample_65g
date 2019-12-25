@@ -1,0 +1,16 @@
+.mypage
+  =render "user-side"
+  .edit
+    .edit__title
+      プロフィール
+    .edit__background
+      .edit__background__user
+        .edit__background__user__image
+          =image_tag "user_image.png",class:"edit__background__user__image"
+        .edit__background__user__name
+          %input{value: "弘夢",placeholder: "例）AYA☆セール中",class:"edit__background__user__name__form"}
+    .edit__content
+      .edit__content__text
+        %textarea{placeholder: "例）こんにちは☆ご覧いただきありがとうございます！かわいいものやきれいめオフィスカジュアル中心にに出品してます。服のサイズは主に９号です。気持ちよくお引取できるよう心がけますので、商品や発送方法などご質問がありましたらお気軽にどうぞ♪",class:"edit__content__text__form"}
+    .edit__btn
+      =link_to "変更する","",class:"edit__btn"

@@ -95,8 +95,19 @@
     = link_to '#', class: 'product__show__move__after' do
       スタッドレス 中古 ＞
   .product__show__sns
-    FB Twitter
-  .otherproduct--in_user
-    〇〇さんのその他の出品
-  .otherproduct--in_category
-    Gジャン その他の商品
+    .product__show__sns__icon
+      = link_to '#' do
+        = image_tag 'facebook.png', size:'45x45'
+      = link_to '#' do
+        = image_tag 'twitter.png', size:'45x45'
+      = link_to '#' do
+        = image_tag 'plink.png', size:'45x45'
+  .otherproducts__in_user
+    .otherproducts__in_user__message
+      〇〇さんのその他の出品
+    .otherproducts__in_user__products
+      
+  .otherproducts__in_category
+    .otherproducts__in_user__message
+      Gジャン その他の商品
+    .otherproducts__in_user__products

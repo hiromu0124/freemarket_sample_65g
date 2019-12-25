@@ -206,17 +206,32 @@
     }
   }
   .product__show__sns {
-    height: 150px;
+    height: 130px;
     width: 700px;
     margin: 0 auto 15px auto;
     background-color: white;
+    padding: auto;
+    &__icon {
+      width: 150px;
+      line-height: 150px;
+      margin: 0 auto;
+    }
   }
-  .otherproduct--in_user {
+  .otherproducts__in_user {
     height: 720px;
     width: 700px;
     margin: 0 auto 8px auto;
+    &__message {
+      color: #136fff;
+      font-size: 23px;
+      font-weight: bold;
+      height: 40px;
+    }
+    &__products {
+
+    }
   }
-  .otherproduct--in_category {
+  .otherproducts__in_category {
     height: 720px;
     width: 700px;
     margin: 0 auto 8px auto;

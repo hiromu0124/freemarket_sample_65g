@@ -104,10 +104,16 @@
         = image_tag 'plink.png', size:'45x45'
   .otherproducts__in_user
     .otherproducts__in_user__message
-      〇〇さんのその他の出品
+      = link_to '#', class: 'otherproducts__in_user__message__link' do
+        〇〇さんのその他の出品
     .otherproducts__in_user__products
-      
+      .items__images
+        = image_tag 'denim.png', size: '230x230', class: 'items__images__image'
+        %p EPOKA
+        %h3 ¥3,000
   .otherproducts__in_category
-    .otherproducts__in_user__message
-      Gジャン その他の商品
+    .otherproducts__in_category__message
+      = link_to '#', class: 'otherproducts__in_category__message__link' do
+        Gジャン/デニムジャケット （メンズ） その他の商品
+        
     .otherproducts__in_user__products

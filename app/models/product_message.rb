@@ -1,0 +1,2 @@
+class ProductMessage < ApplicationRecord
+end

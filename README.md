@@ -36,12 +36,12 @@
 |------|----|-------|
 |name|string|null: false|
 |product_explain|text|null: false|
-|price|integer|null: false, check: price >= 0, price < 10000000|
-|product_category_id|integer|null: false, foreign_key: true|
-|product_brand_id|integer|foreign_key: true|
+|price|references|null: false|
+|product_category_id|references|null: false, foreign_key: true|
+|product_brand_id|references|foreign_key: true|
 |product_send_day|integer|null: false, unique:true|
 |prefecture_id|integer|null: false|
-|user_id|integer|null: false, foreign_key: true|　（販売者）
+|user_id|references|null: false, foreign_key: true|　（販売者）
 |transaction_status|string|null: false, unique:true|
 |product_condition|string|null: false, unique:true|
 |product_fee|integer|null: false, unique:true|
@@ -63,8 +63,8 @@
 |Column|Type|Options|
 |------|----|-------|
 |message|text|null: false|
-|user_id|integer|null: false, foreign_key: true|　（メッセージを送信した人）
-|product_id|integer|null: false, foreign_key: true|
+|user_id|references|null: false, foreign_key: true|　（メッセージを送信した人）
+|product_id|references|null: false, foreign_key: true|
 
 ### Association
 - belongs_to :user
@@ -75,8 +75,8 @@
 ## product_likesテーブル
 |Column|Type|Options|
 |------|----|-------|
-|user_id|integer|null: false, foreign_key: true|　（いいねをした人）
-|product_id|integer|null: false, foreign_key: true|
+|user_id|references|null: false, foreign_key: true|　（いいねをした人）
+|product_id|references|null: false, foreign_key: true|
 
 ### Association
 - belongs_to :user
@@ -87,8 +87,8 @@
 ## ordersテーブル
 |Column|Type|Options|
 |------|----|-------|
-|user_id|integer|null: false, foreign_key: true|　(購入者)
-|product_id|integer|null: false, foreign_key: true|
+|user_id|references|null: false, foreign_key: true|　(購入者)
+|product_id|references|null: false, foreign_key: true|
 
 ### Association
 - belongs_to :user
@@ -100,8 +100,8 @@
 |Column|Type|Options|
 |------|----|-------|
 |comment|text|null: false|
-|user_id|integer|null: false, foreign_key: true|
-|product_id|integer|null: false, foreign_key: true|
+|user_id|references|null: false, foreign_key: true|
+|product_id|references|null: false, foreign_key: true|
 
 ### Association
 - belongs_to :user
@@ -112,10 +112,10 @@
 ## userlikesテーブル
 |Column|Type|Options|
 |------|----|-------|
-|rank_id|integer|null: false, foreign_key: true|
+|rank_id|references|null: false, foreign_key: true|
 |user_likes_comment|text||
-|saler_id|integer|null: false, foreign_key: true|　（販売者かつ、likeを受け取った人）
-|buyer_id|integer|null: false, foreign_key: true|　（購入者かつ、likeを送った人）
+|saler_id|references|null: false, foreign_key: true|　（販売者かつ、likeを受け取った人）
+|buyer_id|references|null: false, foreign_key: true|　（購入者かつ、likeを送った人）
 
 
 ### Association
@@ -139,7 +139,7 @@
 |Column|Type|Options|
 |------|----|-------|
 |image|string|null: false|
-|product_id|integer|null: false, foreign_key: true|
+|product_id|references|null: false, foreign_key: true|
 
 ### Association
 - belongs_to :product

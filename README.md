@@ -114,13 +114,14 @@
 |------|----|-------|
 |rank_id|integer|null: false, foreign_key: true|
 |user_likes_comment|text||
-|receive_user_id|integer|null: false, foreign_key: true|　（販売者かつ、likeを受け取った人） user_idではダメ、、、、
-|user_id|integer|null: false, foreign_key: true|　（購入者かつ、likeを送った人）OK。
+|saler_id|integer|null: false, foreign_key: true|　（販売者かつ、likeを受け取った人）
+|buyer_id|integer|null: false, foreign_key: true|　（購入者かつ、likeを送った人）
 
 
 ### Association
 - belongs_to :rank
-- belongs_to :user
+- belongs_to :saler, class_name: "User"
+- belongs_to :buyer, class_name: "User"
 
 
 

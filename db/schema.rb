@@ -10,7 +10,82 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_12_25_015445) do
+ActiveRecord::Schema.define(version: 2019_12_26_091717) do
+
+  create_table "orders", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.bigint "product_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["product_id"], name: "index_orders_on_product_id"
+    t.index ["user_id"], name: "index_orders_on_user_id"
+  end
+
+  create_table "product_brands", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "name", null: false
+  end
+
+  create_table "product_categories", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "name", null: false
+    t.integer "parent_id"
+  end
+
+  create_table "product_comments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.text "comment", null: false
+    t.bigint "user_id", null: false
+    t.bigint "product_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["product_id"], name: "index_product_comments_on_product_id"
+    t.index ["user_id"], name: "index_product_comments_on_user_id"
+  end
+
+  create_table "product_images", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "image", null: false
+    t.bigint "product_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["product_id"], name: "index_product_images_on_product_id"
+  end
+
+  create_table "product_likes", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.bigint "product_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["product_id"], name: "index_product_likes_on_product_id"
+    t.index ["user_id"], name: "index_product_likes_on_user_id"
+  end
+
+  create_table "product_messages", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.text "message", null: false
+    t.bigint "user_id", null: false
+    t.bigint "product_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["product_id"], name: "index_product_messages_on_product_id"
+    t.index ["user_id"], name: "index_product_messages_on_user_id"
+  end
+
+  create_table "products", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "name", null: false
+    t.text "product_explain", null: false
+    t.integer "price", null: false
+    t.bigint "product_category_id", null: false
+    t.bigint "product_brand_id"
+    t.integer "product_send_day", null: false
+    t.integer "prefecture_id", null: false
+    t.bigint "user_id", null: false
+    t.string "transaction_status", null: false
+    t.string "product_condition", null: false
+    t.integer "product_fee", null: false
+    t.string "product_size"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["product_brand_id"], name: "index_products_on_product_brand_id"
+    t.index ["product_category_id"], name: "index_products_on_product_category_id"
+    t.index ["user_id"], name: "index_products_on_user_id"
+  end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -38,4 +113,16 @@ ActiveRecord::Schema.define(version: 2019_12_25_015445) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "orders", "products"
+  add_foreign_key "orders", "users"
+  add_foreign_key "product_comments", "products"
+  add_foreign_key "product_comments", "users"
+  add_foreign_key "product_images", "products"
+  add_foreign_key "product_likes", "products"
+  add_foreign_key "product_likes", "users"
+  add_foreign_key "product_messages", "products"
+  add_foreign_key "product_messages", "users"
+  add_foreign_key "products", "product_brands"
+  add_foreign_key "products", "product_categories"
+  add_foreign_key "products", "users"
 end

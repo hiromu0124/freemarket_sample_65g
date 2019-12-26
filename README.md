@@ -27,6 +27,7 @@
 - has_many :product-likes
 - has_many :orders
 - has_many :product-comments
+- has_many :products
 
 
 
@@ -36,11 +37,11 @@
 |name|string|null: false|
 |product_explain|text|null: false|
 |price|integer|null: false, check: price >= 0, price < 10000000|
-|category_id|integer|null: false, foreign_key: true|
-|brand_id|integer|foreign_key: true|
+|product_category_id|integer|null: false, foreign_key: true|
+|product_brand_id|integer|foreign_key: true|
 |product_send_day|integer|null: false, unique:true|
 |prefecture_id|integer|null: false|
-|saler_id|integer|foreign_key: true|
+|user_id|integer|null: false, foreign_key: true|　（販売者）
 |transaction_status|string|null: false, unique:true|
 |product_condition|string|null: false, unique:true|
 |product_fee|integer|null: false, unique:true|
@@ -54,6 +55,7 @@
 - belongs_to :product-category
 - belongs_to :product-brand
 - has_many :product-images
+- belongs_to :user
 
 
 
@@ -61,7 +63,7 @@
 |Column|Type|Options|
 |------|----|-------|
 |message|text|null: false|
-|user_id|integer|null: false, foreign_key: true|
+|user_id|integer|null: false, foreign_key: true|　（メッセージを送信した人）
 |product_id|integer|null: false, foreign_key: true|
 
 ### Association
@@ -73,7 +75,7 @@
 ## product_likesテーブル
 |Column|Type|Options|
 |------|----|-------|
-|user_id|integer|null: false, foreign_key: true|
+|user_id|integer|null: false, foreign_key: true|　（いいねをした人）
 |product_id|integer|null: false, foreign_key: true|
 
 ### Association
@@ -85,7 +87,7 @@
 ## ordersテーブル
 |Column|Type|Options|
 |------|----|-------|
-|buyer_id|integer|null: false, foreign_key: true|
+|user_id|integer|null: false, foreign_key: true|　(購入者)
 |product_id|integer|null: false, foreign_key: true|
 
 ### Association
@@ -112,12 +114,14 @@
 |------|----|-------|
 |rank_id|integer|null: false, foreign_key: true|
 |user_likes_comment|text||
-|receive_user_id|integer|null: false, foreign_key: true|
-|user_id|integer|null: false, foreign_key: true|
+|saler_id|integer|null: false, foreign_key: true|　（販売者かつ、likeを受け取った人）
+|buyer_id|integer|null: false, foreign_key: true|　（購入者かつ、likeを送った人）
+
 
 ### Association
 - belongs_to :rank
-- belongs_to :user
+- belongs_to :saler, class_name: "User"
+- belongs_to :buyer, class_name: "User"
 
 
 

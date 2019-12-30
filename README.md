@@ -164,3 +164,6 @@
 
 ### Association
 - has_many :products
+
+
+aaa

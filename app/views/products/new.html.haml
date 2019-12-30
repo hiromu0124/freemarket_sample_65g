@@ -3,7 +3,7 @@
     =icon("fas","fas fa-home",class:"single__header__home__icon")
     =link_to "mercari" ,root_path,class:"single__header__home"
 .single__main
-  .single__main__product
+  = form_with(model: @product, local: true, class: 'single__main__product') do |f|
     .single__main__product__header
       商品の情報を入力
     .single__main__product__image
@@ -14,7 +14,8 @@
           必須
       .single__main__product__image__Supplement
         最大10枚までアップロードできます
-      %label{form:"single__main__product__image__images__fild"}/
+      = f.fields_for :product_images do |i|
+        = i.file_field :image
       .single__main__product__image__images
         ドラッグアンドドロップ
         またはクリックしてファイルをアップロード

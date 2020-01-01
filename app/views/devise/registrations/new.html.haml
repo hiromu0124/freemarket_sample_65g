@@ -3,8 +3,8 @@
     .new-user-main__box__title
       会員情報入力
     .new-user-main__box__contents
-      = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
-        = render "devise/shared/error_messages", resource: resource
+      = form_for(@user, url: phone_number_path) do |f|
+        = render "devise/shared/error_messages", resource: @user
         .field
           = f.label :ニックネーム
           %br/
@@ -28,7 +28,7 @@
         .field
           = f.label :お名前（全角）
           %br/
-          = f.text_field :nickname
+          = f.text_field :full_name
         .field
           = f.label :お名前（カナ）
           %br/

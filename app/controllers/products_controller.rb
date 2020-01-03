@@ -26,4 +26,3 @@ class ProductsController < ApplicationController
     params.require(:product).permit(:name, :product_explain, :price, :product_category_id, :product_brand_id, :product_send_day, :prefecture_id, :product_condition, :product_fee, product_images_attributes: [:image]).merge(user_id: current_user.id, transaction_status: '出品中')
   end
 end
-

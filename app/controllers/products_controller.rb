@@ -14,11 +14,15 @@ class ProductsController < ApplicationController
 
   def create2
     @products = Product.find(1)
-    ProductComment.create(comment_params)
+    @comment=ProductComment.create(comment_params)
+    if @comment.save
       respond_to do |format|
-        format.html { redirect_to product_path( @products.id) }
+        format.html { redirect_to product_path( @products.id) } 
       end
+    else
+      render :show
   end
+end
 
   def show
     @product = Product.find(params[:id])

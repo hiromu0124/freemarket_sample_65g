@@ -151,6 +151,7 @@
           &__label{
             font-size: 14px;
             font-weight: 600;
+            margin-top: 20px;
             font-family: 'arial';
           }
           &__Required{
@@ -162,6 +163,7 @@
             background-color: red;
             color: white;
             margin-left: 10px;
+            margin-top: 20px;
             font-family: 'arial';
             border-radius:3px;
             font-weight: 600;
@@ -169,7 +171,7 @@
         }
         &__condition{
           display: flex;
-          margin-top: 40px;
+          margin-top: 20px;
           &__label{
             font-size: 14px;
             font-weight: 600;

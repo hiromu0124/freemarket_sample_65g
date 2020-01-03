@@ -14,7 +14,7 @@ class ProductsController < ApplicationController
 
   def create2
     @products = Product.find(1)
-    @comment=ProductComment.create(comment_params)
+    @comment=ProductComment.new(comment_params)
     if @comment.save
       respond_to do |format|
         format.html { redirect_to product_path( @products.id) } 

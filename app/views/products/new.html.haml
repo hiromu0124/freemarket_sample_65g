@@ -15,7 +15,9 @@
       .single__main__product__image__Supplement
         最大10枚までアップロードできます
       = f.fields_for :product_images do |i|
-        = i.file_field :image
+        = i.file_field :image, id:'my-awesome-dropzone'
+
+
       .single__main__product__image__images
         ドラッグアンドドロップ
         またはクリックしてファイルをアップロード

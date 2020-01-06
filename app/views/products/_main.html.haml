@@ -3,64 +3,84 @@
     人気のカテゴリー
   .header_low
     %li<
-      = link_to "#", class: "var" do
-        レディース
+      = link_to @category_woman.name, root_path(anchor: "woman"), class: "var" 
     %li<
-      = link_to "#", class: "var" do
-        メンズ
+      = link_to @category_man.name, root_path(anchor: "man"), class: "var" 
     %li<
-      = link_to "#", class: "var" do
-        家電・スマホ・カメラ
+      = link_to @category_camera.name, root_path(anchor: "camera"), class: "var" 
     %li<
-      = link_to "#", class: "var" do
-        おもちゃ・ホビー・グッズ
+      = link_to @category_toy.name, root_path(anchor: "toy"), class: "var" 
 
 .main_contents__wrapper
   .main_contents
     .items
-      .items_name
-        %h3 レディース新着アイテム
+      .items_name#woman
+        .h3
+          =@category_woman.name
+          新着アイテム
         .items_viewmore
           = link_to "#", class: "viewmore" do
             もっと見る ＞
       .items__images
-        = image_tag 'merukari1.jpg', size: '230x230', class: 'items__images__image'
-        %p EPOKA
-        %h3 ¥3,000
+        -@product_woman_image.each do |image|
+          .items__images__main
+            = image_tag image.image, size: '230x230', class: 'items__images__main__image'
+            .items__images__main__p
+              =image.product.name
+            .items__images__main__h3
+              ¥
+              =image.product.price
   .main_contents
     .items
-      .items_name
-        %h3 メンズ新着アイテム
+      .items_name#man
+        .h3
+          =@category_man.name
+          新着アイテム
         .items_viewmore
           = link_to "#", class: "viewmore" do
             もっと見る ＞
       .items__images
-        = image_tag 'merukari1.jpg', size: '230x230', class: 'items__images__image'
-        %p EPOKA
-        %h3 ¥3,000
+        -@product_man_image.each do |image|
+          .items__images__main
+            = image_tag image.image, size: '230x230', class: 'items__images__main__image'
+            .items__images__main__p
+              =image.product.name
+            .items__images__main__h3
+              ¥
+              =image.product.price
   .main_contents
     .items
-      .items_name
-        %h3 家電・スマホ・カメラ新着アイテム
+      .items_name#camera
+        .h3
+          =@category_camera.name
+          新着アイテム
         .items_viewmore
           = link_to "#", class: "viewmore" do
             もっと見る ＞
       .items__images
-        = image_tag 'merukari1.jpg', size: '230x230', class: 'items__images__image'
-        %p EPOKA
-        %h3 ¥3,000
+        -@product_camera_image.each do |image|
+          .items__images__main
+            = image_tag image.image, size: '230x230', class: 'items__images__main__image'
+            .items__images__main__p
+              =image.product.name
+            .items__images__main__h3
+              ¥
+              =image.product.price
   .main_contents
     .items
-      .items_name
-        %h3 おもちゃ・ホビー・グッズ新着アイテム
+      .items_name#toy
+        .h3
+          =@category_toy.name
+          新着アイテム
         .items_viewmore
           = link_to "#", class: "viewmore" do
             もっと見る ＞
       .items__images
-        = image_tag 'merukari1.jpg', size: '230x230', class: 'items__images__image'
-        %p EPOKA
-        %h3 ¥3,000
-
-      
-        
-        
+        -@product_toy_image.each do |image|
+          .items__images__main
+            = image_tag image.image, size: '230x230', class: 'items__images__main__image'
+            .items__images__main__p
+              =image.product.name
+            .items__images__main__h3
+              ¥
+              =image.product.price

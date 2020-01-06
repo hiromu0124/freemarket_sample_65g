@@ -3,7 +3,7 @@
     .new-user-main__box__title
       会員情報入力
     .new-user-main__box__contents
-      = form_for(@user, url: phone_number_path) do |f|
+      = form_for(@user, url: phone_number_path, method: :get) do |f|
         = render "devise/shared/error_messages", resource: @user
         .field
           = f.label :ニックネーム

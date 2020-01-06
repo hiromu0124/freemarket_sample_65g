@@ -1,17 +1,17 @@
 class ProductsController < ApplicationController
   def index
     @category_woman=ProductCategory.find(1)
-    @product_woman=Product.where(product_category_id:@category_woman.id)
-    @product_woman_image=ProductImage.where(product:@product_woman.ids)
+    @product_womans=Product.where(product_category_id:@category_woman.id)
+    @product_woman_images=ProductImage.where(product:@product_womans.ids)
     @category_man=ProductCategory.find(2)
-    @product_man=Product.where(product_category_id:@category_man.id)
-    @product_man_image=ProductImage.where(product:@product_man.ids)
+    @product_mans=Product.where(product_category_id:@category_man.id)
+    @product_man_images=ProductImage.where(product:@product_mans.ids)
     @category_toy=ProductCategory.find(3)
-    @product_toy=Product.where(product_category_id:@category_toy.id)
-    @product_toy_image=ProductImage.where(product:@product_toy.ids)
+    @product_toies=Product.where(product_category_id:@category_toy.id)
+    @product_toy_images=ProductImage.where(product:@product_toies.ids)
     @category_camera=ProductCategory.find(5)
-    @product_camera=Product.where(product_category_id:@category_camera.id)
-    @product_camera_image=ProductImage.where(product:@product_camera.ids)
+    @product_cameraes=Product.where(product_category_id:@category_camera.id)
+    @product_camera_images=ProductImage.where(product:@product_cameraes.ids)
   end
 
   def new

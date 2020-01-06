@@ -22,7 +22,7 @@
           = link_to "#", class: "viewmore" do
             もっと見る ＞
       .items__images
-        -@product_woman_image.each do |image|
+        -@product_woman_images.each do |image|
           .items__images__main
             = image_tag image.image, size: '230x230', class: 'items__images__main__image'
             .items__images__main__p
@@ -40,7 +40,7 @@
           = link_to "#", class: "viewmore" do
             もっと見る ＞
       .items__images
-        -@product_man_image.each do |image|
+        -@product_man_images.each do |image|
           .items__images__main
             = image_tag image.image, size: '230x230', class: 'items__images__main__image'
             .items__images__main__p
@@ -58,7 +58,7 @@
           = link_to "#", class: "viewmore" do
             もっと見る ＞
       .items__images
-        -@product_camera_image.each do |image|
+        -@product_camera_images.each do |image|
           .items__images__main
             = image_tag image.image, size: '230x230', class: 'items__images__main__image'
             .items__images__main__p
@@ -76,7 +76,7 @@
           = link_to "#", class: "viewmore" do
             もっと見る ＞
       .items__images
-        -@product_toy_image.each do |image|
+        -@product_toy_images.each do |image|
           .items__images__main
             = image_tag image.image, size: '230x230', class: 'items__images__main__image'
             .items__images__main__p

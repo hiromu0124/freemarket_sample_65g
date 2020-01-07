@@ -10,7 +10,6 @@ $(document).on('turbolinks:load', function() {
 
   $('.js-file_group').on('change', '.js-file', function(e) {
     // fileIndexの先頭の数字を使ってinputを作る
-    console.log(1)
     $('.js-file_group').append(buildFileField(fileIndex[0]));
     fileIndex.shift();
     // 末尾の数に1足した数を追加する

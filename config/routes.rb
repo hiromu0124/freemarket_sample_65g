@@ -6,6 +6,6 @@ Rails.application.routes.draw do
   root to: 'products#index'
   resources :products, only: [:index, :new, :show, :create]
   resources :users, only: [:show]
-
+  get "identification", to: "users#identification"
   get "RedBull", to:"users#edit2"
 end

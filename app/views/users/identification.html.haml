@@ -1,0 +1,53 @@
+.mypage-main-conatiner
+  -# = render "bread-crumbs"
+  %main.mypage-container.creafix
+    = render "user-side"
+    .identification-content
+      %section.identification-content__mypage
+        %h2.identification-content__head 本人情報の登録
+        = form_with model: @user, local: true, class: "identification-content__form" do |f|
+          %div
+            %p.identification-content__info
+              お客様の本人情報を登録してください。
+              %br
+              登録されたお名前・生年月日を変更する場合、本人確認書類の提出が必要になります。
+            %p.identification-content__textlink
+              = link_to "本人確認書類のアップロードについて", ""
+              %i.fas.fa-chevron-right
+          .identification-content__group
+            = f.label "お名前"
+            %p
+              = current_user.full_name
+          .identification-content__group
+            = f.label "お名前カナ"
+            %p 
+              = current_user.name_kana
+          .identification-content__group
+            = f.label "生年月日", class: "identification-content__birthday"
+            %p 
+              = current_user.birthday_day
+          .identification-content__group 
+            = f.label "郵便番号", class: "identification-content__postalcode"
+            %sapn.identification-content__arbitrary 任意
+            = f.text_field :postalcode, { class: "identification-content__default", placeholder: "例)1234567", value: "#{ current_user.postalcode }" }
+          .identification-content__group 
+            = f.label "都道府県", class: "identification-content__prefecture"
+            %sapn.identification-content__arbitrary 任意
+            .identification-content__select
+              = f.collection_select :prefecture_id, Prefecture.all, :id, :name, prompt: "--", selected: current_user.prefecture_id
+            .identification-content__group 
+              = f.label "市区町村", class: "identification-content__postalcode"
+              %sapn.identification-content__arbitrary 任意
+              = f.text_field :city, { class: "identification-content__default", placeholder: "例)横浜市緑区", value: "#{current_user.city }" }
+            .identification-content__group 
+              = f.label "番地", class: "identification-content__postalcode"
+              %sapn.identification-content__arbitrary 任意
+              = f.text_field :little_adress, { class: "identification-content__default", placeholder: "例)青山1-1-1", value: "#{ current_user.little_adress }" }
+            .identification-content__group
+              =f.label "建物名", class: "identificaton-content__postalcode"
+              %sapn.identification-content__arbitrary 任意
+              = f.text_field :building, { class: "identification-content__default", placeholder: "例)柳ビル103", value: "#{ current_user.building }" }
+              = f.submit "登録する", { class: "identification-content__button" }
+            %p.identification-content__textlinl{ id: "textinfo" }
+              = link_to "本人情報の登録について", ""
+              %i.fas.fa-chevron-right

@@ -28,7 +28,6 @@
       font-family: 'arial';
     }
     &__image{
-      height: 252px;
       padding: 40px;
       border-bottom: 1px solid #EEEEEE;
       &__class{
@@ -55,6 +54,9 @@
       &__Supplement{
         font-size: 14px;
         font-weight: lighter;
+      }
+      .js-file_group {
+        // display: none;
       }
       &__images{
         font-size: 14px;

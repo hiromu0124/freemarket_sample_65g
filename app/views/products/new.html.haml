@@ -14,14 +14,15 @@
           必須
       .single__main__product__image__Supplement
         最大10枚までアップロードできます
-      = f.fields_for :product_images do |i|
-        = i.file_field :image, id:'my-awesome-dropzone'
+      %label
+        = f.fields_for :product_images do |image|
+          %div{data: {index: "#{image.index}"}, class: 'js-file_group'}
+            = image.file_field :image, class: 'js-file'
+            %span{class: 'js-remove'} 削除
 
-
-      .single__main__product__image__images
-        ドラッグアンドドロップ
-        またはクリックしてファイルをアップロード
-      %input.single__main__product__image__images__fild{type:"file"}
+        .single__main__product__image__images
+          ドラッグアンドドロップ
+          またはクリックしてファイルをアップロード
     .single__main__product__name
       .single__main__product__name__class
         .single__main__product__name__class__label

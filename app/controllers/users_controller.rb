@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  def identification
+  def edit
   end
   
   def show

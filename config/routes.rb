@@ -5,7 +5,9 @@ Rails.application.routes.draw do
   }
   root to: 'products#index'
   resources :products, only: [:index, :new, :show, :create]
-  resources :users, only: [:show]
-  get "identification", to: "users#identification"
+  resources :users, only: [:edit, :show]
   get "RedBull", to:"users#edit2"
+  
+  # root to: 'identification#index'
+  # resources :identification, only: [:index, :show, :updata]
 end

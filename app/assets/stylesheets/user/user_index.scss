@@ -1,0 +1,109 @@
+.sign_up{
+background-color: #f5f5f5;
+&__header{
+  height: 128px;
+  background-color: #f5f5f5;
+  text-align: center;
+  line-height: 128px;
+  &__home{
+    font-size: 50px;
+  }
+  &__icon{
+    font-size: 49px;
+    color: red;
+  }
+}
+  &__main{
+    width: 700px;
+    margin: 0 auto;
+    &__header{
+      background-color: white;
+      width: 636px;
+      height: 33px;
+      padding: 32px;
+      text-align:center ;
+      font-size: 22px;
+      border-bottom:1px solid #EEEEEE;
+    }
+    &__form{
+      background-color: white;
+      width: 668px;
+      height: 183px;
+      padding: 24px 16px 40px;
+      &__email{
+        margin-left:150px ;
+        background-color: #ea352d;
+        display: flex;
+        width: 343px;
+        height: 50px;
+        line-height: 50px;
+        border-radius:4px;
+        &__icon{
+          padding-top: 15px; 
+          padding-left: 15px;
+          font-size: 20px;
+          color: white;
+        }
+        &__btn{
+          line-height: 50px;
+          font-size: 14px;
+          padding-left: 80px;
+          &__link{
+            font-family: inherit;
+            color: white;
+          }
+        }
+      }
+      &__facebook{
+        margin-left:150px ;
+        margin-top: 16px;
+        background-color:#385185;
+        display: flex;
+        width: 343px;
+        height: 50px;
+        border-radius:4px;
+        &__icon{
+          padding-top: 10px; 
+          padding-left: 15px;
+          font-size: 30px;
+          color: white;
+        }
+        &__btn{
+          line-height: 50px;
+          font-size: 14px;
+          padding-left: 80px;
+          &__link{
+            font-family: inherit;
+            color: white;
+          }
+        }
+      }
+      &__google{
+        margin-left:150px ;
+        margin-top: 16px;
+        background-color: white;
+        display: flex;
+        width: 343px;
+        height: 50px;
+        border: 1px solid #979797 ;
+        border-radius:4px;
+        &__icon{
+          padding-top: 15px; 
+          padding-left: 15px;
+          font-size: 20px;
+          color: #0099e8;
+        }
+        &__btn{
+          line-height: 50px;
+          font-size: 14px;
+          padding-left: 80px;
+          color: black;
+          &__link{
+            font-family: inherit;
+
+          }
+        }
+      }
+    }
+  }
+}

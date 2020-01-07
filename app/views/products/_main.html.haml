@@ -24,13 +24,14 @@
             もっと見る ＞
       .items__images
         -@product_woman_images.each do |image|
-          .items__images__main
-            = image_tag image.image, size: '230x230', class: 'items__images__main__image'
-            .items__images__main__p
-              =image.product.name
-            .items__images__main__h3
-              ¥
-              =image.product.price
+          =link_to product_path(image.product.id) do
+            .items__images__main
+              = image_tag image.image, size: '230x230', class: 'items__images__main__image'
+              .items__images__main__p
+                =image.product.name
+              .items__images__main__h3
+                ¥
+                =image.product.price
   .main_contents
     .items
       .items_name#man
@@ -42,13 +43,14 @@
             もっと見る ＞
       .items__images
         -@product_man_images.each do |image|
-          .items__images__main
-            = image_tag image.image, size: '230x230', class: 'items__images__main__image'
-            .items__images__main__p
-              =image.product.name
-            .items__images__main__h3
-              ¥
-              =image.product.price
+          =link_to product_path(image.product.id) do
+            .items__images__main
+              = image_tag image.image, size: '230x230', class: 'items__images__main__image'
+              .items__images__main__p
+                =image.product.name
+              .items__images__main__h3
+                ¥
+                =image.product.price
   .main_contents
     .items
       .items_name#camera
@@ -60,13 +62,14 @@
             もっと見る ＞
       .items__images
         -@product_camera_images.each do |image|
-          .items__images__main
-            = image_tag image.image, size: '230x230', class: 'items__images__main__image'
-            .items__images__main__p
-              =image.product.name
-            .items__images__main__h3
-              ¥
-              =image.product.price
+          =link_to product_path(image.product.id) do
+            .items__images__main
+              = image_tag image.image, size: '230x230', class: 'items__images__main__image'
+              .items__images__main__p
+                =image.product.name
+              .items__images__main__h3
+                ¥
+                =image.product.price
   .main_contents
     .items
       .items_name#toy
@@ -78,10 +81,11 @@
             もっと見る ＞
       .items__images
         -@product_toy_images.each do |image|
-          .items__images__main
-            = image_tag image.image, size: '230x230', class: 'items__images__main__image'
-            .items__images__main__p
-              =image.product.name
-            .items__images__main__h3
-              ¥
-              =image.product.price
+          =link_to product_path(image.product.id) do
+            .items__images__main
+              = image_tag image.image, size: '230x230', class: 'items__images__main__image'
+              .items__images__main__p
+                =image.product.name
+              .items__images__main__h3
+                ¥
+                =image.product.price

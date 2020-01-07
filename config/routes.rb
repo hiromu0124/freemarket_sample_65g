@@ -9,8 +9,6 @@ Rails.application.routes.draw do
   resources :users, only: [:edit, :show]
   get "RedBull", to:"users#edit2"
   
-
-
   resources :users, only: [:show]
   get "identification", to: "users#identification"
 

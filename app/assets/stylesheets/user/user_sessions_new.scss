@@ -1,0 +1,133 @@
+.log_in{
+  background-color: #f5f5f5;
+  &__header{
+    height: 128px;
+    background-color: #f5f5f5;
+    text-align: center;
+    line-height: 128px;
+    &__home{
+      font-size: 50px;
+    }
+    &__icon{
+      font-size: 49px;
+      color: red;
+    }
+  }
+  &__main{
+    width: 456px;
+    margin: 0 auto;
+    background-color: white;
+    &__header{
+      width: 328px;
+      padding:40px 64px ;
+      border-bottom:1px solid #EEEEEE;
+      &__new{
+        font-family: 'Source Sans Pro';
+        font-size: 14px;
+        text-align: center;
+        &__btn{
+          border: 1px solid #0099e8;
+          background-color: #0099e8;
+          width: 328px;
+          height: 42px;
+          text-align: center;
+          line-height: 42px;
+          &__link{
+          color: white;
+          }
+        }
+      }
+    }
+    .log_in__main__sns{
+      width: 328px;
+      padding: 32px 64px;
+      &__facebook{
+        width: 328px;
+        height: 50px;
+        background-color:#385185;
+        color: white;
+        display: flex;
+        line-height: 50px;
+        &__icon{
+          line-height: 50px;
+          padding-left: 15px;
+          font-size: 30px;
+        }
+        &__btn{
+          font-size: 14px;
+          padding-left: 80px;
+          &__link{
+            font-family: inherit;
+            color: white;
+          }
+        }
+      }
+      &__google{
+        width: 328px;
+        height: 50px;
+        display: flex;
+        line-height: 50px;
+        margin-top: 10px;
+        border: 1px solid  #979797 ;
+        &__icon{
+          line-height: 50px;
+          padding-left: 15px;
+          font-size: 20px;
+          color: #0099e8;
+        }
+        &__btn{
+          font-size: 14px;
+          padding-left: 80px;
+          &__link{
+            font-family: inherit;
+            color: black;
+          }
+        }
+      }
+    }
+    &__form{
+      width: 328px;
+      padding: 24px 64px 32px;
+      &__email{
+        padding: 10px 16px 8px 0;
+        width: 296px;
+        height: 30px;
+        border-radius:7px;
+        &__form{
+          padding: 10px 16px 8px;
+          background-color: #b3d4fc;
+          width: 296px;
+          height: 30px;
+          border-radius:4px;
+        }
+      }
+      &__password{
+        padding: 10px 16px 8px 0;
+        margin-top: 24px;
+        width: 296px;
+        height: 30px;
+        border-radius:4px;
+        &__form{
+          padding: 10px 16px 8px;
+          background-color: #b3d4fc;
+          width: 296px;
+          height: 30px;
+          border-radius:4px;
+        }
+      }
+      &__actions{
+        margin-top: 24px;
+        &__btn{
+          width: 328px;
+          height: 50px;
+          margin-top: 24px;
+          background-color: #ea352d;
+          color: white;
+        }
+      }
+    }
+  }
+}
+.password{
+  color: #0099e8;
+}

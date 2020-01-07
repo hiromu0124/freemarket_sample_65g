@@ -1,43 +1,50 @@
 .product__show__wrapper
   .product__show
     .product__show__title
-      寅壱　デニム
+      =@product.name
     .product__show__detail
       .product__show__detail__picture
-        = image_tag 'denim.png', size: '300x270'
+        -@images.each do |image|
+          =image_tag image.image,class:"product__show__detail__picture__images"
       .product__show__detail__table
         %table
           %tr
             %th 出品者
-            %td しょう吉
+            %td=@product.user.nickname
           %tr
             %th カテゴリー 
-            %td デニム
+            %td=@product.product_category.name
           %tr
             %th ブランド
-            %td 寅壱
-          %tr
-            %th 商品のサイズ
-            %td S
+            -if @product.product_brand_id ==nil
+              %td
+            -else
+              %td=@product.product_brand.name
+          -if @product.product_size ==nil
+          -else
+            %tr
+              %th 商品のサイズ
+              %td=@product.product_size
           %tr
             %th 商品の状態
-            %td やや傷や汚れあり
+            %td=@product.product_condition
           %tr
             %th 配送料の負担
-            %td 送料込み(出品者負担)
+            %td=@product.product_fee
           %tr
             %th 配送の方法
             %td ゆうゆうメルカリ便
           %tr
             %th 配送元地域
-            %td 北海道
+            %td=@product.prefecture_id
           %tr
             %th 発送日の目安
-            %td 2~3日で発送
+            %td=@product.product_send_day
     .product__show__price
-      %span ¥ 3,100
+      %span¥
+      %span=@product.price
       (税込) 送料込み
-    = link_to "#", class: 'product__show__buy_btn'do
+    = link_to "", class: 'product__show__buy_btn'do
       購入画面に進む
     .product__show__notes
       この商品はゆうゆうメルカリ便を利用しているため、アプリからのみ購入できます。
@@ -50,95 +57,68 @@
       %button.product__show__bottom__report_btn
         %i.far.fa-flag
         %span 不適切な商品の報告
-      = link_to "#", class: "relief" do
+      = link_to "https://www.mercari.com/jp/safe/description/", class: "relief" do
         %i.fas.fa-unlock-alt
         %span あんしん・あんぜんへの取り組み
 
 
   .product__show__comments
-    .product__show__comment
-      = image_tag 'sea1.jpg', class: 'product__show__comment__picture'
-      .product__show__comment__area
-        .product__show__comment__area__name
-          努
-        .product__show__comment__area__box
-          裏面も見たいです！
-    .product__show__comment
-      = image_tag 'sea2.jpg', class: 'product__show__comment__picture'
-      .product__show__comment__area
-        .product__show__comment__area__name
-          中村
-        .product__show__comment__area__box
-          タグも見たいです！
-    .product__show__comment
-      = image_tag 'sea3.jpg', class: 'product__show__comment__picture'
-      .product__show__comment__area
-        .product__show__comment__area__name
-          池田
-        .product__show__comment__area__box
-          ほつれはありますか？メリークリスマス！！！＼(^o^)／
-    .product__show__comment
-      = image_tag 'sea4.jpg', class: 'product__show__comment__picture'
-      .product__show__comment__area
-        .product__show__comment__area__name
-          加藤
-        .product__show__comment__area__box
-          検討します！
+    -@comments.each do |comment|
+      .product__show__comment  
+        = image_tag comment.user.thumbnail , class: 'product__show__comment__picture'
+        .product__show__comment__area
+          .product__show__comment__area__name
+            =comment.user.nickname
+          .product__show__comment__area__box
+            =comment.comment
     .product__show__comments__note
       相手のことを考え丁寧なコメントを心がけましょう。不快な言葉遣いなどは利用制限や退会処分となることがあります。
-    %textarea.product__show__comments__form
-    %button.product__show__comments__btn
-      コメントする
+    = form_with(url: create2_path, model: @product_comment, local: true) do |f|
+      = f.text_area :comment,class:"product__show__comments__form"
+      = f.submit "コメントをする",class:"product__show__comments__btn"
   .product__show__move
-    = link_to '#', class: 'product__show__move__before' do
-      ＜ チョコレートフォンデュポット
-    = link_to '#', class: 'product__show__move__after' do
-      スタッドレス 中古 ＞
+    -if @product_0==nil
+    -else
+      = link_to product_path(@product.id-1),class: 'product__show__move__before' do
+        =@product_0 .name
+    -if @product_1==nil
+    -else
+      = link_to  product_path(@product.id+1),class: 'product__show__move__after' do
+        =@product_1 .name
   .product__show__sns
     .product__show__sns__icon
-      = link_to '#' do
+      = link_to 'https://www.facebook.com/login.php?skip_api_login=1&api_key=966242223397117&signed_next=1&next=https%3A%2F%2Fwww.facebook.com%2Fshare.php%3Fu%3Dhttps%253A%252F%252Fitem.mercari.com%252Fjp%252Fm27001837740%252F&cancel_url=https%3A%2F%2Fwww.facebook.com%2Fdialog%2Fclose_window%2F%3Fapp_id%3D966242223397117%26connect%3D0%23_%3D_&display=popup&locale=ja_JP' do
         = image_tag 'facebook.png', size:'45x45'
-      = link_to '#' do
+      = link_to 'https://twitter.com/intent/tweet?text=%2FTWIST%E3%82%B5%E3%83%B3%E3%82%B0%E3%83%A9%E3%82%B9%E3%80%80%E2%80%A6%20%28%C2%A52%2C980%29%20https%3A%2F%2Fitem.mercari.com%2Fjp%2Fm27001837740%2F%20%E3%83%95%E3%83%AA%E3%83%9E%E3%82%A2%E3%83%97%E3%83%AA%E3%80%8C%E3%83%A1%E3%83%AB%E3%82%AB%E3%83%AA%E3%80%8D%E3%81%A7%E8%B2%A9%E5%A3%B2%E4%B8%AD%E2%99%AA%20%23%E3%83%A1%E3%83%AB%E3%82%AB%E3%83%AA%20%40mercari_jp%E3%81%95%E3%82%93%E3%81%8B%E3%82%89&url=&original_referer=' do
         = image_tag 'twitter.png', size:'45x45'
-      = link_to '#' do
+      = link_to 'https://www.pinterest.jp/' do
         = image_tag 'plink.png', size:'45x45'
   .otherproducts__in_user
     .otherproducts__in_user__message
       = link_to '#', class: 'otherproducts__in_user__message__link' do
-        〇〇さんのその他の出品
+        =@product.user.nickname
+        さんのその他の出品
     .otherproducts__in_user__products
-      .otherproducts__in_user__products__image
-        = image_tag 'denimjacket.jpg', size: '210x230', class: 'otherproducts__image'
-        %p gg
-        %h3 ¥ 3,000
-        %i.far.fa-heart.likeicon
-      .otherproducts__in_user__products__image
-        = image_tag 'denimjacket.jpg', size: '210x230', class: 'otherproducts__image'
-        %p gg
-        %h3 ¥ 3,000
-        %i.far.fa-heart.likeicon
-      .otherproducts__in_user__products__image
-        = image_tag 'denimjacket.jpg', size: '210x230', class: 'otherproducts__image'
-        %p gg
-        %h3 ¥ 3,000
-        %i.far.fa-heart.likeicon
+      -@product_image.each do |image| 
+        .otherproducts__in_user__products__image
+          = image_tag image.image, size: '210x230', class: 'otherproducts__image'
+          %p=image.product.name
+          .h3
+            ¥
+            =image.product.price
+            =link_to "" do
+              %i.far.fa-heart.likeicon
   .otherproducts__in_category
     .otherproducts__in_category__message
       = link_to '#', class: 'otherproducts__in_category__message__link' do
-        Gジャン/デニムジャケット （メンズ） その他の商品
+        =@product.product_category.name
     .otherproducts__in_category__products
-      .otherproducts__in_category__products__image
-        = image_tag 'denimjacket.jpg', size: '210x230', class: 'otherproducts__image'
-        %p gg
-        %h3 ¥ 3,000
-        %i.far.fa-heart.likeicon
-      .otherproducts__in_category__products__image
-        = image_tag 'denimjacket.jpg', size: '210x230', class: 'otherproducts__image'
-        %p gg
-        %h3 ¥ 3,000
-        %i.far.fa-heart.likeicon
-      .otherproducts__in_category__products__image
-        = image_tag 'denimjacket.jpg', size: '210x230', class: 'otherproducts__image'
-        %p gg
-        %h3 ¥ 3,000
-        %i.far.fa-heart.likeicon
+      -@category_image.each do |image|
+        .otherproducts__in_category__products__image
+          = image_tag image.image, size: '210x230', class: 'otherproducts__image'
+          %p=image.product.name
+          .h3
+            ¥
+            =image.product.price
+            =link_to "" do
+              %i.far.fa-heart.likeicon

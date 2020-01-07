@@ -1,0 +1,45 @@
+.new-user-main
+  .new-user-main__box
+    .new-user-main__box__title
+      発送元・お届け先住所入力
+    .new-user-main__box__contents
+      = form_for(@user, url: payment_path, method: :get) do |f|
+        = render "devise/shared/error_messages", resource: @user
+        .field
+          = f.label :お名前
+          %br/
+          = f.text_field :full_name
+        .field
+          = f.label :お名前カナ
+          %br/
+          = f.text_field :name_kana
+        .field
+          = f.label :郵便番号
+          %br/
+          = f.text_field :postalcode
+        .field
+          = f.label :都道府県
+          %br/
+        .prefecture-form         
+          = f.collection_select :prefecture_id, Prefecture.all, :id, :name, prompt: "--", selected: current_user
+        .field
+          = f.label :市区町村 
+          %br/
+          = f.text_field :city, placeholder:"例)渋谷区 神南" ,class: "default-text"
+        .field
+          = f.label :番地
+          %br/
+          = f.text_field :little_adress, placeholder:"１丁目１２−１６" ,class: "default-text"
+        .field
+          = f.label :建物名
+          %br/
+          = f.text_field :building, placeholder:"例)アジアビル" ,class: "default-text"
+        .field
+          = f.label :電話, class: "form-group"
+          %br/
+          = f.telephone_field :tell, placeholder:"例)09011112222" ,class: "default-text"
+
+        .actions
+          = f.submit "次へ進む", class: 'next-btn'
+
+

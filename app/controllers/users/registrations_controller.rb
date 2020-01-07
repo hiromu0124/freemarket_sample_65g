@@ -1,13 +1,28 @@
 # frozen_string_literal: true
 
 class Users::RegistrationsController < Devise::RegistrationsController
-  # before_action :configure_sign_up_params, only: [:create]
+  before_action :configure_sign_up_params, only: [:create]
   # before_action :configure_account_update_params, only: [:update]
 
   # GET /resource/sign_up
-  # def new
-  #   super
-  # end
+
+  def new  # 新規インスタンス作成
+    @user = User.new
+  end
+
+  def new_phone_number #1ページ目の情報をセッションに保存(ユーザー基本情報)
+
+    @user = User.new
+  end
+
+  def new_street_address #2ページ目の情報をセッションに保存(電話番号)
+    @user = User.new
+  end
+
+  def new_payment #3ページ目の情報をセッションに保存(住所)
+    @user = User.new
+  end
+
 
   # POST /resource
   # def create
@@ -38,12 +53,12 @@ class Users::RegistrationsController < Devise::RegistrationsController
   #   super
   # end
 
-  # protected
+  protected
 
   # If you have extra params to permit, append them to the sanitizer.
-  # def configure_sign_up_params
-  #   devise_parameter_sanitizer.permit(:sign_up, keys: [:attribute])
-  # end
+  def configure_sign_up_params
+    devise_parameter_sanitizer.permit(:sign_up, keys: [:attribute])
+  end
 
   # If you have extra params to permit, append them to the sanitizer.
   # def configure_account_update_params
@@ -59,4 +74,6 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # def after_inactive_sign_up_path_for(resource)
   #   super(resource)
   # end
+
+
 end

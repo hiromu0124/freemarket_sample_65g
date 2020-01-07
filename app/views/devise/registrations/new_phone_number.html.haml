@@ -1,0 +1,26 @@
+.new-user-main
+  .new-user-main__box
+    .new-user-main__box__title
+      電話番号の確認
+    .new-user-main__box__contents
+      .new-user-main__box__contents__form
+        = form_for(@user, url: street_address_path, method: :get) do |f|
+          .field
+            = f.label :携帯電話の番号, class: "form-group"
+            %br/
+            = f.telephone_field :tell, placeholder:"携帯電話の番号を入力" ,class: "default-text"
+          .actions
+            = f.submit "次へ進む", class: 'next-btn'
+          %p ※電話番号は本人確認や不正利用防止のために利用します。他のユーザーに公開されることはありません。
+
+
+
+
+
+
+
+
+
+
+
+

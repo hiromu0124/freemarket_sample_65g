@@ -11,24 +11,24 @@ class Users::RegistrationsController < Devise::RegistrationsController
     @user = User.new
   end
 
-  # def step2 #1ページ目の情報をセッションに保存
-  #   session[:nickname] = user_params[:nickname]
-  #   session[:email] = user_params[:email]
-  #   session[:password] = user_params[:password]
-  #   session[:password_confirmation] = user_params[:password_confirmation]
-  #   session[:full_name] = user_params[:full_name]
-  #   session[:name_kana] = user_params[:name_kana]
-  #   @user = User.new
-  # end
+  def new_phone_number
+    # session[:nickname] = user_params[:nickname]
+    # session[:email] = user_params[:email]
+    # session[:password] = user_params[:password]
+    # session[:password_confirmation] = user_params[:password_confirmation]
+    # session[:full_name] = user_params[:full_name]
+    # session[:name_kana] = user_params[:name_kana]
+    @user = User.new
+  end
 
-  # def step3 #2ページ目の情報をセッションに保存(電話番号)
-  #   session[:tell] = user_params[:tell]
-  #   @user = User.new
-  # end
+  def new_street_address #2ページ目の情報をセッションに保存(電話番号)
+    # session[:tell] = user_params[:tell]
+    @user = User.new
+  end
 
-  # def step4 #3ページ目の情報をセッションに保存(住所)
-  #   @user = User.new
-  # end
+  def new_payment #3ページ目の情報をセッションに保存(住所)
+    @user = User.new
+  end
 
 
   # POST /resource
@@ -95,5 +95,5 @@ class Users::RegistrationsController < Devise::RegistrationsController
   #     :tell,
   # )
   # end
-  
+
 end

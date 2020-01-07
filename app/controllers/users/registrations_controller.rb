@@ -10,18 +10,12 @@ class Users::RegistrationsController < Devise::RegistrationsController
     @user = User.new
   end
 
-  def new_phone_number
-    # session[:nickname] = user_params[:nickname]
-    # session[:email] = user_params[:email]
-    # session[:password] = user_params[:password]
-    # session[:password_confirmation] = user_params[:password_confirmation]
-    # session[:full_name] = user_params[:full_name]
-    # session[:name_kana] = user_params[:name_kana]
+  def new_phone_number #1ページ目の情報をセッションに保存(ユーザー基本情報)
+
     @user = User.new
   end
 
   def new_street_address #2ページ目の情報をセッションに保存(電話番号)
-    # session[:tell] = user_params[:tell]
     @user = User.new
   end
 
@@ -81,18 +75,5 @@ class Users::RegistrationsController < Devise::RegistrationsController
   #   super(resource)
   # end
 
-  # private
-  # # 許可するキーを設定します
-  # def user_params
-  #   params.require(:user).permit(
-  #     :nickname, 
-  #     :email, 
-  #     :password, 
-  #     :password_confirmation, 
-  #     :full_name, 
-  #     :name_kana, 
-  #     :tell,
-  # )
-  # end
 
 end

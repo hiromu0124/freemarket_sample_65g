@@ -1,0 +1,56 @@
+.html{
+  background-color: #eeeeee;
+  .creditcard_main{
+    padding: 40px 77px 0;
+    display: flex;
+    &__pay{
+      background-color: white;
+      height: 34px;
+      width: 700px;
+      margin: 24px auto 0;
+      text-align: center;
+      line-height: 34px;
+      &__header{
+        font-size: 25px;
+        font-family: 'arial';
+        height: 34px;
+        width: 700px;
+        border-bottom: 1px solid #eeeeee;
+      }
+      &__all{
+        font-family: 'arial';
+        height: 180.09px;
+        width: 572px;
+        font-size: 16px;
+        background-color: white;
+        padding: 64px;
+        &__card{
+          width: 572px;
+          height: 107px;
+          border-bottom: 1px solid #eeeeee;
+          &__btn{
+            text-align: center;
+            line-height: 2px;
+            width: 320px;
+            height: 2px;
+            padding: 24px 0;
+            background-color: #ea352d;
+            color:white;
+            font-weight: 100;
+            margin:24px 0 24px 200px ;
+            &__class{
+              color: white;
+            }
+          }
+          &__description{
+            padding: 15px 0 0  400px;
+            color: #0099e8;
+            &__link{
+              color: #0099e8;
+            }
+          }
+        }
+      }
+    }
+  }
+}

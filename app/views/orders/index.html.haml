@@ -28,12 +28,12 @@
             %p ポイントを使用 (所持ポイント: P0)
           .buy_user_info
             .buy_user_info_inner
-              %h3
+              .h3 
                 支払い方法
             .user_info_text
               = link_to "#", class: "text" do
                 .icon_plas_circle
-              <i class="fas fa-plus-circle"></i>
+                  =icon('fas',"fas fa-plus-circle")
               .buy_register_text
                 登録してください
           .buy_user_info_under
@@ -41,12 +41,11 @@
               .clearfix
                 .left
                   配送先
-                .right
-                  = link_to "#", class: "change" do
-                    変更する
+                = link_to "#", class: "right" do
+                  変更する
               .address
                 .p
-                  105-0000
+                  〒105-0000
                   %br
                   東京都＠＠＠＠＠ー＠＠＠
                   %br

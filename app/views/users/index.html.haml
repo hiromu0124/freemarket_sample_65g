@@ -1,0 +1,24 @@
+.sign_up
+  .sign_up__header
+    =icon("fab","fab fa-apple",class:"log_in__header__icon")
+    =link_to "mercari" ,root_path,class:"log_in__header__home"
+  .sign_up__main
+    .sign_up__main__header
+      新規会員登録
+    .sign_up__main__form
+      =link_to new_user_registration_path,class:"sign_up__main__form__email__btn__link" do
+        .sign_up__main__form__email
+          =icon("far","far fa-envelope",class:"sign_up__main__form__email__icon")
+          .sign_up__main__form__email__btn
+            メールアドレスで登録する
+      =link_to "",class:"sign_up__main__form__facebook__btn__link" do
+        .sign_up__main__form__facebook
+          =icon("fab","fab fa-facebook-square",class:"sign_up__main__form__facebook__icon")
+          .sign_up__main__form__facebook__btn
+            Facebookで登録する
+      =link_to "",class:"sign_up__main__form__google__btn__link" do
+        .sign_up__main__form__google
+          =icon("fab","fab fa-google",class:"sign_up__main__form__google__icon")
+          .sign_up__main__form__google__btn
+            Googleで登録する
+=render "products/product_footer"

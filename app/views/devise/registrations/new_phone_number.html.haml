@@ -1,9 +1,9 @@
-.new-phone-number
-  .new-phone-number__box
-    .new-phone-number__box__title
+.new-user-main
+  .new-user-main__box
+    .new-user-main__box__title
       電話番号の確認
-    .new-phone-number__box__content
-      .new-phone-number__box__content__form
+    .new-user-main__box__contents
+      .new-user-main__box__contents__form
         = form_for(@user, url: street_address_path, method: :get) do |f|
           .field
             = f.label :携帯電話の番号, class: "form-group"

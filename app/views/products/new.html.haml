@@ -145,14 +145,4 @@
         %input{type:"button",value:"出品する",class:"single__main__product__list__exhibitionbtn"}
         .single__main__product__list__returnbtn
           =link_to "もどる",root_path,class:"returnbtn"
-.single__footer
-  .single__footer__note
-    =link_to "プライバシーポリシー","mercari.com/jp/privacy/",class:"single__footer__note"
-    　
-    =link_to "メルカリ利用規約","https://www.mercari.com/jp/tos/",class:"single__footer__note"
-    　
-    =link_to "特定商取引に関する表記","https://www.mercari.com/jp/tokutei/",class:"single__footer__note"
-    .single__footer__image
-      =link_to root_path do
-        =image_tag "mercari.svg",size:"70x70"
-    %p © Mercari, Inc.
+=render "products/product_footer"

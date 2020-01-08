@@ -57,7 +57,6 @@
               %sapn.identification-content__arbitrary 任意
               = f.text_field :building, { class: "identification-content__default", placeholder: "例)柳ビル103", value: "#{ current_user.building }" }
               = f.submit "登録する", { class: "identification-content__button" }
-            %p.identification-content__textlinl{ id: "textinfo" }
+            .identification-content__textlink{ id: "textinfo" }
               = link_to "本人情報の登録について", ""
               %i.fas.fa-chevron-right
-= current_user.birthday_day

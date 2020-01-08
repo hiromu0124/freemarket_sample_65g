@@ -12,7 +12,7 @@ class User < ApplicationRecord
   has_many :orders
   has_many :product_comments
   has_many :products
-  belongs_to :birthday_year
-  belongs_to :birthday_month
-  belongs_to :birthday_day
+  # belongs_to :birthday_year
+  # belongs_to :birthday_month
+  # belongs_to :birthday_day
 end

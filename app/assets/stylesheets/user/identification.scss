@@ -41,6 +41,7 @@
     &__info{
       margin-top: 8px;
       line-height: 1.5;
+      font-size: 14.5px;
     }
     &__textlink{
       margin-top: 8px;
@@ -73,7 +74,7 @@
     }
     &__default{
       height: 20px;
-      width: 100%;
+      width:  540px;
       margin-top: 8px;
       padding: 10px 16px 8px;
       border-radius: 4px;
@@ -144,7 +145,7 @@
   }
 }
 select {
-  width: 608px;
+  width: 100%;
   height: 48px;
   margin-top: 8px;
   border-radius: 4px;

@@ -20,7 +20,11 @@ Rails.application.routes.draw do
 
   resources :users, only: [:index, :show]
   resources :product_comments, only: [:new,:create]
+
+  resources :orders, only: :index
+
   resources :creditcards, only: [:index, :new, :create]
+
 
   get "RedBull", to:"users#edit2"
   post "create2", to:"products#create2"

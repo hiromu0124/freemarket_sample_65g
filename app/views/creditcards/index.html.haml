@@ -1,0 +1,13 @@
+.html
+  .creditcard_main
+    =render "users/user-side"
+    .creditcard_main__pay
+      .creditcard_main__pay__header
+        支払い方法
+      .creditcard_main__pay__all
+        クレジットカード一覧
+        .creditcard_main__pay__all__card
+          .creditcard_main__pay__all__card__btn
+            =link_to "クレジットカードを追加する",new_creditcard_path,class:"creditcard_main__pay__all__card__btn__class"
+        .creditcard_main__pay__all__card__description
+          =link_to "支払い方法について ＞","https://www.mercari.com/jp/help_center/category/6/",class:"creditcard_main__pay__all__card__description__link"

@@ -10,10 +10,10 @@
         %table
           %tr
             %th 出品者
-            %td=@product.user.nickname
+            %td=link_to @product.user.nickname,user_path(@product.user.id)
           %tr
             %th カテゴリー 
-            %td=@product.product_category.name
+            %td=link_to @product.product_category.name,""
           %tr
             %th ブランド
             -if @product.product_brand_id ==nil
@@ -36,7 +36,7 @@
             %td ゆうゆうメルカリ便
           %tr
             %th 配送元地域
-            %td=@product.prefecture_id
+            %td=link_to @product.prefecture_id,""
           %tr
             %th 発送日の目安
             %td=@product.product_send_day
@@ -68,7 +68,7 @@
         = image_tag comment.user.thumbnail , class: 'product__show__comment__picture'
         .product__show__comment__area
           .product__show__comment__area__name
-            =comment.user.nickname
+            =link_to comment.user.nickname,user_path(comment.user.id)
           .product__show__comment__area__box
             =comment.comment
     .product__show__comments__note

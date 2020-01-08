@@ -58,18 +58,37 @@
       .js-file_group {
         // display: none;
       }
-      &__images{
-        font-size: 14px;
-        font-family: 'arial';
-        white-space:pre-wrap;
-        height: 82px;
-        width: 540px;
-        background-color: #EEEEEE;
-        border:2px  dotted #DDDDDD;
-        text-align: center;
-        padding: 40px;
-        &__fild{
-          display: none;
+      &__zone {
+        display: flex;
+        .previews {
+          &__btn {
+            height: 43px;
+            line-height: 43px;
+            background-color: #f5f5f5;
+            &__update {
+              color: #0099e8;
+              margin-left: 10px;
+            }
+            &__destroy {
+              color: #0099e8;
+              margin-left: 30px;
+            }
+          }
+        }
+        &__images{
+          font-size: 14px;
+          font-family: 'arial';
+          white-space:pre-wrap;
+          height: 82px;
+          width: 100%;
+          background-color: #EEEEEE;
+          border:2px  dotted #DDDDDD;
+          text-align: center;
+          padding: 40px;
+
+          &__fild{
+            display: none;
+          }
         }
       }
     }

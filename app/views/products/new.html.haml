@@ -14,16 +14,22 @@
           必須
       .single__main__product__image__Supplement
         最大10枚までアップロードできます
-      %label
-        = f.fields_for :product_images do |image|
-          %div{data: {index: "#{image.index}"}, class: 'js-file_group'}
-            = image.file_field :image, class: 'js-file'
+      
+        %label
+          = f.fields_for :product_images do |image|
+            %div{data: {index: "#{image.index}"}, class: 'js-file_group'}
+              = image.file_field :image, class: 'js-file'
       %span{class: 'js-remove'} 削除
 
-      .single__main__product__image__images
+      .single__main__product__image__zone
         .previews
-        ドラッグアンドドロップ
-        またはクリックしてファイルをアップロード
+          %img <img data-index="0" src="blob:http://localhost:3000/45df47ba-3f5b-4fc8-b21a-8886a418985a" width="120px" height="120px"
+          .previews__btn
+            = link_to '編集', '#', class: 'previews__btn__update'
+            = link_to '削除', '#', class: 'previews__btn__destroy'
+        .single__main__product__image__zone__images
+          ドラッグアンドドロップ
+          またはクリックしてファイルをアップロード
     .single__main__product__name
       .single__main__product__name__class
         .single__main__product__name__class__label

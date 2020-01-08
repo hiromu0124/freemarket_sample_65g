@@ -7,7 +7,10 @@ $(document).on('turbolinks:load', function() {
   }
 
   const buildImg = (index, url)=> {
-    const html = `<img data-index="${index}" src="${url}" width="100px" height="100px">`;
+    const html = `<img data-index="${index}" src="${url}" width="120px" height="120px"><div class="previews__btn">
+    <a class="previews__btn__update" href="#">編集</a>
+    <a class="previews__btn__destroy" href="#">削除</a>
+    </div>`;
     return html;
   }
 

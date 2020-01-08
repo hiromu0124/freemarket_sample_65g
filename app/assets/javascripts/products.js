@@ -1,6 +1,5 @@
 $(document).on('turbolinks:load', function() {
-  // 画像用のinputを生成する関数
-  console.log(2)
+
   $(document).on('click', '.previews__btn__destroy', function() {
     $(this).parent().parent().remove();
     // 選択された要素の番号を取得
@@ -12,7 +11,7 @@ $(document).on('turbolinks:load', function() {
   });
   
   const buildFileField = (index)=> {
-    const html = `<input class="js-file" data-index="${index}" type="file" name="product[product_images_attributes][${index}][image]" id="product_product_images_attributes_${index}_image">`;
+    const html = `<input class="js-file" data-index="${index}" value="" type="file" name="product[product_images_attributes][${index}][image]" id="product_product_images_attributes_${index}_image">`;
     return html;
   }
 
@@ -43,6 +42,4 @@ $(document).on('turbolinks:load', function() {
     const blobUrl = window.URL.createObjectURL(file);
     $('.previews').append(buildImg(targetIndex, blobUrl));
   });
-
-  
 });

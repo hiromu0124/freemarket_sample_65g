@@ -12,4 +12,5 @@ class User < ApplicationRecord
   has_many :orders
   has_many :product_comments
   has_many :products
+
 end

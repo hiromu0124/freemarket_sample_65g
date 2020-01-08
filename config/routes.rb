@@ -13,14 +13,11 @@ Rails.application.routes.draw do
   resources :products, only: [:index, :new, :show, :create]
 
   resources :users, only: [:edit, :show]
-  get "RedBull", to:"users#edit2"
-  
-  resources :users, only: [:show]
-  get "identification", to: "users#identification"
 
   resources :users, only: [:index, :show] do
     get "logout", to: :logout
   end
+
   resources :product_comments, only: [:new,:create]
 
   resources :orders, only: :index

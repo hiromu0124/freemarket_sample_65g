@@ -18,7 +18,9 @@ Rails.application.routes.draw do
   resources :users, only: [:show]
   get "identification", to: "users#identification"
 
-  resources :users, only: [:index, :show]
+  resources :users, only: [:index, :show] do
+    get "logout", to: :logout
+  end
   resources :product_comments, only: [:new,:create]
 
   resources :orders, only: :index
@@ -28,7 +30,7 @@ Rails.application.routes.draw do
 
   get "RedBull", to:"users#edit2"
   post "create2", to:"products#create2"
-  get "logout", to:"users#logout"
+  
 
 end
 

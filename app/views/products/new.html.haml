@@ -18,11 +18,12 @@
         = f.fields_for :product_images do |image|
           %div{data: {index: "#{image.index}"}, class: 'js-file_group'}
             = image.file_field :image, class: 'js-file'
-            %span{class: 'js-remove'} 削除
+      %span{class: 'js-remove'} 削除
 
-        .single__main__product__image__images
-          ドラッグアンドドロップ
-          またはクリックしてファイルをアップロード
+      .single__main__product__image__images
+        .previews
+        ドラッグアンドドロップ
+        またはクリックしてファイルをアップロード
     .single__main__product__name
       .single__main__product__name__class
         .single__main__product__name__class__label

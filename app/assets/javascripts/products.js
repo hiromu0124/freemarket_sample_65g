@@ -1,16 +1,29 @@
 $(document).on('turbolinks:load', function() {
   // 画像用のinputを生成する関数
   console.log(2)
+  $(document).on('click', '.previews__btn__destroy', function() {
+    $(this).parent().parent().remove();
+    // 選択された要素の番号を取得
+    const index = $(this).data('index')
+    // js−file_groupの何番目の子要素を指定して削除する
+    $('.js-file')[0].remove();
+    // 画像入力欄が0個にならないようにしておく
+    if ($('.js-file').length == 0) $('#image-box').append(buildFileField(fileIndex[0]));
+  });
+  
   const buildFileField = (index)=> {
-    const html = `<input class="js-file" type="file" name="product[product_images_attributes][0][image]" id="product_product_images_attributes_0_image"><span class="js-remove">削除</span>`;
+    const html = `<input class="js-file" data-index="${index}" type="file" name="product[product_images_attributes][${index}][image]" id="product_product_images_attributes_${index}_image">`;
     return html;
   }
 
   const buildImg = (index, url)=> {
-    const html = `<img data-index="${index}" src="${url}" width="120px" height="120px"><div class="previews__btn">
-    <a class="previews__btn__update" href="#">編集</a>
-    <a class="previews__btn__destroy" href="#">削除</a>
-    </div>`;
+    const html = `<div class="previews_float">
+<img><img data-index="${index}" src="${url}" width="120px" height="120px">
+<div class="previews__btn">
+<div class="previews__btn__update">編集</div>
+<div data-index="${index}" class="previews__btn__destroy">削除</div>
+</div>
+</div>`;
     return html;
   }
 
@@ -31,9 +44,5 @@ $(document).on('turbolinks:load', function() {
     $('.previews').append(buildImg(targetIndex, blobUrl));
   });
 
-  $('.js-remove').on('click', '.js-remove', function() {
-    $(this).parent().remove();
-    // 画像入力欄が0個にならないようにしておく
-    if ($('.js-file').length == 0) $('#image-box').append(buildFileField(fileIndex[0]));
-  });
+  
 });

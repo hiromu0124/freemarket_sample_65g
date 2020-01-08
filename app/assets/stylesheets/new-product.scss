@@ -61,10 +61,12 @@
       &__zone {
         display: flex;
         .previews {
+          display: flex;
           &__btn {
             height: 43px;
             line-height: 43px;
             background-color: #f5f5f5;
+            display: flex;
             &__update {
               color: #0099e8;
               margin-left: 10px;
@@ -75,21 +77,26 @@
             }
           }
         }
-        &__images{
-          font-size: 14px;
-          font-family: 'arial';
-          white-space:pre-wrap;
-          height: 82px;
-          width: 100%;
-          background-color: #EEEEEE;
-          border:2px  dotted #DDDDDD;
-          text-align: center;
-          padding: 40px;
-
-          &__fild{
-            display: none;
+        label {
+          display: block;
+          width: 615px;
+          .single__main__product__image__zone__images {
+            font-size: 14px;
+            font-family: 'arial';
+            white-space:pre-wrap;
+            height: 82px;
+            width: 100%;
+            background-color: #EEEEEE;
+            border:2px  dotted #DDDDDD;
+            text-align: center;
+            padding: 40px 0;
+  
+            &__fild{
+              display: none;
+            }
           }
         }
+        
       }
     }
       &__name{

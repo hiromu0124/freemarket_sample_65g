@@ -28,6 +28,7 @@ Rails.application.routes.draw do
 
   get "RedBull", to:"users#edit2"
   post "create2", to:"products#create2"
+  get "logout", to:"users#logout"
 
 end
 

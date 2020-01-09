@@ -52,6 +52,10 @@ class ProductsController < ApplicationController
     @product_comment=ProductComment.new
   end
 
+
+  def edit
+    
+  end
 private
   def comment_params
     params.require(:product_comment).permit(:comment).merge(user_id: current_user.id, product_id: @products.id)

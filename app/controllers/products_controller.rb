@@ -36,7 +36,6 @@ class ProductsController < ApplicationController
       render :show
 
   end
-end
 
   def show
     @product = Product.find(params[:id])

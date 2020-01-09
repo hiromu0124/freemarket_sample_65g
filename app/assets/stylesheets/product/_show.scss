@@ -22,6 +22,10 @@
         height: 370px;
         width: 300px;
         background-color: #f5f5f5;
+        &__images{
+          height: 300px;
+          width: 300px;
+        }
       }
       &__table {
         height: 370px;
@@ -79,6 +83,12 @@
         background-color: #f5f5f5;
         border-radius: 20px;
         border: none;
+        &__icon{
+          color: white;
+        }
+        &__icon2{
+          color: palevioletred;
+        }
         span {
           margin-left: 5px;
         }
@@ -105,11 +115,50 @@
         }
       }
     }
+    &__btns{
+      margin: 30px auto;
+      padding: 40px 25px;
+      width: 650px;
+      background-color: white;
+      &__edit{
+        margin: 0 auto;
+        background-color: #ea352d;
+        width: 650px;
+        height: 50px;
+        text-align: center;
+        line-height: 50px;
+        color: white;
+      }
+      &__or{
+        height: 50px;
+        text-align: center;
+        font-size: 18px;
+        line-height: 50px;
+      }
+      &__pause{
+        margin: 0 auto;
+        background-color: #aaa;
+        width: 650px;
+        height: 50px;
+        text-align: center;
+        line-height: 50px;
+        color: white;
+      }
+      &__delete{
+        margin:10px auto ;
+        background-color: #aaa;
+        width: 650px;
+        height: 50px;
+        text-align: center;
+        line-height: 50px;
+        color: white;
+      }
+    }
   }
 
   .product__show__comments {
-    height: 830px;
     width: 650px;
+    height: 100%;
     margin: 0 auto;
     padding: 40px 25px 0;
     background-color: white;
@@ -253,7 +302,7 @@
           background-color: white;
           line-height: 50px;
         }
-        h3 {
+        .h3 {
           font-size: 16px;
           font-weight: bold;
           width: 190px;
@@ -261,11 +310,15 @@
           padding-left: 20px;
           background-color: white;
           line-height: 50px;
-        }
-        .likeicon {
-          position: absolute;
-          bottom: 20px;
-          right: 30px;
+          .likeicon {
+            position: absolute;
+            right: 20px;
+          }
+          .likeicon:hover {
+            position: absolute;
+            right: 20px;
+            color: red;
+          }
         }
       }
     }
@@ -288,7 +341,6 @@
       }
     }
     &__products {
-      width: 100%;
       display: flex;
       justify-content: space-between;
       &__image {
@@ -299,12 +351,11 @@
         p {
           font-size: 20px;
           width: 190px;
-          height: 50px;
           padding-left: 20px;
           background-color: white;
           line-height: 50px;
         }
-        h3 {
+        .h3 {
           font-size: 16px;
           font-weight: bold;
           width: 190px;
@@ -312,12 +363,11 @@
           padding-left: 20px;
           background-color: white;
           line-height: 50px;
-        }
         .likeicon {
           position: absolute;
-          bottom: 20px;
-          right: 30px;
+          right: 20px;
         }
+      }
       }
     }
   }

@@ -1,0 +1,59 @@
+.main
+  .buy_item_container
+    .h2
+      購入内容の確認
+    .buy_content
+      .buy_content_inner
+        .buy_item_box
+          = image_tag 'merukari1.jpg', size: '230x230', class: 'buy_item_image'
+          .buy_item_detail
+            .buy_item_name
+              シャツ
+            .buy_price
+              .buy_price_inner
+                ¥500
+              .item_shipping_free
+                (税込)送料込み
+    .buy_item_content
+      .buy_item_inner
+        .form
+          .buy_price_table
+            .buy_price_label
+              支払い金額
+              .buy_price_cell
+                .pay
+                  ¥500
+          -# .buy_accordion
+          %input{type: 'checkbox', class: 'buy_input'}
+            %p ポイントを使用 (所持ポイント: P0)
+          .buy_user_info
+            .buy_user_info_inner
+              .h3 
+                支払い方法
+            .user_info_text
+              = link_to "#", class: "text" do
+                .icon_plas_circle
+                  =icon('fas',"fas fa-plus-circle")
+              .buy_register_text
+                登録してください
+          .buy_user_info_under
+            .buy_user_info_under_inner
+              .clearfix
+                .left
+                  配送先
+                = link_to "#", class: "right" do
+                  変更する
+              .address
+                .p
+                  〒105-0000
+                  %br
+                  東京都＠＠＠＠＠ー＠＠＠
+                  %br
+                  つとむ
+          .buy_button
+            .submit
+              購入する
+
+              
+
+            

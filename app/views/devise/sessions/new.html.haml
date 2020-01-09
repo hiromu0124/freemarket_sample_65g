@@ -1,17 +1,32 @@
-%h2 Log in
-= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
-  .field
-    = f.label :email
-    %br/
-    = f.email_field :email, autofocus: true, autocomplete: "email"
-  .field
-    = f.label :password
-    %br/
-    = f.password_field :password, autocomplete: "current-password"
-  - if devise_mapping.rememberable?
-    .field
-      = f.check_box :remember_me
-      = f.label :remember_me
-  .actions
-    = f.submit "Log in"
-= render "devise/shared/links"
+.log_in
+  .log_in__header
+    =icon("fab","fab fa-apple",class:"log_in__header__icon")
+    =link_to "mercari" ,root_path,class:"log_in__header__home"
+  .log_in__main
+    .log_in__main__header
+      .log_in__main__header__new
+        アカウントをお持ち出ない方はこちら
+        =link_to new_user_registration_path,class:"log_in__main__header__new__btn__link" do
+          .log_in__main__header__new__btn
+            新規会員登録
+    .log_in__main__sns
+      =link_to class:"log_in__main__sns__facebook__btn__link" do
+        .log_in__main__sns__facebook
+          =icon("fab","fab fa-facebook-square",class:"log_in__main__sns__facebook__icon")
+          .log_in__main__sns__facebook__btn
+            Facebookでログイン
+      =link_to "",class:"log_in__main__sns__google__btn__link" do
+        .log_in__main__sns__google
+          =icon("fab","fab fa-google",class:"log_in__main__sns__google__icon")
+          .log_in__main__sns__google__btn
+            Googleでログイン
+    .log_in__main__form
+      = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+        .log_in__main__form__email
+          = f.email_field :email, autofocus: true, autocomplete: "email",class:"log_in__main__form__email__form"
+        .log_in__main__form__password
+          = f.password_field :password, autocomplete: "current-password",class:"log_in__main__form__password__form"
+        .log_in__main__form__actions
+          = f.submit "ログイン",class:"log_in__main__form__actions__btn"
+      = render "devise/shared/links"
+=render "products/product_footer"

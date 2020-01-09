@@ -1,0 +1,50 @@
+.new-user-main
+  .new-user-main__box
+    .new-user-main__box__title
+      支払い方法
+    .new-user-main__box__contents
+      = form_for @user,url: {controller:"registrations",action:"create"} do |f|
+        = render "devise/shared/error_messages", resource: @user
+        .field
+          = f.label :カード番号
+          %br/
+          = f.text_field :full_name
+        .field__box
+          = f.label :有効期限
+          .field__box__box
+            %select{name: "", class: "select-form"} 
+              %option{value: ""} -
+              %option{value: "0"} 0
+              %option{value: "1"} 1
+              %option{value: "2"} 2
+              %option{value: "3"} 3
+              %option{value: "4"} 4
+              %option{value: "5"} 5
+              %option{value: "6"} 6
+              %option{value: "7"} 7
+              %option{value: "8"} 8
+              %option{value: "9"} 9
+              %option{value: "10"} 10
+              %option{value: "11"} 11
+
+            %select{name: "", class: "select-form"} 
+              %option{value: ""} -
+              %option{value: "20"} 20
+              %option{value: "21"} 21
+              %option{value: "22"} 22
+              %option{value: "23"} 23
+              %option{value: "24"} 24
+              %option{value: "25"} 25
+              %option{value: "26"} 26
+              %option{value: "27"} 27
+              %option{value: "28"} 28
+              %option{value: "29"} 29
+              %option{value: "30"} 30
+        .field
+          = f.label :セキュリティコード
+          %br/
+          = f.text_field :tell, placeholder:"カード背面もしくは3桁の番号" ,class: "default-text"
+        .actions
+          = f.submit "次へ進む", class: 'next-btn'
+
+

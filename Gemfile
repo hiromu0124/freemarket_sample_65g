@@ -74,9 +74,14 @@ group :production do
   gem 'unicorn', '5.4.1'
 end
 
+gem 'active_hash'
 gem 'haml-rails'
 gem 'font-awesome-sass'
 gem 'jquery-rails'
 gem 'devise'
+gem 'jp_prefecture'
 gem 'carrierwave'
+
 gem 'mini_magick'
+gem "gretel"
+

@@ -8,10 +8,8 @@
     width: 900px;
     margin: 0px auto;
     margin-top: 10px;
-
     &__title{
       font-size: 30px;
-
     }
     #main-header__top__form{
       position:relative;
@@ -179,4 +177,7 @@
 
 a {
   text-decoration: none;
+}
+.link{
+  color: black;
 }

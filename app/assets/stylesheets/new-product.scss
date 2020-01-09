@@ -55,8 +55,8 @@
         font-size: 14px;
         font-weight: lighter;
       }
-      .js-file_group {
-        // display: none;
+      .js-file{
+        display: none;
       }
       &__zone {
         display: flex;
@@ -79,7 +79,7 @@
         }
         label {
           display: block;
-          width: 615px;
+          width: 700px;
           .single__main__product__image__zone__images {
             font-size: 14px;
             font-family: 'arial';

@@ -11,7 +11,18 @@ $(document).on('turbolinks:load', function() {
   });
   
   const buildFileField = (index)=> {
-    const html = `<input class="js-file" data-index="${index}" value="" type="file" name="product[product_images_attributes][${index}][image]" id="product_product_images_attributes_${index}_image">`;
+    const html = `<label data-index="${index}">
+    <div class="js-file_group">
+    <input class="js-file" data-index="${index}" value="" type="file" name="product[product_images_attributes][${index}][image]" id="product_product_images_attributes_${index}_image">
+    </div>
+    <div class="single__main__product__image__zone__images">
+    ドラッグアンドドロップ
+    またはクリックしてファイルをアップロード
+    </div>
+    </label>`;
+
+
+
     return html;
   }
 
@@ -41,5 +52,6 @@ $(document).on('turbolinks:load', function() {
     const file = e.target.files[0];
     const blobUrl = window.URL.createObjectURL(file);
     $('.previews').append(buildImg(targetIndex, blobUrl));
+    $('.single__main__product__image__zone__images')[0].remove();
   });
 });

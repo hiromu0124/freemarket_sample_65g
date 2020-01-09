@@ -6,7 +6,7 @@ class UsersController < ApplicationController
   end
   
   def edit2
-    
+    @user=User.find(current_user.id)
   end
   def logout
   end

@@ -51,8 +51,8 @@
     .product__show__message
       何回か着ましたが目立つような汚れはありませんが着ていたので神経質な方の購入は控え下さい。
     .product__show__bottom
-      %button.product__show__bottom__like_btn
-        %i.far.fa-heart
+      %button.product__show__bottom__like_btn 
+        =icon("fas","far fa-heart",class:"product__show__bottom__like_btn__icon")
         %span いいね!
       %button.product__show__bottom__report_btn
         %i.far.fa-flag
@@ -60,6 +60,21 @@
       = link_to "https://www.mercari.com/jp/safe/description/", class: "relief" do
         %i.fas.fa-unlock-alt
         %span あんしん・あんぜんへの取り組み
+
+
+  .product__show__btns
+    =link_to "",class:"link" do
+      .product__show__btns__edit  
+        商品編集
+    .product__show__btns__or
+      or
+    =link_to class:"link" do
+      .product__show__btns__pause
+        出品を一旦停止する
+    =link_to class:"link" do
+      .product__show__btns__delete
+        この商品を削除する
+            
 
 
   .product__show__comments

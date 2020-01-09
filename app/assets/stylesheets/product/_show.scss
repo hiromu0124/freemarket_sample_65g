@@ -83,6 +83,12 @@
         background-color: #f5f5f5;
         border-radius: 20px;
         border: none;
+        &__icon{
+          color: white;
+        }
+        &__icon2{
+          color: palevioletred;
+        }
         span {
           margin-left: 5px;
         }
@@ -107,6 +113,45 @@
         span {
           margin-left: 5px;
         }
+      }
+    }
+    &__btns{
+      margin: 30px auto;
+      padding: 40px 25px;
+      width: 650px;
+      background-color: white;
+      &__edit{
+        margin: 0 auto;
+        background-color: #ea352d;
+        width: 650px;
+        height: 50px;
+        text-align: center;
+        line-height: 50px;
+        color: white;
+      }
+      &__or{
+        height: 50px;
+        text-align: center;
+        font-size: 18px;
+        line-height: 50px;
+      }
+      &__pause{
+        margin: 0 auto;
+        background-color: #aaa;
+        width: 650px;
+        height: 50px;
+        text-align: center;
+        line-height: 50px;
+        color: white;
+      }
+      &__delete{
+        margin:10px auto ;
+        background-color: #aaa;
+        width: 650px;
+        height: 50px;
+        text-align: center;
+        line-height: 50px;
+        color: white;
       }
     }
   }

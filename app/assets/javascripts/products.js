@@ -16,8 +16,7 @@ $(document).on('turbolinks:load', function() {
     <input class="js-file" data-index="${index}" type="file" name="product[product_images_attributes][${index}][image]" id="product_product_images_attributes_${index}_image">
     </div>
     <div class="single__main__product__image__zone__images" data-index="${index}">
-    ドラッグアンドドロップ
-    またはクリックしてファイルをアップロード
+    クリックしてファイルをアップロード
     </div>
     </label>`;
 
@@ -37,27 +36,23 @@ $(document).on('turbolinks:load', function() {
 
   // file_fieldのnameに動的なindexをつける為の配列
   let fileIndex = [1,2,3,4,5,6,7,8,9,10];
-  const remove_index = 0;
+  let remove_number = 1
 
   $('.single__main__product__image__zone').on('change', '.js-file', function(e) {
     // fileIndexの先頭の数字を使ってinputを作る
-    $('.add_form').append(buildFileField(fileIndex[0]));
+    $('.add_form').append(buildFileField(remove_number));
     // console.log(fileIndex[0])
-    console.log($('.single__main__product__image__zone__images')[fileIndex[0]-1])
     $('.single__main__product__image__zone__images')[fileIndex[0] - 1].remove();
-    console.log(fileIndex[0] - 1)
-    
-    fileIndex.shift();
+    remove_number += 1
+    // fileIndex.shift();
     // 末尾の数に1足した数を追加する
-    fileIndex.push(fileIndex[fileIndex.length - 1] + 1)
+    // fileIndex.push(fileIndex[fileIndex.length - 1] + 1)
 
     const targetIndex = $(this).parent().data('index');
     // ファイルのブラウザ上でのURLを取得する
     const file = e.target.files[0];
     const blobUrl = window.URL.createObjectURL(file);
     
-    $('.previews').append(buildImg(fileIndex[0] - 2, blobUrl));
-    
-    console.log();
+    $('.previews').append(buildImg(fileIndex[0] - 1, blobUrl));
   });
 });

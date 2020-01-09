@@ -5,7 +5,7 @@ $(document).on('turbolinks:load', function() {
     // 選択された要素の番号を取得
     const index = $(this).data('index')
     // js−file_groupの何番目の子要素を指定して削除する
-    $('.js-file')[0].remove();
+    $('.js-file')[index].remove();
     // 画像入力欄が0個にならないようにしておく
     if ($('.js-file').length == 0) $('#image-box').append(buildFileField(fileIndex[0]));
   });
@@ -13,15 +13,13 @@ $(document).on('turbolinks:load', function() {
   const buildFileField = (index)=> {
     const html = `<label data-index="${index}">
     <div class="js-file_group">
-    <input class="js-file" data-index="${index}" value="" type="file" name="product[product_images_attributes][${index}][image]" id="product_product_images_attributes_${index}_image">
+    <input class="js-file" data-index="${index}" type="file" name="product[product_images_attributes][${index}][image]" id="product_product_images_attributes_${index}_image">
     </div>
-    <div class="single__main__product__image__zone__images">
+    <div class="single__main__product__image__zone__images" data-index="${index}">
     ドラッグアンドドロップ
     またはクリックしてファイルをアップロード
     </div>
     </label>`;
-
-
 
     return html;
   }
@@ -39,10 +37,16 @@ $(document).on('turbolinks:load', function() {
 
   // file_fieldのnameに動的なindexをつける為の配列
   let fileIndex = [1,2,3,4,5,6,7,8,9,10];
+  const remove_index = 0;
 
-  $('.js-file_group').on('change', '.js-file', function(e) {
+  $('.single__main__product__image__zone').on('change', '.js-file', function(e) {
     // fileIndexの先頭の数字を使ってinputを作る
-    $('.js-file_group').append(buildFileField(fileIndex[0]));
+    $('.add_form').append(buildFileField(fileIndex[0]));
+    // console.log(fileIndex[0])
+    console.log($('.single__main__product__image__zone__images')[fileIndex[0]-1])
+    $('.single__main__product__image__zone__images')[fileIndex[0] - 1].remove();
+    console.log(fileIndex[0] - 1)
+    
     fileIndex.shift();
     // 末尾の数に1足した数を追加する
     fileIndex.push(fileIndex[fileIndex.length - 1] + 1)
@@ -51,7 +55,9 @@ $(document).on('turbolinks:load', function() {
     // ファイルのブラウザ上でのURLを取得する
     const file = e.target.files[0];
     const blobUrl = window.URL.createObjectURL(file);
-    $('.previews').append(buildImg(targetIndex, blobUrl));
-    $('.single__main__product__image__zone__images')[0].remove();
+    
+    $('.previews').append(buildImg(fileIndex[0] - 2, blobUrl));
+    
+    console.log();
   });
 });

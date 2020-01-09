@@ -17,11 +17,12 @@
       .single__main__product__image__zone
         .previews
         = f.fields_for :product_images do |image|
-          %label{class: 'js-file_group', data: {index: "#{image.index}"}}
-            = image.file_field :image, class: 'js-file', data: {index: "#{image.index}"}
-            %div{class: 'single__main__product__image__zone__images', data: {index: "#{image.index}"}}
-              ドラッグアンドドロップ
-              またはクリックしてファイルをアップロード
+          .add_form
+            %label{class: 'js-file_group', data: {index: "#{image.index}"}}
+              = image.file_field :image, class: 'js-file', data: {index: "#{image.index}"}
+              %div{class: 'single__main__product__image__zone__images', data: {index: "#{image.index}"}}
+                ドラッグアンドドロップ
+                またはクリックしてファイルをアップロード
     .single__main__product__name
       .single__main__product__name__class
         .single__main__product__name__class__label

@@ -85,8 +85,7 @@
             発送元の地域
           .single__main__product__delivery__form__area__Required
             必須
-        = f.select :prefecture_id, class:"single__main__product__delivery__areaform" do
-          %option{value:  "1"}  --
+        = f.collection_select :prefecture_id, Prefecture.all, :id, :name, prompt: "--", selected: current_user.prefecture_id
         .single__main__product__delivery__form__area
           .single__main__product__delivery__form__area__label
             発送までの日数

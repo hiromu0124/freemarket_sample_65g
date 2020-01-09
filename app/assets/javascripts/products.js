@@ -41,12 +41,8 @@ $(document).on('turbolinks:load', function() {
   $('.single__main__product__image__zone').on('change', '.js-file', function(e) {
     // fileIndexの先頭の数字を使ってinputを作る
     $('.add_form').append(buildFileField(remove_number));
-    // console.log(fileIndex[0])
     $('.single__main__product__image__zone__images')[fileIndex[0] - 1].remove();
     remove_number += 1
-    // fileIndex.shift();
-    // 末尾の数に1足した数を追加する
-    // fileIndex.push(fileIndex[fileIndex.length - 1] + 1)
 
     const targetIndex = $(this).parent().data('index');
     // ファイルのブラウザ上でのURLを取得する

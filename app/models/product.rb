@@ -1,5 +1,4 @@
 class Product < ApplicationRecord
-  mount_uploader :image, ImageUploader
   
   has_many :product_messages, dependent: :destroy
   has_many :product_likes, dependent: :destroy

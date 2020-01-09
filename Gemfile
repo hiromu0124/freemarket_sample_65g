@@ -81,5 +81,7 @@ gem 'jquery-rails'
 gem 'devise'
 gem 'jp_prefecture'
 gem 'carrierwave'
+
 gem 'mini_magick'
 gem "gretel"
+

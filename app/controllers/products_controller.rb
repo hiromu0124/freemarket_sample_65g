@@ -1,4 +1,6 @@
 class ProductsController < ApplicationController
+  before_action :set_product, only: [:show, :destroy]
+  
   def index
     @category_woman=ProductCategory.find(1)
     @product_womans=Product.where(product_category_id:@category_woman.id)
@@ -38,7 +40,6 @@ class ProductsController < ApplicationController
   end
 
   def show
-    @product = Product.find(params[:id])
     @category_product=@product.product_category_id
     @user_product= @product.user.id
     @product_category=Product.where(product_category_id:@category_product)
@@ -52,15 +53,33 @@ class ProductsController < ApplicationController
     @product_comment=ProductComment.new
   end
 
+  def destroy
+    if @product.destroy 
+      redirect_to root_path
+    else
+      redirect_to product_destroy_miss_path
+    end
+  end
+
+  def destroy_miss
+  end
+
+
 
   def edit
     
   end
 
-  private
+
+private
   def comment_params
     params.require(:product_comment).permit(:comment).merge(user_id: current_user.id, product_id: @products.id)
   end
+  def set_product
+    @product = Product.find(params[:id])
+  end
+
+
 
   def product_params
     params.require(:product).permit(:name, :product_explain, :price, :product_category_id, :product_brand_id, :product_send_day, :prefecture_id, :product_condition, :product_fee, product_images_attributes: [:image]).merge(user_id: current_user.id, transaction_status: '出品中')

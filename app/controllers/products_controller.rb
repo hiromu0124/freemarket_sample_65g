@@ -22,6 +22,8 @@ class ProductsController < ApplicationController
   end
 
   def create
+    Product.create(product_params)
+    redirect_to action: :new
     
   end
 
@@ -34,8 +36,8 @@ class ProductsController < ApplicationController
       end
     else
       render :show
+
   end
-end
 
   def show
     @category_product=@product.product_category_id
@@ -62,6 +64,12 @@ end
   def destroy_miss
   end
 
+
+
+  def edit
+    
+  end
+
 private
   def comment_params
     params.require(:product_comment).permit(:comment).merge(user_id: current_user.id, product_id: @products.id)
@@ -71,3 +79,8 @@ private
   end
 end
 
+  private
+  def product_params
+    params.require(:product).permit(:name, :product_explain, :price, :product_category_id, :product_brand_id, :product_send_day, :prefecture_id, :product_condition, :product_fee, product_images_attributes: [:image]).merge(user_id: current_user.id, transaction_status: '出品中')
+  end
+end

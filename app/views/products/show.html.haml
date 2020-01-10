@@ -5,7 +5,7 @@
     .product__show__detail
       .product__show__detail__picture
         -@images.each do |image|
-          =image_tag image.image,class:"product__show__detail__picture__images"
+          =image_tag image.image.url,class:"product__show__detail__picture__images"
       .product__show__detail__table
         %table
           %tr

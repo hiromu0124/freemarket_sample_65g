@@ -38,7 +38,6 @@ class ProductsController < ApplicationController
   end
 
   def show
-    # binding.pry
     @product = Product.find(params[:id])
     @category_product=@product.product_category_id
     @user_product= @product.user.id

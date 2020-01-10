@@ -36,7 +36,7 @@ class ProductsController < ApplicationController
       end
     else
       render :show
-
+    end
   end
 
   def show
@@ -48,7 +48,7 @@ class ProductsController < ApplicationController
     @product_image=ProductImage.where(product_id: @product_user.ids)
     @product_0 = Product.find_by(id:@product.id-1)
     @product_1 = Product.find_by(id:@product.id+1)
-    @images = ProductImage.where(product_id: params[:id])
+    @images = ProductImage.where(product_id: params[:id]).limit(1)
     @comments = ProductComment.where(product_id: params[:id])
     @product_comment=ProductComment.new
   end
@@ -70,6 +70,7 @@ class ProductsController < ApplicationController
     
   end
 
+
 private
   def comment_params
     params.require(:product_comment).permit(:comment).merge(user_id: current_user.id, product_id: @products.id)
@@ -77,10 +78,11 @@ private
   def set_product
     @product = Product.find(params[:id])
   end
-end
 
-  private
+
+
   def product_params
     params.require(:product).permit(:name, :product_explain, :price, :product_category_id, :product_brand_id, :product_send_day, :prefecture_id, :product_condition, :product_fee, product_images_attributes: [:image]).merge(user_id: current_user.id, transaction_status: '出品中')
   end
+
 end

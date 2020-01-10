@@ -25,13 +25,14 @@
       .items__images
         -@product_woman_images.each do |image|
           =link_to product_path(image.product.id) do
+            .items__images__main__h3
+              ¥
+              =image.product.price
             .items__images__main
               = image_tag image.image.url, size: '230x230', class: 'items__images__main__image'
+
               .items__images__main__p
                 =image.product.name
-              .items__images__main__h3
-                ¥
-                =image.product.price
   .main_contents
     .items
       .items_name#man
@@ -44,13 +45,13 @@
       .items__images
         -@product_man_images.each do |image|
           =link_to product_path(image.product.id) do
+            .items__images__main__h3
+              ¥
+              =image.product.price
             .items__images__main
               = image_tag image.image.url, size: '230x230', class: 'items__images__main__image'
               .items__images__main__p
                 =image.product.name
-              .items__images__main__h3
-                ¥
-                =image.product.price
   .main_contents
     .items
       .items_name#camera
@@ -63,13 +64,13 @@
       .items__images
         -@product_camera_images.each do |image|
           =link_to product_path(image.product.id) do
+            .items__images__main__h3
+              ¥
+              =image.product.price
             .items__images__main
               = image_tag image.image.url, size: '230x230', class: 'items__images__main__image'
               .items__images__main__p
                 =image.product.name
-              .items__images__main__h3
-                ¥
-                =image.product.price
   .main_contents
     .items
       .items_name#toy
@@ -82,10 +83,11 @@
       .items__images
         -@product_toy_images.each do |image|
           =link_to product_path(image.product.id) do
+            .items__images__main__h3
+              ¥
+              =image.product.price
             .items__images__main
               = image_tag image.image.url, size: '230x230', class: 'items__images__main__image'
               .items__images__main__p
                 =image.product.name
-              .items__images__main__h3
-                ¥
-                =image.product.price
+            

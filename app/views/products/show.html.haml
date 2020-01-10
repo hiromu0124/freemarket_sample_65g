@@ -62,7 +62,7 @@
           %i.fas.fa-unlock-alt
           %span あんしん・あんぜんへの取り組み
     -else
-      =link_to "",class:"link" do
+      =link_to edit_product_path,class:"link" do
         .product__show__btns__edit  
           商品編集
       .product__show__btns__or
@@ -114,27 +114,29 @@
         さんのその他の出品
     .otherproducts__in_user__products
       -@product_image.each do |image| 
-        .otherproducts__in_user__products__image
-          = image_tag image.image.url, size: '210x230', class: 'otherproducts__image'
-          .otherproducts__in_user__products__image__name
-            =image.product.name
-          .h3
-            ¥
-            =image.product.price
-            =link_to "" do
-              %i.far.fa-heart.likeicon
+        =link_to product_path(image.product.id),class:"link" do
+          .otherproducts__in_user__products__image
+            = image_tag image.image.url, size: '210x230', class: 'otherproducts__image'
+            .otherproducts__in_user__products__image__name
+              =image.product.name
+            .h3
+              ¥
+              =image.product.price
+              =link_to "" do
+                %i.far.fa-heart.likeicon
   .otherproducts__in_category
     .otherproducts__in_category__message
       = link_to '#', class: 'otherproducts__in_category__message__link' do
         =@product.product_category.name
     .otherproducts__in_category__products
       -@category_image.each do |image|
-        .otherproducts__in_category__products__image
-          = image_tag image.image.url, size: '210x230', class: 'otherproducts__image'
-          .otherproducts__in_category__products__image__name
-            =image.product.name
-          .h3
-            ¥
-            =image.product.price
-            =link_to "" do
-              %i.far.fa-heart.likeicon
+        =link_to product_path(image.product.id),class:"link" do
+          .otherproducts__in_category__products__image
+            = image_tag image.image.url, size: '210x230', class: 'otherproducts__image'
+            .otherproducts__in_category__products__image__name
+              =image.product.name
+            .h3
+              ¥
+              =image.product.price
+              =link_to "" do
+                %i.far.fa-heart.likeicon

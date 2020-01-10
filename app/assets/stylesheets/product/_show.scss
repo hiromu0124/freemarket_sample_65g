@@ -269,7 +269,7 @@
     }
   }
   .otherproducts__in_user {
-    height: 690px;
+    height: 800px;
     width: 700px;
     margin: 0 auto 8px auto;
     &__message {
@@ -289,7 +289,9 @@
       width: 100%;
       display: flex;
       justify-content: space-between;
+      flex-wrap: wrap;
       &__image {
+        padding-top: 10px;
         position: relative;
         .otherproducts__image {
           vertical-align: bottom;
@@ -342,8 +344,10 @@
     }
     &__products {
       display: flex;
+      flex-wrap: wrap;
       justify-content: space-between;
       &__image {
+        padding-top: 10px;
         position: relative;
         .otherproducts__image {
           vertical-align: bottom;

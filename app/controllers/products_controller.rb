@@ -47,7 +47,7 @@ class ProductsController < ApplicationController
     @product_image=ProductImage.where(product_id: @product_user.ids)
     @product_0 = Product.find_by(id:@product.id-1)
     @product_1 = Product.find_by(id:@product.id+1)
-    @images = ProductImage.where(product_id: params[:id])
+    @images = ProductImage.where(product_id: params[:id]).limit(1)
     @comments = ProductComment.where(product_id: params[:id])
     @product_comment=ProductComment.new
   end

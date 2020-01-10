@@ -58,6 +58,12 @@ class ProductsController < ApplicationController
     redirect_to root_path
   end
 
+
+
+  def edit
+    
+  end
+
 private
   def comment_params
     params.require(:product_comment).permit(:comment).merge(user_id: current_user.id, product_id: @products.id)

@@ -11,11 +11,13 @@ Rails.application.routes.draw do
     post 'done', to: 'users/registrations#done'
   end
   root to: 'products#index'
-  resources :products, only: [:index, :new, :show, :create, :destroy]
 
-  resources :users, only: [:edit, :show]
 
-  resources :users, only: [:index, :show] do
+  resources :products, only: [:index, :new, :show, :create, :edit, :destroy]
+
+
+
+  resources :users, only: [:index, :show, :edit] do
     get "logout", to: :logout
   end
 

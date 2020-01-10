@@ -1,4 +1,6 @@
 class ProductsController < ApplicationController
+  before_action :set_product, only: [:show, :destroy]
+  
   def index
     @category_woman=ProductCategory.find(1)
     @product_womans=Product.where(product_category_id:@category_woman.id)
@@ -36,7 +38,6 @@ class ProductsController < ApplicationController
 end
 
   def show
-    @product = Product.find(params[:id])
     @category_product=@product.product_category_id
     @user_product= @product.user.id
     @product_category=Product.where(product_category_id:@category_product)
@@ -51,14 +52,22 @@ end
   end
 
   def destroy
-    product = Product.find(params[:id])
-    product.destroy 
-    redirect_to root_path
+    if @product.destroy 
+      redirect_to root_path
+    else
+      redirect_to product_destroy_miss_path
+    end
+  end
+
+  def destroy_miss
   end
 
 private
   def comment_params
     params.require(:product_comment).permit(:comment).merge(user_id: current_user.id, product_id: @products.id)
+  end
+  def set_product
+    @product = Product.find(params[:id])
   end
 end
 

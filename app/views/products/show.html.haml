@@ -115,7 +115,7 @@
     .otherproducts__in_user__products
       -@product_image.each do |image| 
         .otherproducts__in_user__products__image
-          = image_tag image.image, size: '210x230', class: 'otherproducts__image'
+          = image_tag image.image.url, size: '210x230', class: 'otherproducts__image'
           .otherproducts__in_user__products__image__name
             =image.product.name
           .h3
@@ -130,7 +130,7 @@
     .otherproducts__in_category__products
       -@category_image.each do |image|
         .otherproducts__in_category__products__image
-          = image_tag image.image, size: '210x230', class: 'otherproducts__image'
+          = image_tag image.image.url, size: '210x230', class: 'otherproducts__image'
           .otherproducts__in_category__products__image__name
             =image.product.name
           .h3

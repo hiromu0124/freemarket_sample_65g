@@ -1,5 +1,5 @@
 class ProductsController < ApplicationController
-  before_action :set_product, only: [:show, :destroy, :edit]
+  before_action :set_product, only: [:show, :destroy, :edit,:update]
   
   def index
     @category_woman=ProductCategory.find(1)
@@ -64,10 +64,13 @@ class ProductsController < ApplicationController
   def destroy_miss
   end
 
-
+  def update
+    @product.update(product_params)
+    redirect_to product_path(@product)
+  end
 
   def edit
-    
+    @product_images=@product.product_images.where(product_id:params[:id])
   end
 
 
@@ -82,7 +85,7 @@ private
 
 
   def product_params
-    params.require(:product).permit(:name, :product_explain, :price, :product_category_id, :product_brand_id, :product_send_day, :prefecture_id, :product_condition, :product_fee, product_images_attributes: [:image]).merge(user_id: current_user.id, transaction_status: '出品中')
+    params.require(:product).permit(:name, :product_explain, :price, :product_category_id, :product_brand_id, :product_send_day, :prefecture_id, :product_condition, :product_fee, product_images_attributes: [:image, :id, :_destroy]).merge(user_id: current_user.id, transaction_status: '出品中')
   end
 
 end

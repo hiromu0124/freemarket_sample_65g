@@ -10,8 +10,10 @@ Rails.application.routes.draw do
     get 'done', to: 'users/registrations#done'
   end
   root to: 'products#index'
-  resources :products, only: [:index, :new, :show, :create]
-
+  resources :products, only: [:index, :new, :show, :create] do
+    get "show2", to: :show2
+  end
+   
   resources :users, only: [:edit, :show]
   get "RedBull", to:"users#edit2"
   
@@ -21,9 +23,10 @@ Rails.application.routes.draw do
   resources :users, only: [:index, :show]
   resources :product_comments, only: [:new,:create]
 
-  resources :orders, only: :index
+  resources :orders, only: [:create]
 
   resources :creditcards, only: [:index, :new, :create]
+
 
 
   get "RedBull", to:"users#edit2"

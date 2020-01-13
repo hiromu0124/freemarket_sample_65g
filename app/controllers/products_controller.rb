@@ -50,6 +50,12 @@ end
     @product_comment=ProductComment.new
   end
 
+  def show2
+    @order = Order.new
+    @product = Product.find(params[:product_id])
+    @product_image=ProductImage.where(product_id:@product.id)
+  end
+
 private
   def comment_params
     params.require(:product_comment).permit(:comment).merge(user_id: current_user.id, product_id: @products.id)

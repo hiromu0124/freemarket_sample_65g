@@ -57,7 +57,12 @@ class Users::RegistrationsController < Devise::RegistrationsController
       session[:id] = @user.id
       redirect_to done_path
     else
-      
+      if params[:sns_auth] == 'true'
+        pass = Devise.friendly_token
+        params[:user][:password] = pass
+        params[:user][:password_confirmation] = pass
+      end
+      super
     end
   end
 

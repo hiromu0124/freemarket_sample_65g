@@ -11,6 +11,8 @@ class DeviseCreateUsers < ActiveRecord::Migration[5.2]
       t.string :name_kana,null: false
       t.string :tell, null: false, unique:true
       t.string :thumbnail
+      t.string :uid
+      t.string :provider
       t.text :self_introduction
       t.string :postalcode,null:false
       t.string :city,null:false

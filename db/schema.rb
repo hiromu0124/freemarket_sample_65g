@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_12_26_091717) do
+ActiveRecord::Schema.define(version: 2020_01_13_082621) do
 
   create_table "orders", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "user_id", null: false
@@ -87,6 +87,15 @@ ActiveRecord::Schema.define(version: 2019_12_26_091717) do
     t.index ["user_id"], name: "index_products_on_user_id"
   end
 
+  create_table "sns_credentials", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "provider"
+    t.string "uid"
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_sns_credentials_on_user_id"
+  end
+
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -95,6 +104,8 @@ ActiveRecord::Schema.define(version: 2019_12_26_091717) do
     t.string "name_kana", null: false
     t.string "tell", null: false
     t.string "thumbnail"
+    t.string "uid"
+    t.string "provider"
     t.text "self_introduction"
     t.string "postalcode", null: false
     t.string "city", null: false
@@ -125,4 +136,5 @@ ActiveRecord::Schema.define(version: 2019_12_26_091717) do
   add_foreign_key "products", "product_brands"
   add_foreign_key "products", "product_categories"
   add_foreign_key "products", "users"
+  add_foreign_key "sns_credentials", "users"
 end

@@ -12,7 +12,7 @@ CarrierWave.configure do |config|
       provider: 'AWS',
       aws_access_key_id: Rails.application.credentials.aws[:access_key_id],
       aws_secret_access_key: Rails.application.credentials.aws[:secret_access_key],
-      region: 'your_region' # 東京はap-northeast-1
+      region: 'ap-northeast-1' #リージョン指定
     }
     config.fog_directory  = 'freemarket-sample-65g' #S3のバケット名
     config.asset_host = 'https://s3-your_region.amazonaws.com/freemarket-sample-65g'

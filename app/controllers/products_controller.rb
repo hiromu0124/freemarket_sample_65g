@@ -1,6 +1,6 @@
 class ProductsController < ApplicationController
   before_action :set_product, only: [:show, :destroy, :edit,:update]
-  
+
   def index
     @category_woman=ProductCategory.find(1)
     @product_womans=Product.where(product_category_id:@category_woman.id)
@@ -64,10 +64,12 @@ class ProductsController < ApplicationController
   def destroy_miss
   end
 
+
   def update
     @product.update(product_params)
     redirect_to product_path(@product)
   end
+
 
   def edit
     @product_images=@product.product_images.where(product_id:params[:id])

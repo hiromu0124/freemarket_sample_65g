@@ -80,8 +80,10 @@ gem 'font-awesome-sass'
 gem 'jquery-rails'
 gem 'devise'
 gem 'jp_prefecture'
-gem 'carrierwave'
-
 gem 'mini_magick'
 gem "gretel"
+
+# for image uploader with AWS S3
+gem 'carrierwave'
+gem 'fog-aws'
 

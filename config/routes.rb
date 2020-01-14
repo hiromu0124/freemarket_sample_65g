@@ -11,7 +11,10 @@ Rails.application.routes.draw do
     post 'done', to: 'users/registrations#done'
   end
   root to: 'products#index'
-  resources :products, only: [:index, :new, :show, :create, :edit,:update]
+
+  resources :products, only: [:index, :new, :show, :create, :edit, :destroy,:update] do 
+    get "destroy_miss", to: :destroy_miss
+  end
 
 
   resources :users, only: [:index, :show, :edit] do

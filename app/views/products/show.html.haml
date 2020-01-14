@@ -44,6 +44,7 @@
       %span¥
       %span=@product.price
       (税込) 送料込み
+
     -if user_signed_in? && current_user.id != @product.user_id
       = link_to "", class: 'product__show__buy_btn'do
         購入画面に進む
@@ -70,12 +71,10 @@
       =link_to class:"link" do
         .product__show__btns__pause
           出品を一旦停止する
-      =link_to class:"link" do
+      =link_to product_path(@product) ,class:"link", method: :delete do
         .product__show__btns__delete
           この商品を削除する
-            
-
-
+          
   .product__show__comments
     -@comments.each do |comment|
       .product__show__comment  

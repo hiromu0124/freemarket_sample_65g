@@ -21,7 +21,7 @@
               =image_tag  image.image.url,height: "120px" ,width: "120px",class:"previews_float__image"
               .previews__btn
                 .previews__btn__update 編集
-                .previews__btn__destroy{"data-index" => "${index}"} 削除
+                .previews__btn__destroy{data: {index: "${index}"}} 削除
         %label{class:"js-file_group"}
           %div{class: 'single__main__product__image__zone__images'}
             クリックしてファイルをアップロード

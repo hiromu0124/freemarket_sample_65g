@@ -64,8 +64,11 @@ class ProductsController < ApplicationController
 
 
   def update
-    @product.update(product_params)
-    redirect_to product_path(@product)
+    if @product.update(product_params)
+      redirect_to product_path(@product)
+    else
+      redirect_to product_destroy_miss_path
+    end
   end
 
 

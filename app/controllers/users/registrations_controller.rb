@@ -7,6 +7,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
   # GET /resource/sign_up
 
+
   def new  # 新規インスタンス作成
     @user = User.new
   end

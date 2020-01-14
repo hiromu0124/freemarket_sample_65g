@@ -38,7 +38,7 @@ $(document).on('turbolinks:load', function() {
   let fileIndex = [1,2,3,4,5,6,7,8,9,10];
   let remove_number = 1
 
-  $('.single__main__product__image__zone').on('change', '.js-file', function(e) {
+  $('.single__main__product__image__zone2').on('change', '.js-file', function(e) {
     // fileIndexの先頭の数字を使ってinputを作る
     $('.add_form').append(buildFileField(remove_number));
     $('.single__main__product__image__zone__images')[fileIndex[0] - 1].remove();
@@ -49,6 +49,12 @@ $(document).on('turbolinks:load', function() {
     const file = e.target.files[0];
     const blobUrl = window.URL.createObjectURL(file);
     
+    $('.previews').append(buildImg(fileIndex[0] - 1, blobUrl));
+  });
+
+  $('.single__main__product__image__zone').on('change', '.js-file', function(e) {
+    const file = e.target.files[0];
+    const blobUrl = window.URL.createObjectURL(file);
     $('.previews').append(buildImg(fileIndex[0] - 1, blobUrl));
   });
 });

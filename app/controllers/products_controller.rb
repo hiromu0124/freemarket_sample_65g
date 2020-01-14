@@ -1,6 +1,6 @@
 class ProductsController < ApplicationController
-  before_action :set_product, only: [:show, :destroy]
-  
+  before_action :set_product, only: [:show, :destroy, :edit,:update]
+
   def index
     @category_woman=ProductCategory.find(1)
     @product_womans=Product.where(product_category_id:@category_woman.id)
@@ -24,18 +24,16 @@ class ProductsController < ApplicationController
   def create
     Product.create(product_params)
     redirect_to action: :index
-    
   end
 
   def create2
-    @products = Product.find(1)
     @comment=ProductComment.new(comment_params)
     if @comment.save
       respond_to do |format|
-        format.html { redirect_to product_path( @products.id) } 
+        format.html { redirect_to product_path(comment_params[:product_id]) } 
       end
     else
-      render :show
+
     end
   end
 
@@ -44,8 +42,8 @@ class ProductsController < ApplicationController
     @user_product= @product.user.id
     @product_category=Product.where(product_category_id:@category_product)
     @product_user=Product.where(user_id:@user_product)
-    @category_image=ProductImage.where(product_id:@product_category).limit(6)
-    @product_image=ProductImage.where(product_id: @product_user.ids).limit(6)
+    @category_image=ProductImage.where(product_id:@product_category)
+    @product_image=ProductImage.where(product_id: @product_user.ids)
     @product_0 = Product.find_by(id:@product.id-1)
     @product_1 = Product.find_by(id:@product.id+1)
     @images = ProductImage.where(product_id: params[:id]).limit(1)
@@ -65,15 +63,23 @@ class ProductsController < ApplicationController
   end
 
 
+  def update
+    if @product.update(product_params)
+      redirect_to product_path(@product)
+    else
+      redirect_to product_destroy_miss_path
+    end
+  end
+
 
   def edit
-    
+    @product_images=@product.product_images.where(product_id:params[:id])
   end
 
 
 private
   def comment_params
-    params.require(:product_comment).permit(:comment).merge(user_id: current_user.id, product_id: @products.id)
+    params.require(:product_comment).permit(:comment,:product_id).merge(user_id: current_user.id)
   end
   def set_product
     @product = Product.find(params[:id])
@@ -82,7 +88,7 @@ private
 
 
   def product_params
-    params.require(:product).permit(:name, :product_explain, :price, :product_category_id, :product_brand_id, :product_send_day, :prefecture_id, :product_condition, :product_fee, product_images_attributes: [:image]).merge(user_id: current_user.id, transaction_status: '出品中')
+    params.require(:product).permit(:name, :product_explain, :price, :product_category_id, :product_brand_id, :product_send_day, :prefecture_id, :product_condition, :product_fee, product_images_attributes: [:image, :id, :_destroy]).merge(user_id: current_user.id, transaction_status: '出品中')
   end
 
 end

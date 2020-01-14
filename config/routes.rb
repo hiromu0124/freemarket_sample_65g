@@ -12,11 +12,9 @@ Rails.application.routes.draw do
   end
   root to: 'products#index'
 
-  resources :products, only: [:index, :new, :show, :create, :edit, :destroy] do 
+  resources :products, only: [:index, :new, :show, :create, :edit, :destroy,:update] do 
     get "destroy_miss", to: :destroy_miss
   end
-
-
 
 
   resources :users, only: [:index, :show, :edit] do

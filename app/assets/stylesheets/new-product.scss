@@ -59,7 +59,21 @@
         display: none;
       }
       &__zone {
-        display: flex;
+          .single__main__product__image__zone__images {
+            font-size: 14px;
+            font-family: 'arial';
+            white-space:pre-wrap;
+            height: 82px;
+            width: 100%;
+            margin-left: 10px;
+            background-color: #EEEEEE;
+            border:2px  dotted #DDDDDD;
+            text-align: center;
+            padding: 40px 0;
+            &__fild{
+              display: none;
+            }
+          }
         .previews {
           display: flex;
           &__btn {
@@ -77,11 +91,11 @@
             }
           }
         }
-        .add_form {
+        .add_form_update{
           width: 600px;
           label {
             display: block;
-            .single__main__product__image__zone__images {
+            .single__main__product__image__zone__images_update {
               font-size: 14px;
               font-family: 'arial';
               white-space:pre-wrap;
@@ -98,8 +112,114 @@
             }
           }
         }
-        
-        
+        .add_form {
+          width: 600px;
+          .js-file_group {
+            .single__main__product__image__zone__images {
+              font-size: 14px;
+              font-family: 'arial';
+              white-space:pre-wrap;
+              height: 82px;
+              width: 100%;
+              margin-left: 10px;
+              background-color: #EEEEEE;
+              border:2px  dotted #DDDDDD;
+              text-align: center;
+              padding: 40px 0;
+              &__fild{
+                display: none;
+              }
+            }
+            .single__main__product__image__zone__images2 {
+              display: none;
+              &__fild{
+                display: none;
+              }
+            }
+          }
+        }
+      }
+      &__zone2 {
+        display: flex;
+          .single__main__product__image__zone__images {
+            font-size: 14px;
+            font-family: 'arial';
+            white-space:pre-wrap;
+            height: 82px;
+            width: 100%;
+            margin-left: 10px;
+            background-color: #EEEEEE;
+            border:2px  dotted #DDDDDD;
+            text-align: center;
+            padding: 40px 0;
+            &__fild{
+              display: none;
+            }
+          }
+        .previews {
+          display: flex;
+          &__btn {
+            height: 43px;
+            line-height: 43px;
+            background-color: #f5f5f5;
+            display: flex;
+            &__update {
+              color: #0099e8;
+              margin-left: 10px;
+            }
+            &__destroy {
+              color: #0099e8;
+              margin-left: 30px;
+            }
+          }
+        }
+        .add_form_update{
+          width: 600px;
+          label {
+            display: block;
+            .single__main__product__image__zone__images_update {
+              font-size: 14px;
+              font-family: 'arial';
+              white-space:pre-wrap;
+              height: 82px;
+              width: 100%;
+              margin-left: 10px;
+              background-color: #EEEEEE;
+              border:2px  dotted #DDDDDD;
+              text-align: center;
+              padding: 40px 0;
+              &__fild{
+                display: none;
+              }
+            }
+          }
+        }
+        .add_form {
+          width: 600px;
+          .js-file_group {
+            .single__main__product__image__zone__images {
+              font-size: 14px;
+              font-family: 'arial';
+              white-space:pre-wrap;
+              height: 82px;
+              width: 100%;
+              margin-left: 10px;
+              background-color: #EEEEEE;
+              border:2px  dotted #DDDDDD;
+              text-align: center;
+              padding: 40px 0;
+              &__fild{
+                display: none;
+              }
+            }
+            .single__main__product__image__zone__images2 {
+              display: none;
+              &__fild{
+                display: none;
+              }
+            }
+          }
+        }
       }
     }
       &__name{

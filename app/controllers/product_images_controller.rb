@@ -10,5 +10,6 @@ class ProductImagesController < ApplicationController
     else
       render json: { error: @image.errors.full_messages.join(',')}, status: 400
     end
+    
   end
 end

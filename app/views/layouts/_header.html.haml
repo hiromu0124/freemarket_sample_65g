@@ -1,7 +1,7 @@
 .main-header
   .main-header__top
     .main-header__top__title
-      %i.fab.fa-meetup
+      %i.fab.fa-apple
       = link_to 'mercari', root_path,class:"link"
     %form#main-header__top__form{:action => "", :method => ""}
       %input#main-header__top__form__text{:name => "s", :placeholder => "何かお探しですか？", :type => "text"}/
@@ -14,7 +14,7 @@
     .main-header__bottom__left
       %ul#category
         %li
-          = link_to 'カテゴリから探す', '#'
+          = link_to 'カテゴリから探す', '#',{:class => "category-list"}
           %ul
             %li
               = link_to 'レディース', '#',{:class => "parent-category"}
@@ -130,7 +130,7 @@
             %li
               = link_to 'カテゴリ一覧', '#'
         %li
-          = link_to 'ブランドから探す', '#'
+          = link_to 'ブランドから探す', '#',{:class => "brand-list"}
           %ul
             %li
               = link_to 'シャネル', '#'
@@ -173,16 +173,16 @@
         %li
           - if current_user
             = link_to 'マイページ' ,user_path(current_user.id)
+            %ul
+              %li
+                = link_to 'mercari', '#'
+              %li
+                = link_to 'mercari', '#'
+              %li
+                = link_to 'mercari', '#'
+              %li
+                = link_to 'mercari', '#'
           - else
             = link_to 'ログイン' , new_user_session_path
-          %ul
-            %li
-              = link_to 'mercari', '#'
-            %li
-              = link_to 'mercari', '#'
-            %li
-              = link_to 'mercari', '#'
-            %li
-              = link_to 'mercari', '#'
   .main-header__gretel
     = breadcrumbs  separator: " &rsaquo; "

@@ -9,12 +9,9 @@
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
   %body
     .header
-      = render "layouts/header"
+
+      aaaa
     .wrapper
       = yield
     .footer
-      = render "layouts/footer"
-    
-    - if current_user
-      .btn
-        =render "layouts/product_btn"
+      =render "products/product_footer"

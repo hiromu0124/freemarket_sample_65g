@@ -190,5 +190,20 @@ a {
 }
 .brand-list{
   padding-left: 10px;
-
+}
+.not-login{
+  display: flex;
+  font-weight: bold;
+  justify-content: flex-end;
+  width: 400px;
+  &__new{
+    background-color: rgb(255, 0, 0);
+    color: white;
+    margin-right: 10px;
+    }
+  &__login{
+    outline: solid #0080ff;
+    outline-width: thin;
+    color: #0080ff;
+  }
 }

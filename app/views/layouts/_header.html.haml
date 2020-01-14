@@ -1,7 +1,7 @@
 .main-header
   .main-header__top
     .main-header__top__title
-      %i.fab.fa-apple
+      %i.fab.fa-meetup
       = link_to 'mercari', root_path,class:"link"
     %form#main-header__top__form{:action => "", :method => ""}
       %input#main-header__top__form__text{:name => "s", :placeholder => "何かお探しですか？", :type => "text"}/
@@ -14,7 +14,7 @@
     .main-header__bottom__left
       %ul#category
         %li
-          = link_to 'カテゴリから探す', '#',{:class => "category-list"}
+          = link_to 'カテゴリから探す', '#'
           %ul
             %li
               = link_to 'レディース', '#',{:class => "parent-category"}
@@ -130,7 +130,7 @@
             %li
               = link_to 'カテゴリ一覧', '#'
         %li
-          = link_to 'ブランドから探す', '#',{:class => "brand-list"}
+          = link_to 'ブランドから探す', '#'
           %ul
             %li
               = link_to 'シャネル', '#'
@@ -144,35 +144,13 @@
               = link_to 'ブランド一覧', '#'
 
     .main-header__bottom__right
-      %ul#category
-        %li
-          = link_to 'いいね一覧', '#'
+      - if current_user
+        %ul#category
+          %li
+            = link_to 'いいね一覧', '#'
 
-        %li
-          = link_to 'お知らせ', '#'
-          %ul
-            %li
-              = link_to 'mercari', '#'
-            %li
-              = link_to 'mercari', '#'
-            %li
-              = link_to 'mercari', '#'
-            %li
-              = link_to 'mercari', '#'
-        %li
-          = link_to 'やることリスト', '#'
-          %ul
-            %li
-              = link_to 'mercari', '#'
-            %li
-              = link_to 'mercari', '#'
-            %li
-              = link_to 'mercari', '#'
-            %li
-              = link_to 'mercari', '#'
-        %li
-          - if current_user
-            = link_to 'マイページ' ,user_path(current_user.id)
+          %li
+            = link_to 'お知らせ', '#'
             %ul
               %li
                 = link_to 'mercari', '#'
@@ -182,7 +160,24 @@
                 = link_to 'mercari', '#'
               %li
                 = link_to 'mercari', '#'
-          - else
-            = link_to 'ログイン' , new_user_session_path
+          %li
+            = link_to 'やることリスト', '#'
+            %ul
+              %li
+                = link_to 'mercari', '#'
+              %li
+                = link_to 'mercari', '#'
+              %li
+                = link_to 'mercari', '#'
+              %li
+                = link_to 'mercari', '#'
+          %li
+            = link_to 'マイページ' ,user_path(current_user.id)
+      - else
+        %ul.not-login
+          %li
+            = link_to '新規会員登録' , new_user_session_path, class:"not-login__new"
+          %li
+            = link_to 'ログイン' , new_user_session_path, class:"not-login__login"
   .main-header__gretel
     = breadcrumbs  separator: " &rsaquo; "

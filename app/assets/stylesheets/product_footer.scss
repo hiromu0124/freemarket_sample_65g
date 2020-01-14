@@ -3,6 +3,8 @@
   text-align: center;
   text-decoration: none;
   background-color: #f5f5f5;
+  bottom: 0; /*下に固定*/
+  width: 100%;
   &__note{
     color: black;
     font-size: 12px;

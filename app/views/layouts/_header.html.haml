@@ -173,16 +173,16 @@
         %li
           - if current_user
             = link_to 'マイページ' ,user_path(current_user.id)
+            %ul
+              %li
+                = link_to 'mercari', '#'
+              %li
+                = link_to 'mercari', '#'
+              %li
+                = link_to 'mercari', '#'
+              %li
+                = link_to 'mercari', '#'
           - else
             = link_to 'ログイン' , new_user_session_path
-          %ul
-            %li
-              = link_to 'mercari', '#'
-            %li
-              = link_to 'mercari', '#'
-            %li
-              = link_to 'mercari', '#'
-            %li
-              = link_to 'mercari', '#'
   .main-header__gretel
     = breadcrumbs  separator: " &rsaquo; "

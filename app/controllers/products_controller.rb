@@ -24,18 +24,16 @@ class ProductsController < ApplicationController
   def create
     Product.create(product_params)
     redirect_to action: :new
-    
   end
 
   def create2
-    @products = Product.find(1)
     @comment=ProductComment.new(comment_params)
     if @comment.save
       respond_to do |format|
-        format.html { redirect_to product_path( @products.id) } 
+        format.html { redirect_to product_path(comment_params[:product_id]) } 
       end
     else
-      render :show
+
     end
   end
 
@@ -78,7 +76,7 @@ class ProductsController < ApplicationController
 
 private
   def comment_params
-    params.require(:product_comment).permit(:comment).merge(user_id: current_user.id, product_id: @products.id)
+    params.require(:product_comment).permit(:comment,:product_id).merge(user_id: current_user.id)
   end
   def set_product
     @product = Product.find(params[:id])

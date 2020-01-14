@@ -22,9 +22,10 @@
               .previews__btn
                 .previews__btn__update 編集
                 .previews__btn__destroy{"data-index" => "${index}"} 削除
-        %label{class:"js-file_group"}
-          %div{class: 'single__main__product__image__zone__images'}
-            クリックしてファイルをアップロード
+        .add_form_update
+          %label{class:"js-file_group_update"}
+            %div{class: 'single__main__product__image__zone__images_update'}
+              クリックしてファイルをアップロード
           = f.fields_for :product_images do |image|
             .add_form
               %label{class: 'js-file_group', data: {index: "#{image.index}"}}

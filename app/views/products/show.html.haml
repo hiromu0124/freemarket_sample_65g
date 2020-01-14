@@ -88,6 +88,7 @@
       相手のことを考え丁寧なコメントを心がけましょう。不快な言葉遣いなどは利用制限や退会処分となることがあります。
     = form_with(url: create2_path, model: @product_comment, local: true) do |f|
       = f.text_area :comment,class:"product__show__comments__form"
+      = f.hidden_field :product_id, value: @product.id
       = f.submit "コメントをする",class:"product__show__comments__btn"
   .product__show__move
     -if @product_0==nil

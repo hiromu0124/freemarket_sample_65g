@@ -59,13 +59,19 @@
         display: none;
       }
       &__zone {
+        width: 600px;
         display: flex;
+        .add_form {
+          
+        }
         .js-file_group{
+          width: 100%;
           .single__main__product__image__zone__images {
             font-size: 14px;
             font-family: 'arial';
             white-space:pre-wrap;
             height: 82px;
+            width: 100vh;
             margin-left: 10px;
             background-color: #EEEEEE;
             border:2px  dotted #DDDDDD;
@@ -425,7 +431,4 @@
 .returnbtn{
   text-decoration: none;
   color: white;
-}
-.previews_float__image{
-  display: none;
 }

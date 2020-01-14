@@ -15,7 +15,7 @@ CarrierWave.configure do |config|
       region: 'ap-northeast-1' #リージョン指定
     }
     config.fog_directory  = 'freemarket-sample-65g' #S3のバケット名
-    config.asset_host = 'https://s3-your_region.amazonaws.com/freemarket-sample-65g'
+    config.asset_host = 'https://freemarket-sample-65g.s3.amazonaws.com'
   else
     config.storage :file # 開発環境:public/uploades下に保存
     config.enable_processing = false if Rails.env.test? #test:処理をスキップ

@@ -60,23 +60,19 @@
       }
       &__zone {
         display: flex;
-        .add_form{
-          width: 00px;
-          .js-file_group{
-            .single__main__product__image__zone__images {
-              font-size: 14px;
-              font-family: 'arial';
-              white-space:pre-wrap;
-              height: 82px;
-              width: 100%;
-              margin-left: 10px;
-              background-color: #EEEEEE;
-              border:2px  dotted #DDDDDD;
-              text-align: center;
-              padding: 40px 0;
-              &__fild{
-                display: none;
-              }
+        .js-file_group{
+          .single__main__product__image__zone__images {
+            font-size: 14px;
+            font-family: 'arial';
+            white-space:pre-wrap;
+            height: 82px;
+            margin-left: 10px;
+            background-color: #EEEEEE;
+            border:2px  dotted #DDDDDD;
+            text-align: center;
+            padding: 40px 0;
+            &__fild{
+              display: none;
             }
           }
         }

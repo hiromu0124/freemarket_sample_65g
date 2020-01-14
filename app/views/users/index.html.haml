@@ -11,12 +11,12 @@
           =icon("far","far fa-envelope",class:"sign_up__main__form__email__icon")
           .sign_up__main__form__email__btn
             メールアドレスで登録する
-      =link_to "",class:"sign_up__main__form__facebook__btn__link" do
+      =link_to "user_facebook_omniauth_authorize_path", method: :post, class:"sign_up__main__form__facebook__btn__link" do
         .sign_up__main__form__facebook
           =icon("fab","fab fa-facebook-square",class:"sign_up__main__form__facebook__icon")
           .sign_up__main__form__facebook__btn
             Facebookで登録する
-      =link_to "",class:"sign_up__main__form__google__btn__link" do
+      =link_to "user_google_oauth2_omniauth_authorize_path", method: :post, class:"sign_up__main__form__google__btn__link" do
         .sign_up__main__form__google
           =icon("fab","fab fa-google",class:"sign_up__main__form__google__icon")
           .sign_up__main__form__google__btn

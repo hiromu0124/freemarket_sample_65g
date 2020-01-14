@@ -1,0 +1,9 @@
+.header2{
+  height: 128px;
+  background-color: #f5f5f5;
+  position: relative;
+  &__title{
+    text-align: center;
+    line-height: 128px;
+  }
+}

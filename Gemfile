@@ -89,5 +89,5 @@ gem "omniauth-rails_csrf_protection"
 
 # for image uploader with AWS S3
 gem 'carrierwave'
-gem 'fog'
+gem 'fog-aws'
 

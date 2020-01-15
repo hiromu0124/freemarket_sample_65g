@@ -21,6 +21,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
     session[:birthday_year] = user_params[:birthday_year]
     session[:birthday_manth] = user_params[:birthday_manth]
     session[:birthday_day] = user_params[:birthday_day]
+    session[:thumbnail] = user_params[:thumbnail]
     @user = User.new
   end
 
@@ -53,7 +54,8 @@ class Users::RegistrationsController < Devise::RegistrationsController
       prefecture_id: session[:prefecture_id],
       city: session[:city],
       little_adress: session[:little_adress],
-      building: session[:building]
+      building: session[:building],
+      thumbnail: session[:thumbnail]
     )
     if @user.save
       session[:id] = @user.id
@@ -125,6 +127,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
       :birthday_year,
       :birthday_manth,
       :birthday_day,
+      :thumbnail,
     )
   end
   # If you have extra params to permit, append them to the sanitizer.

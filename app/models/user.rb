@@ -6,6 +6,7 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
+  has_many :cards
   has_many :userlikes
   has_many :product_messages
   has_many :product_likes

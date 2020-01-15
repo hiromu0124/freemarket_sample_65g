@@ -11,6 +11,7 @@ Rails.application.routes.draw do
   end
   root to: 'products#index'
   resources :products, only: [:index, :new, :show, :create] do
+    resources :cards , only: [:new, :index, :create, :destroy]
     get "show2", to: :show2
   end
    

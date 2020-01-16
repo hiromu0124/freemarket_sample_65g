@@ -112,30 +112,31 @@
         =@product.user.nickname
         さんのその他の出品
     .otherproducts__in_user__products
-      -@product_image.each do |image| 
-        =link_to product_path(image.product.id),class:"link" do
+      -@product_user.each do |user| 
+        =link_to product_path(user.id),class:"link" do
           .otherproducts__in_user__products__image
-            = image_tag image.image.url, size: '210x230', class: 'otherproducts__image'
+            = image_tag user.product_images[0].image.url, size: '210x230', class: 'otherproducts__image'
             .otherproducts__in_user__products__image__name
-              =image.product.name
+              =user.name
             .h3
               ¥
-              =image.product.price
+              =user.price
               =link_to "" do
                 %i.far.fa-heart.likeicon
   .otherproducts__in_category
     .otherproducts__in_category__message
       = link_to '#', class: 'otherproducts__in_category__message__link' do
         =@product.product_category.name
+        のその他の出品
     .otherproducts__in_category__products
-      -@category_image.each do |image|
-        =link_to product_path(image.product.id),class:"link" do
+      -@product_category.each do |category|
+        =link_to product_path(category.id),class:"link" do
           .otherproducts__in_category__products__image
-            = image_tag image.image.url, size: '210x230', class: 'otherproducts__image'
+            = image_tag category.product_images[0].image.url, size: '210x230', class: 'otherproducts__image'
             .otherproducts__in_category__products__image__name
-              =image.product.name
+              =category.name
             .h3
               ¥
-              =image.product.price
+              =category.price
               =link_to "" do
                 %i.far.fa-heart.likeicon

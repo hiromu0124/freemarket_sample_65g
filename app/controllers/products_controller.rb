@@ -4,16 +4,12 @@ class ProductsController < ApplicationController
   def index
     @category_woman=ProductCategory.find(1)
     @product_womans=Product.where(product_category_id:@category_woman.id)
-    @product_woman_images=ProductImage.where(product:@product_womans.ids).limit(8)
     @category_man=ProductCategory.find(2)
     @product_mans=Product.where(product_category_id:@category_man.id)
-    @product_man_images=ProductImage.where(product:@product_mans.ids).limit(8)
     @category_toy=ProductCategory.find(3)
     @product_toies=Product.where(product_category_id:@category_toy.id)
-    @product_toy_images=ProductImage.where(product:@product_toies.ids)
     @category_camera=ProductCategory.find(5)
     @product_cameraes=Product.where(product_category_id:@category_camera.id)
-    @product_camera_images=ProductImage.where(product:@product_cameraes.ids).limit(8)
   end
 
   def new
@@ -45,8 +41,6 @@ class ProductsController < ApplicationController
   def show
     @product_category=Product.where(product_category_id:@product.product_category_id)
     @product_user=Product.where(user_id:@product.user.id)
-    @category_image=ProductImage.where(product_id:@product_category).limit(6)
-    @product_image=ProductImage.where(product_id: @product_user.ids).limit(6)
     @product_0 = Product.find_by(id:@product.id-1)
     @product_1 = Product.find_by(id:@product.id+1)
     @images = ProductImage.where(product_id: params[:id]).limit(1)

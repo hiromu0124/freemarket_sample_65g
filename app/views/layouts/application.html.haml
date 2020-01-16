@@ -16,5 +16,7 @@
       = yield
     .footer
       = render "layouts/footer"
-    .btn
-      =render "layouts/product_btn"
+    
+    - if current_user
+      .btn
+        =render "layouts/product_btn"

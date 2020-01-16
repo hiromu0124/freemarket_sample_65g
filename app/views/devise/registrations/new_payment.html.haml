@@ -3,7 +3,7 @@
     .new-user-main__box__title
       支払い方法
     .new-user-main__box__contents
-      = form_for(@user, url: done_path, method: :get) do |f|
+      = form_for @user,url: {controller:"registrations",action:"create"} do |f|
         = render "devise/shared/error_messages", resource: @user
         .field
           = f.label :カード番号

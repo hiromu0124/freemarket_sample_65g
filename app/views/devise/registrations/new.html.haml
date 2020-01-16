@@ -36,7 +36,7 @@
         .field__box
           = f.label :生年月日
           .field__box__box
-            %select{:name => "year",:class => "select-form"}>
+            =f.select :birthday_year,name: "year",class: "select-form" do
               %option{value: ""} -
               %option{value: "1950"} 1950
               %option{value: "1951"} 1951
@@ -121,7 +121,7 @@
               %option{value: "2030"} 2030
               年
 
-            %select{:name => "month",:class => "select-form"}>
+            =f.select :birthday_manth, name: "manth",class: "select-form" do
               %option{value: ""} -
               %option{value: "1"} 1
               %option{value: "2"} 2
@@ -136,8 +136,8 @@
               %option{value: "11"} 11
               %option{value: "12"} 12
               月
-          
-            %select{:name => "day",:class => "select-form"}>
+        
+            =f.select :birthday_day ,name:"day",class: "select-form" do
               %option{value: ""} -
               %option{value: "1"} 1
               %option{value: "2"} 2
@@ -177,4 +177,6 @@
             
 
         .actions
+          = f.hidden_field :thumbnail,value:"user_image.png"
           = f.submit "次へ進む", class: 'next-btn'
+    

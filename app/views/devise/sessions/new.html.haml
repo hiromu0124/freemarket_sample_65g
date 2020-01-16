@@ -6,16 +6,16 @@
     .log_in__main__header
       .log_in__main__header__new
         アカウントをお持ち出ない方はこちら
-        =link_to users_path,class:"log_in__main__header__new__btn__link" do
+        =link_to new_user_registration_path,class:"log_in__main__header__new__btn__link" do
           .log_in__main__header__new__btn
             新規会員登録
     .log_in__main__sns
-      =link_to class:"log_in__main__sns__facebook__btn__link" do
+      =link_to user_facebook_omniauth_authorize_path, method: :post, class:"log_in__main__sns__facebook__btn__link" do
         .log_in__main__sns__facebook
           =icon("fab","fab fa-facebook-square",class:"log_in__main__sns__facebook__icon")
           .log_in__main__sns__facebook__btn
             Facebookでログイン
-      =link_to "",class:"log_in__main__sns__google__btn__link" do
+      =link_to user_google_oauth2_omniauth_authorize_path, method: :post, class:"log_in__main__sns__google__btn__link" do
         .log_in__main__sns__google
           =icon("fab","fab fa-google",class:"log_in__main__sns__google__icon")
           .log_in__main__sns__google__btn
@@ -28,5 +28,4 @@
           = f.password_field :password, autocomplete: "current-password",class:"log_in__main__form__password__form"
         .log_in__main__form__actions
           = f.submit "ログイン",class:"log_in__main__form__actions__btn"
-      = render "devise/shared/links"
 =render "products/product_footer"

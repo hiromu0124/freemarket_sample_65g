@@ -1,6 +1,4 @@
 .mypage-main-conatiner
-  -# = render "herder"
-  -# = render "bread-crumbs"
   %main.mypage-container.creafix
     = render "user-side"
     .identification-content
@@ -12,21 +10,31 @@
               お客様の本人情報を登録してください。
               %br
               登録されたお名前・生年月日を変更する場合、本人確認書類の提出が必要になります。
-            %p.identification-content__textlink
+            .identification-content__textlink
               = link_to "本人確認書類のアップロードについて", ""
               %i.fas.fa-chevron-right
           .identification-content__group
             = f.label "お名前"
+            %br/
             %p
               = current_user.full_name
           .identification-content__group
             = f.label "お名前カナ"
-            %p 
+            %br/
+            %p
               = current_user.name_kana
           .identification-content__group
             = f.label "生年月日", class: "identification-content__birthday"
-            %p 
+            %br/
+            %p
+              = current_user.birthday_year
+              %p /
+            %p  
+              = current_user.birthday_manth
+              %p /
+            %p  
               = current_user.birthday_day
+              
           .identification-content__group 
             = f.label "郵便番号", class: "identification-content__postalcode"
             %sapn.identification-content__arbitrary 任意
@@ -49,6 +57,6 @@
               %sapn.identification-content__arbitrary 任意
               = f.text_field :building, { class: "identification-content__default", placeholder: "例)柳ビル103", value: "#{ current_user.building }" }
               = f.submit "登録する", { class: "identification-content__button" }
-            %p.identification-content__textlinl{ id: "textinfo" }
+            .identification-content__textlink{ id: "textinfo" }
               = link_to "本人情報の登録について", ""
               %i.fas.fa-chevron-right

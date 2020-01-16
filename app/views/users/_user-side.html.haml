@@ -51,8 +51,8 @@
       %li
         = link_to 'メール/パスワード', '#'
       %li
-        = link_to '本人情報', '#'
+        = link_to '本人情報', edit_user_path(current_user.id)
       %li
-        = link_to '電話番号の確認', '#'
+        = link_to '電話番号の確認,'#'
       %li
-        = link_to 'ログアウト', destroy_user_session_path, method: :delete
+        = link_to 'ログアウト', user_logout_path(current_user)

@@ -34,13 +34,15 @@
   }
 }
 .main_contents__wrapper {
-  width: 100%;
+  width: 1410px;
   background-color:rgb(239, 239, 239);
+  margin: auto;
+
   .main_contents{
     width: 1000px;
-    margin: auto;
+    margin: 0 auto;
     .items{
-      height: 455px;
+      height: 640px;
       &_name{
         display: flex;
         justify-content: space-between;
@@ -61,12 +63,13 @@
         }
       }
       &__images {
-        height: 250px;
-        width: 230px;
+        margin-top: 20px;
+        width: 1000px;
         position: relative;
         display: flex;
+        flex-wrap: wrap;
         &__main{
-          padding-left: 10px;
+          padding: 10px 0 0 10px;
           &__image {
             vertical-align: bottom;
           }
@@ -83,7 +86,7 @@
             line-height: 30px;
             width: 70px;
             position: absolute;
-            bottom: 23px;
+            margin: 200px 0 0 10px;
             font-size: 13px;
             color: white;
             background-color: rgba(0,0,0,0.4);

@@ -1,0 +1,11 @@
+.mypage
+  =render "user-side"
+  .wrapper
+    .main
+      .main_content
+        .inner
+          .single
+            = link_to destroy_user_session_path, method: :delete do
+              .button
+                ログアウト
+          

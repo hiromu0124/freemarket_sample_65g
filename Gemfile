@@ -80,7 +80,15 @@ gem 'font-awesome-sass'
 gem 'jquery-rails'
 gem 'devise'
 gem 'jp_prefecture'
-gem 'carrierwave'
 gem 'mini_magick'
 gem "gretel"
+
 gem "payjp"
+gem "omniauth-facebook"
+gem "omniauth-twitter"
+gem "omniauth-google-oauth2"
+gem "omniauth-rails_csrf_protection"
+
+# for image uploader with AWS S3
+gem 'carrierwave'
+gem 'fog-aws'

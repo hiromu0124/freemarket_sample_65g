@@ -20,13 +20,14 @@
         border-radius:2px;
         outline:0;
         background:#eee;
-        width: 700px;
+        width: 750px;
         font-size: 10px;
+        padding-left: 15px;
       }
       #main-header__top__form__btn{
         height:30px;
         position:absolute; 
-        left:670px;
+        left:720px;
         background:none;
         color:#666;
         border:none;
@@ -53,11 +54,12 @@
   &__left{
     display: flex;
     position: relative;
+    width: 500px;
   }
   &__right{
     display: flex;
     position: relative;
-    right: 180px;
+    width: 500px;
   }
 }
 //ドロップダウンリスト
@@ -70,7 +72,6 @@
 
   li {
     position: relative;
-    width: 20%;
     float: left;
     margin: 0;
     padding: 0;
@@ -80,7 +81,7 @@
     a {
       display: block;
       margin: 0;
-      padding: 16px 0;
+      padding: 16px;
       background: #ffffff;
       color: black;
       font-size: 10px;
@@ -179,5 +180,30 @@ a {
   text-decoration: none;
 }
 .link{
+  margin: 0;
+  padding: 0;
   color: black;
+}
+
+.category-list{
+  padding-right: 10px;
+}
+.brand-list{
+  padding-left: 10px;
+}
+.not-login{
+  display: flex;
+  font-weight: bold;
+  justify-content: flex-end;
+  width: 400px;
+  &__new{
+    background-color: rgb(255, 0, 0);
+    color: white;
+    margin-right: 10px;
+    }
+  &__login{
+    outline: solid #0080ff;
+    outline-width: thin;
+    color: #0080ff;
+  }
 }

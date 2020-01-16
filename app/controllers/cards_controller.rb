@@ -14,6 +14,37 @@ class CardsController < ApplicationController
     end
   end
 
+  def buy #クレジット購入
+    # binding.pry
+    @card = Card.find_by(user_id: current_user.id)
+    if @card.blank?
+      redirect_to action: "new"
+      flash[:alert] = '購入にはクレジットカード登録が必要です'
+    else
+      @product = Product.find(params[:product_id])
+     # 購入した際の情報を元に引っ張ってくる
+      
+     # テーブル紐付けてるのでログインユーザーのクレジットカードを引っ張ってくる
+      Payjp.api_key = "sk_test_c4c61e2a8182851aec77574b"
+     # キーをセットする(環境変数においても良い)
+      Payjp::Charge.create(
+      amount: @product.price, #支払金額
+      customer: @card.customer_id, #顧客ID
+      currency: 'jpy', #日本円
+      )
+      # @product.update(transaction_status: '購入済み')
+     # ↑商品の金額をamountへ、cardの顧客idをcustomerへ、currencyをjpyへ入れる
+      if 
+        flash[:notice] = '購入しました。'
+        redirect_to @product
+      else
+        flash[:alert] = '購入に失敗しました。'
+        redirect_to @product
+      end
+     #↑この辺はこちら側のテーブル設計どうりに色々しています
+    end
+  end
+
   # 登録画面で入力した情報をDBに保存
   def create
     Payjp.api_key = "sk_test_c4c61e2a8182851aec77574b"
@@ -42,5 +73,9 @@ class CardsController < ApplicationController
 
   def set_card
     @card = Card.where(user_id: current_user.id).first if Card.where(user_id: current_user.id).present?
+  end
+
+  def order_params
+    params.require(:order).permit(:user_id,:product_id)
   end
 end

@@ -1,8 +1,9 @@
 class OrdersController < ApplicationController
 
   def create
-   Order.create(order_params)
-   redirect_to root_path
+    Order.create(order_params)
+    # redirect_to controller: 'products', action: 'update'
+    @product=Product.find(order_params[:product_id])
   end
 
  

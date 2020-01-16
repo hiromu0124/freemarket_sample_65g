@@ -23,6 +23,11 @@ class ProductsController < ApplicationController
     
   end
 
+  def update
+    product = Product.find(order_params[:product_id])
+    product.update_attributes(transaction_status: '購入済み')
+  end
+
   def create2
     @products = Product.find(1)
     @comment=ProductComment.new(comment_params)
@@ -54,6 +59,7 @@ end
     @order = Order.new
     @product = Product.find(params[:product_id])
     @product_image=ProductImage.where(product_id:@product.id)
+    @card=Card.find_by(user_id: current_user.id)
   end
 
 private

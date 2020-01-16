@@ -56,7 +56,7 @@
                   %br
                   = current_user.nickname
           .buy_button
-            =form_for @order do |f|
+            =form_with url:product_card_buy_path(@product.id,@card.id),local: true,method: :post do |f|
               = f.hidden_field :user_id, value:  current_user.id
               = f.hidden_field :product_id, value:  @product.id
               = f.submit "購入する"

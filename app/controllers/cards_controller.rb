@@ -15,7 +15,6 @@ class CardsController < ApplicationController
   end
 
   def buy #クレジット購入
-    # binding.pry
     @card = Card.find_by(user_id: current_user.id)
     if @card.blank?
       redirect_to action: "new"

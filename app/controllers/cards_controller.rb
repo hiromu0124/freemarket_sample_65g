@@ -30,7 +30,7 @@ class CardsController < ApplicationController
       customer: @card.customer_id, #顧客ID
       currency: 'jpy', #日本円
       )
-      # @product.update(transaction_status: '購入済み')
+      @product.update(transaction_status: '購入済み')
      # ↑商品の金額をamountへ、cardの顧客idをcustomerへ、currencyをjpyへ入れる
       if 
         flash[:notice] = '購入しました。'

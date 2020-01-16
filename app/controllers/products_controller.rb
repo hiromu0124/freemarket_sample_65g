@@ -43,12 +43,10 @@ class ProductsController < ApplicationController
   end
 
   def show
-    @category_product=@product.product_category_id
-    @user_product= @product.user.id
-    @product_category=Product.where(product_category_id:@category_product)
-    @product_user=Product.where(user_id:@user_product)
-    @category_image=ProductImage.where(product_id:@product_category)
-    @product_image=ProductImage.where(product_id: @product_user.ids)
+    @product_category=Product.where(product_category_id:@product.product_category_id)
+    @product_user=Product.where(user_id:@product.user.id)
+    @category_image=ProductImage.where(product_id:@product_category).limit(6)
+    @product_image=ProductImage.where(product_id: @product_user.ids).limit(6)
     @product_0 = Product.find_by(id:@product.id-1)
     @product_1 = Product.find_by(id:@product.id+1)
     @images = ProductImage.where(product_id: params[:id]).limit(1)

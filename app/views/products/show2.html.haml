@@ -5,13 +5,15 @@
     .buy_content
       .buy_content_inner
         .buy_item_box
-          = image_tag 'merukari1.jpg', size: '230x230', class: 'buy_item_image'
+          -@product_image.each do |image|
+            = image_tag image.image, size: '230x230', class: 'buy_item_image'
           .buy_item_detail
             .buy_item_name
-              シャツ
+              =@product.name
             .buy_price
               .buy_price_inner
-                ¥500
+                ¥
+                =@product.price
               .item_shipping_free
                 (税込)送料込み
     .buy_item_content
@@ -22,10 +24,11 @@
               支払い金額
               .buy_price_cell
                 .pay
-                  ¥500
+                  ¥
+                  =@product.price
           -# .buy_accordion
           %input{type: 'checkbox', class: 'buy_input'}
-            %p ポイントを使用 (所持ポイント: P0)
+            %p.point_use ポイントを使用 (所持ポイント: P0)
           .buy_user_info
             .buy_user_info_inner
               .h3 
@@ -35,7 +38,7 @@
                 .icon_plas_circle
                   =icon('fas',"fas fa-plus-circle")
               .buy_register_text
-                登録してください
+                = link_to '登録してください', new_product_card_path(@product.id)
           .buy_user_info_under
             .buy_user_info_under_inner
               .clearfix
@@ -45,15 +48,20 @@
                   変更する
               .address
                 .p
-                  〒105-0000
+                  〒
+                  = current_user.postalcode
                   %br
-                  東京都＠＠＠＠＠ー＠＠＠
+                  = current_user.city
+                  = current_user.little_adress
                   %br
-                  つとむ
+                  = current_user.nickname
           .buy_button
-            .submit
-              購入する
+            =form_with url:product_card_buy_path(@product.id,@card.id),local: true,method: :post do |f|
+              = f.hidden_field :user_id, value:  current_user.id
+              = f.hidden_field :product_id, value:  @product.id
+              = f.submit "購入する"
+
+                
 
               
 
-            

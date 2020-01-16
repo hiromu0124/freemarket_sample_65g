@@ -25,6 +25,7 @@ class User < ApplicationRecord
 end
 
 
+  has_many :cards
   has_many :userlikes
   has_many :product_messages
   has_many :product_likes

@@ -13,7 +13,13 @@ Rails.application.routes.draw do
   end
   root to: 'products#index'
 
+
   resources :products, only: [:index, :new, :show, :create, :edit, :destroy,:update] do 
+    resources :product_images
+    resources :cards , only: [:new, :index, :create, :destroy] do
+      post "buy",to: :buy
+    end
+    get "show2", to: :show2
     get "destroy_miss", to: :destroy_miss
   end
 
@@ -24,9 +30,10 @@ Rails.application.routes.draw do
 
   resources :product_comments, only: [:new,:create]
 
-  resources :orders, only: :index
+  resources :orders, only: [:create, :update]
 
   resources :creditcards, only: [:index, :new, :create]
+
 
 
   get "RedBull", to:"users#edit2"

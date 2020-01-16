@@ -26,6 +26,11 @@ class ProductsController < ApplicationController
     redirect_to action: :index
   end
 
+  def update
+    product = Product.find(order_params[:product_id])
+    product.update_attributes(transaction_status: '購入済み')
+  end
+
   def create2
     @comment=ProductComment.new(comment_params)
     if @comment.save
@@ -49,6 +54,13 @@ class ProductsController < ApplicationController
     @images = ProductImage.where(product_id: params[:id]).limit(1)
     @comments = ProductComment.where(product_id: params[:id])
     @product_comment=ProductComment.new
+  end
+
+  def show2
+    @order = Order.new
+    @product = Product.find(params[:product_id])
+    @product_image=ProductImage.where(product_id:@product.id)
+    @card=Card.find_by(user_id: current_user.id)
   end
 
   def destroy

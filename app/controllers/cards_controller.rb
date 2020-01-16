@@ -25,7 +25,7 @@ class CardsController < ApplicationController
      # 購入した際の情報を元に引っ張ってくる
       
      # テーブル紐付けてるのでログインユーザーのクレジットカードを引っ張ってくる
-      Payjp.api_key = "sk_test_c4c61e2a8182851aec77574b"
+      Payjp.api_key = ENV["PAYJP_PRIVATE_KEY"]
      # キーをセットする(環境変数においても良い)
       Payjp::Charge.create(
       amount: @product.price, #支払金額
@@ -47,7 +47,7 @@ class CardsController < ApplicationController
 
   # 登録画面で入力した情報をDBに保存
   def create
-    Payjp.api_key = "sk_test_c4c61e2a8182851aec77574b"
+    Payjp.api_key = ENV["PAYJP_PRIVATE_KEY"]
     if params['payjp-token'].blank?
       render product_show2_path
     else

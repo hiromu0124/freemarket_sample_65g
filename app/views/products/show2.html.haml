@@ -6,7 +6,7 @@
       .buy_content_inner
         .buy_item_box
           -@product_image.each do |image|
-            = image_tag image.image, size: '230x230', class: 'buy_item_image'
+            = image_tag image.image.url, size: '230x230', class: 'buy_item_image'
           .buy_item_detail
             .buy_item_name
               =@product.name

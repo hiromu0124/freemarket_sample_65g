@@ -8,7 +8,6 @@ class CardsController < ApplicationController
 
   # クレジットカード情報入力画面
   def new
-    @product = Product.find(params[:product_id])
     if @card
       redirect_to card_path unless @card
     end

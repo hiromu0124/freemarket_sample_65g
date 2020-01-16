@@ -16,13 +16,13 @@ Rails.application.routes.draw do
 
   resources :products, only: [:index, :new, :show, :create, :edit, :destroy,:update] do 
     resources :product_images
-    resources :cards , only: [:new, :index, :create, :destroy] do
+    resources :cards , only: [ :index, :destroy] do
       post "buy",to: :buy
     end
     get "show2", to: :show2
     get "destroy_miss", to: :destroy_miss
   end
-
+  resources :cards , only: [:new, :create]
 
   resources :users, only: [:index, :show, :edit] do
     get "logout", to: :logout

@@ -23,16 +23,16 @@
           = link_to "#", class: "viewmore" do
             もっと見る ＞
       .items__images
-        -@product_woman_images.each do |image|
-          =link_to product_path(image.product.id) do
+        -@product_womans.each do |product|
+          =link_to product_path(product.id) do
             .items__images__main__h3
               ¥
-              =image.product.price
+              =product.price
             .items__images__main
-              = image_tag image.image.url, size: '230x230', class: 'items__images__main__image'
+              = image_tag product.product_images[0].image.url, size: '230x230', class: 'items__images__main__image'
 
               .items__images__main__p
-                =image.product.name
+                =product.name
   .main_contents
     .items
       .items_name#man
@@ -43,15 +43,15 @@
           = link_to "#", class: "viewmore" do
             もっと見る ＞
       .items__images
-        -@product_man_images.each do |image|
-          =link_to product_path(image.product.id) do
+        -@product_mans.each do |product|
+          =link_to product_path(product.id) do
             .items__images__main__h3
               ¥
-              =image.product.price
+              =product.price
             .items__images__main
-              = image_tag image.image.url, size: '230x230', class: 'items__images__main__image'
+              = image_tag product.product_images[0].image.url, size: '230x230', class: 'items__images__main__image'
               .items__images__main__p
-                =image.product.name
+                =product.name
   .main_contents
     .items
       .items_name#camera
@@ -62,15 +62,15 @@
           = link_to "#", class: "viewmore" do
             もっと見る ＞
       .items__images
-        -@product_camera_images.each do |image|
-          =link_to product_path(image.product.id) do
+        -@product_cameraes.each do |product|
+          =link_to product_path(product.id) do
             .items__images__main__h3
               ¥
-              =image.product.price
+              =product.price
             .items__images__main
-              = image_tag image.image.url, size: '230x230', class: 'items__images__main__image'
+              = image_tag product.product_image[0].image.url, size: '230x230', class: 'items__images__main__image'
               .items__images__main__p
-                =image.product.name
+                =product.name
   .main_contents
     .items
       .items_name#toy
@@ -81,13 +81,13 @@
           = link_to "#", class: "viewmore" do
             もっと見る ＞
       .items__images
-        -@product_toy_images.each do |image|
-          =link_to product_path(image.product.id) do
+        -@product_toies.each do |product|
+          =link_to product_path(product.id) do
             .items__images__main__h3
               ¥
-              =image.product.price
+              =product.price
             .items__images__main
-              = image_tag image.image.url, size: '230x230', class: 'items__images__main__image'
+              = image_tag product.product_images[0].image.url, size: '230x230', class: 'items__images__main__image'
               .items__images__main__p
-                =image.product.name
+                =product.name
             

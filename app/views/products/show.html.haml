@@ -61,7 +61,18 @@
         = link_to "https://www.mercari.com/jp/safe/description/", class: "relief" do
           %i.fas.fa-unlock-alt
           %span あんしん・あんぜんへの取り組み
-          
+    -elsif user_signed_in? && current_user.id != @product.user_id
+      =link_to edit_product_path,class:"link" do
+        .product__show__btns__edit  
+          商品編集
+      .product__show__btns__or
+        or
+      =link_to class:"link" do
+        .product__show__btns__pause
+          出品を一旦停止する
+      =link_to product_path(@product) ,class:"link", method: :delete do
+        .product__show__btns__delete
+          この商品を削除する
     -elsif user_signed_in? && current_user.id != @product.user_id && @product.transaction_status == "購入済み"
       .product__show__buy_btn2
         売り切れました
@@ -80,17 +91,20 @@
           %i.fas.fa-unlock-alt
           %span あんしん・あんぜんへの取り組み
     -else
-      =link_to edit_product_path,class:"link" do
-        .product__show__btns__edit  
-          商品編集
-      .product__show__btns__or
-        or
-      =link_to class:"link" do
-        .product__show__btns__pause
-          出品を一旦停止する
-      =link_to product_path(@product) ,class:"link", method: :delete do
-        .product__show__btns__delete
-          この商品を削除する
+      .product__show__notes
+        この商品はゆうゆうメルカリ便を利用しているため、アプリからのみ購入できます。
+      .product__show__message
+        =@product.product_explain
+      .product__show__bottom
+        %button.product__show__bottom__like_btn 
+          =icon("fas","far fa-heart",class:"product__show__bottom__like_btn__icon")
+          %span いいね!
+        %button.product__show__bottom__report_btn
+          %i.far.fa-flag
+          %span 不適切な商品の報告
+        = link_to "https://www.mercari.com/jp/safe/description/", class: "relief" do
+          %i.fas.fa-unlock-alt
+          %span あんしん・あんぜんへの取り組み
   -if @product.transaction_status=="出品中"
     .product__show__comments
       -@comments.each do |comment|

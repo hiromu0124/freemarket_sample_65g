@@ -44,9 +44,27 @@
       %span¥
       %span=@product.price
       (税込) 送料込み
-    -if user_signed_in? && current_user.id != @product.user_id
+    -if user_signed_in? && current_user.id != @product.user_id && @product.transaction_status =="出品中"
       = link_to product_show2_path(product_id:@product.id), class: 'product__show__buy_btn'do
         購入画面に進む
+      .product__show__notes
+        この商品はゆうゆうメルカリ便を利用しているため、アプリからのみ購入できます。
+      .product__show__message
+        何回か着ましたが目立つような汚れはありませんが着ていたので神経質な方の購入は控え下さい。
+      .product__show__bottom
+        %button.product__show__bottom__like_btn 
+          =icon("fas","far fa-heart",class:"product__show__bottom__like_btn__icon")
+          %span いいね!
+        %button.product__show__bottom__report_btn
+          %i.far.fa-flag
+          %span 不適切な商品の報告
+        = link_to "https://www.mercari.com/jp/safe/description/", class: "relief" do
+          %i.fas.fa-unlock-alt
+          %span あんしん・あんぜんへの取り組み
+          
+    -elsif @product.transaction_status == "購入済み"
+      .product__show__buy_btn2
+        売り切れました
       .product__show__notes
         この商品はゆうゆうメルカリ便を利用しているため、アプリからのみ購入できます。
       .product__show__message
@@ -73,22 +91,38 @@
       =link_to product_path(@product) ,class:"link", method: :delete do
         .product__show__btns__delete
           この商品を削除する
-          
-  .product__show__comments
-    -@comments.each do |comment|
-      .product__show__comment  
-        = image_tag comment.user.thumbnail , class: 'product__show__comment__picture'
-        .product__show__comment__area
-          .product__show__comment__area__name
-            =link_to comment.user.nickname,user_path(comment.user.id)
-          .product__show__comment__area__box
-            =comment.comment
-    .product__show__comments__note
-      相手のことを考え丁寧なコメントを心がけましょう。不快な言葉遣いなどは利用制限や退会処分となることがあります。
-    = form_with(url: create2_path, model: @product_comment, local: true) do |f|
-      = f.text_area :comment,class:"product__show__comments__form"
-      = f.hidden_field :product_id, value: @product.id
-      = f.submit "コメントをする",class:"product__show__comments__btn"
+  -if @product.transaction_status=="出品中"
+    .product__show__comments
+      -@comments.each do |comment|
+        .product__show__comment  
+          = image_tag comment.user.thumbnail , class: 'product__show__comment__picture'
+          .product__show__comment__area
+            .product__show__comment__area__name
+              =link_to comment.user.nickname,user_path(comment.user.id)
+            .product__show__comment__area__box
+              =comment.comment
+      .product__show__comments__note
+        相手のことを考え丁寧なコメントを心がけましょう。不快な言葉遣いなどは利用制限や退会処分となることがあります。
+      = form_with(url: create2_path, model: @product_comment, local: true) do |f|
+        = f.text_area :comment,class:"product__show__comments__form"
+        = f.hidden_field :product_id, value: @product.id
+        = f.submit "コメントをする",class:"product__show__comments__btn"
+  - elsif @product.transaction_status=="購入済み"
+    .product__show__comments
+      -@comments.each do |comment|
+        .product__show__comment  
+          = image_tag comment.user.thumbnail , class: 'product__show__comment__picture'
+          .product__show__comment__area
+            .product__show__comment__area__name
+              =link_to comment.user.nickname,user_path(comment.user.id)
+            .product__show__comment__area__box
+              =comment.comment
+      .product__show__comments__note
+        相手のことを考え丁寧なコメントを心がけましょう。不快な言葉遣いなどは利用制限や退会処分となることがあります。
+      = form_with(url: create2_path, model: @product_comment, local: true) do |f|
+        = f.text_area :comment,class:"product__show__comments__form",disabled: true
+        = f.hidden_field :product_id, value: @product.id
+        = f.submit "売り切れのためコメントできません",class:"product__show__comments__btn",disabled: true
   .product__show__move
     -if @product_0==nil
     -else

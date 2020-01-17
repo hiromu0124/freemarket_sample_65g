@@ -111,6 +111,8 @@ ActiveRecord::Schema.define(version: 2020_01_13_082621) do
     t.string "name_kana", null: false
     t.string "tell", null: false
     t.string "thumbnail"
+    t.string "uid"
+    t.string "provider"
     t.text "self_introduction"
     t.string "postalcode", null: false
     t.string "city", null: false

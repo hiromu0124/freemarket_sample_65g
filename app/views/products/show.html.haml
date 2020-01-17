@@ -50,7 +50,7 @@
       .product__show__notes
         この商品はゆうゆうメルカリ便を利用しているため、アプリからのみ購入できます。
       .product__show__message
-        何回か着ましたが目立つような汚れはありませんが着ていたので神経質な方の購入は控え下さい。
+        =@product.product_explain
       .product__show__bottom
         %button.product__show__bottom__like_btn 
           =icon("fas","far fa-heart",class:"product__show__bottom__like_btn__icon")
@@ -62,13 +62,13 @@
           %i.fas.fa-unlock-alt
           %span あんしん・あんぜんへの取り組み
           
-    -elsif @product.transaction_status == "購入済み"
+    -elsif user_signed_in? && current_user.id != @product.user_id && @product.transaction_status == "購入済み"
       .product__show__buy_btn2
         売り切れました
       .product__show__notes
         この商品はゆうゆうメルカリ便を利用しているため、アプリからのみ購入できます。
       .product__show__message
-        何回か着ましたが目立つような汚れはありませんが着ていたので神経質な方の購入は控え下さい。
+        =@product.product_explain
       .product__show__bottom
         %button.product__show__bottom__like_btn 
           =icon("fas","far fa-heart",class:"product__show__bottom__like_btn__icon")
